@@ -1,5 +1,53 @@
+.course-container.modal-open {
+    justify-content: flex-start;
+    width: calc(70% - 20px);
+    margin-left: 20px;
+    padding: 0;
+}
+
+.course-card.modal-open {
+    width: 25%;
+    margin: 10px;
+}
+
+.modal-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    transition: width 0.3s ease-in-out;
+}
+
+.modal {
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0;
+}
+
+
 .page-container {
     display: flex;
+}
+
+.container-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1%;
+    margin-top: 50px;
 }
 
 .course-container {
@@ -9,7 +57,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .container-june {
@@ -20,12 +68,13 @@
 }
 
 .course-card {
-    width: 30%;
+    width: 25%;
     border-radius: 8px;
     padding: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 10px;
     box-sizing: border-box;
+    transition: transform 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 .price-june {
@@ -43,7 +92,7 @@
     font-size: 1rem;
     background-color: #FFEEE8;
     color: #FF6636;
-    line-height: 1.25; 
+    line-height: 1.25;
     letter-spacing: -0.8%;
     font-weight: 600;
     border: none;
@@ -57,11 +106,12 @@
     right: 0;
     bottom: 0;
     width: 30%;
-    height: 60%;
+    height: 100%;
     z-index: 1000;
     display: flex;
     justify-content: center;
     padding: 20px;
+    transition: width 0.3s ease-in-out;
 }
 
 .modal {
@@ -80,29 +130,31 @@
     cursor: pointer;
 }
 
-.prof-june1 {
+.prof-june1,
+.prof-june2,
+.prof-june3 {
     font-family: 'Inter', sans-serif;
-    color: red;
     font-size: 10px;
     background-color: #FFEEE8;
+}
+
+.prof-june1 {
+    color: red;
 }
 
 .prof-june2 {
-    font-family: 'Inter', sans-serif;
     color: blue;
-    font-size: 10px;
-    background-color: #FFEEE8;
 }
 
 .prof-june3 {
-    font-family: 'Inter', sans-serif;
     color: green;
-    font-size: 10px;
-    background-color: #FFEEE8;
 }
 
 .desc-june {
     font-family: 'Inter', sans-serif;
+    margin: 20px 0px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 .rating-container {
@@ -111,21 +163,22 @@
 }
 
 .course-image {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
 }
 
 .containers {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
+    color: #4E5566;
 }
 
 .containers-user {
     display: flex;
     align-items: center;
-    gap: 10px; 
+    gap: 10px;
 }
 
 .user-icon {
@@ -135,6 +188,7 @@
 
 .enrollment-text {
     font-family: 'Inter', sans-serif;
+    color: #8C94A3;
 }
 
 @media (max-width: 768px) {
@@ -142,4 +196,150 @@
         width: 50%;
         margin: 10px 0;
     }
+}
+
+.course-container.modal-open {
+    justify-content: flex-start;
+    width: calc(100% - 30%);
+    margin-left: 0;
+    padding: 0;
+}
+
+.course-card.modal-open {
+    width: 20%;
+    margin: 5px;
+}
+
+.develop-p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    height: 15px;
+    background-color: #EBEBFF;
+    color: #342F98;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.st-p {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.container-photo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.container-photo .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container-photo .rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.st-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.arrangement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.discounted-price {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    color: #1D2026;
+    margin-right: 10px;
+}
+
+.discount {
+    margin-left: 10px;
+    background-color: #FFEEE8;
+    color: #FF6636;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    line-height: 14px;
+    width: 86px;
+    padding: 10px;
+}
+
+.heart {
+    margin-left: 100px;
+    background-color: #FFEEE8;
+    padding: 10px;
+}
+
+.original-price {
+    font-size: 15px;
+    font-family: "Inter", sans-serif;
+    line-height: 24px;
+    font-weight: 400;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.Check-p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -1%;
+    color: #6E7485;
+}
+
+.page-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.btn-p,
+.btn-cs {
+    background-color: #FF6636;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 48px;
+    letter-spacing: -0.8%;
+    width: 300px;
+    height: 48px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-cs {
+    background-color: #FFEEE8;
+    color: #FF6636;
 }

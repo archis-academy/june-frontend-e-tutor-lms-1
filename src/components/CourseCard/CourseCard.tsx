@@ -36,7 +36,7 @@ const CourseCard: React.FC<CourseCardProps & { className: string }> = ({ image, 
                 {renderStars(rating)}
                 <div className={styles['containers-user']}>
                     <img src="/User.png" alt="User" className={styles['user-icon']} />
-                    <p className={styles['enrollment-text']}>{numPeople} students enrolled</p>
+                    <p className={styles['enrollment-text']}>{numPeople}K students</p>
                 </div>
             </div>
         </div>
