@@ -5,5 +5,6 @@ export interface CourseCardProps{
   description:string;
   rating:number;
   numPeople:number;
+  categoryColor:string;
 }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { CourseCardProps } from "../../type/CourseCardSituation";
 import styles from '../CourseCard/CourseCard.module.css';
-const CourseCard: React.FC<CourseCardProps & { className: string }> = ({ image, profession, price, description, rating, numPeople, className }) => {
+const CourseCard: React.FC<CourseCardProps> = ({ image, profession, price, description, rating, numPeople,categoryColor }) => {
 
     const renderStars = (rating: number) => {
         const stars = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; rating; i++) {
             stars.push(
                 <img
                     key={i}
@@ -27,7 +27,7 @@ const CourseCard: React.FC<CourseCardProps & { className: string }> = ({ image, 
         <div className={styles['course-card']}>
             <img src={image} alt={profession} className={styles['course-image']} />
             <div className={styles['container-june']}>
-                <h2 className={`${styles['prof-june']} ${className}`}>{profession}</h2>
+                <h2 style={{color:categoryColor}} className={`${styles['prof-june']} `}>{profession}</h2>
                 <p className={styles['price-june']}>${price}</p>
             </div>
             <p className={styles['desc-june']}>{description}</p>
