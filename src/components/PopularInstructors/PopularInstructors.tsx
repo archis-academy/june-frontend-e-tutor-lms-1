@@ -1,6 +1,7 @@
 import { PopularInstructorsData } from "./PopularInstructorsData";
 import { PopularInstructorsCard } from "../PopularInstructorsCard/PopularInstructorsCard";
 import styles from "./PopularInstructors.module.scss";
+import Link from "next/link";
 
 export const PopularInstructors = () => {
 	return (
@@ -20,8 +21,11 @@ export const PopularInstructors = () => {
 					);
 				})}
 			</div>
-			<p>
-				Thousands of students waiting for a instructor. Start teaching & earning now! <span>Become Instructor →</span>
+			<p className={styles.description}>
+				Thousands of students waiting for a instructor. Start teaching & earning now!{" "}
+				<Link href="/" className={styles.becomeInstructor}>
+					Become Instructor →
+				</Link>
 			</p>
 		</section>
 	);

@@ -9,6 +9,7 @@
 	font-family: $primary-font;
 	width: 1480px;
 	margin-inline: auto;
+	border: 1px solid $light-gray;
 	.title {
 		font-size: 40px;
 		font-weight: 600;
@@ -16,5 +17,16 @@
 	.instructorCards {
 		display: flex;
 		gap: 40px;
+	}
+	.description {
+		color: $gray;
+		.becomeInstructor {
+			color: $orange;
+			font-weight: 500;
+			text-decoration: none;
+		}
+		.becomeInstructor:hover {
+			text-decoration: underline;
+		}
 	}
 }

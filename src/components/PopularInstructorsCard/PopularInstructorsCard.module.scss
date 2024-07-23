@@ -2,16 +2,22 @@
 
 .instructorCard {
 	width: 244px;
-	height: 362px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	.instructorThumbnail {
-		width: 244px;
-		height: 244px;
+		margin: 0;
 	}
 	.personalInfo {
+		margin: 0;
+		border: 1px solid $light-gray;
+		border-top: 0;
 		text-align: center;
 		display: flex;
+		gap: 10px;
 		flex-direction: column;
 		justify-content: space-around;
+		padding-block: 14px;
 		.name {
 			font-size: 16px;
 			font-weight: 500;
@@ -20,26 +26,37 @@
 		.title {
 			font-size: 14px;
 			font-weight: 400;
-			color: $light-gray;
+			color: $gray;
 			margin: 0;
 		}
 	}
 	.stats {
+		border: 1px solid $light-gray;
+		border-top: 0;
 		display: flex;
 		justify-content: space-between;
+		padding: 14px;
 		.ratingContainer {
+			display: flex;
+			align-items: center;
+			gap: 6px;
+
 			.rating {
 				font-size: 14px;
 				font-weight: 500;
 			}
-			.studentNumberContainer {
-				.studentNumber {
-					font-weight: 500;
-				}
-				.students {
-					font-weight: 400;
-					color: $light-gray;
-				}
+		}
+		.studentNumberContainer {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			font-size: 14px;
+			.studentNumber {
+				font-weight: 500;
+			}
+			.students {
+				font-weight: 400;
+				color: $gray;
 			}
 		}
 	}
