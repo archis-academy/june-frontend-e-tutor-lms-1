@@ -5,8 +5,44 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+
+	@media screen and (max-width: 1700px) {
+		width: 220px;
+	}
+	@media screen and (max-width: 1500px) {
+		width: 180px;
+	}
+	@media screen and (max-width: 900px) {
+		width: 140px;
+	}
+	@media screen and (max-width: 700px) {
+		width: 120px;
+	}
+	@media screen and (max-width: 380px) {
+		width: 110px;
+	}
 	.instructorThumbnail {
 		margin: 0;
+		@media screen and (max-width: 1700px) {
+			width: 220px;
+			height: 220px;
+		}
+		@media screen and (max-width: 1500px) {
+			width: 180px;
+			height: 180px;
+		}
+		@media screen and (max-width: 900px) {
+			width: 140px;
+			height: 140px;
+		}
+		@media screen and (max-width: 700px) {
+			width: 120px;
+			height: 120px;
+		}
+		@media screen and (max-width: 380px) {
+			width: 110px;
+			height: 110px;
+		}
 	}
 	.personalInfo {
 		margin: 0;
@@ -22,12 +58,33 @@
 			font-size: 16px;
 			font-weight: 500;
 			margin: 0;
+
+			@media screen and (max-width: 1500px) {
+				font-size: 14px;
+			}
+			@media screen and (max-width: 700px) {
+				font-size: 12px;
+			}
 		}
 		.title {
 			font-size: 14px;
 			font-weight: 400;
 			color: $gray;
 			margin: 0;
+			@media screen and (max-width: 1500px) {
+				font-size: 12px;
+			}
+		}
+		@media screen and (max-width: 900px) {
+			height: 46px;
+			gap: 6px;
+			padding: 8px;
+			justify-content: unset;
+		}
+		@media screen and (max-width: 700px) {
+			height: 50px;
+			gap: 4px;
+			padding: 6px;
 		}
 	}
 	.stats {
@@ -44,6 +101,9 @@
 			.rating {
 				font-size: 14px;
 				font-weight: 500;
+				@media screen and (max-width: 1500px) {
+					font-size: 12px;
+				}
 			}
 		}
 		.studentNumberContainer {
@@ -58,6 +118,15 @@
 				font-weight: 400;
 				color: $gray;
 			}
+			@media screen and (max-width: 1500px) {
+				font-size: 12px;
+			}
+		}
+		@media screen and (max-width: 900px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 6px;
+			padding: 8px;
 		}
 	}
 }

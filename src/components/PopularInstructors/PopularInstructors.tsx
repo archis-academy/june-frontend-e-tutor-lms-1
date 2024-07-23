@@ -22,7 +22,7 @@ export const PopularInstructors = () => {
 				})}
 			</div>
 			<p className={styles.description}>
-				Thousands of students waiting for a instructor. Start teaching & earning now!{" "}
+				Thousands of students waiting for an instructor. Start teaching & earning now!{" "}
 				<Link href="/" className={styles.becomeInstructor}>
 					Become Instructor →
 				</Link>
