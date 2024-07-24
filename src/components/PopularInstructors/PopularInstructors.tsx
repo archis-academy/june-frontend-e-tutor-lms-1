@@ -1,7 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { PopularInstructorsCard } from "../PopularInstructorsCard/PopularInstructorsCard";
 import { PopularInstructorsData } from "./PopularInstructorsData";
-import arrowIcon from "@/public/assets/arrow-right.svg";
+import arrowIcon from "@/public/assets/Common/arrow-right.svg";
 import styles from "./PopularInstructors.module.scss";
 
 export const PopularInstructors = () => {
@@ -25,9 +26,12 @@ export const PopularInstructors = () => {
       <p className={styles.description}>
         Thousands of students waiting for an instructor. Start teaching & earning
         now!
-        <Link href="/" className={styles.becomeInstructor}>
-          Become Instructor →
-        </Link>
+        <span className={styles.becomeInstructorContainer}>
+          <Link href="/" className={styles.becomeInstructor}>
+            Become Instructor
+          </Link>
+          <Image className={styles.arrowIcon} src={arrowIcon} alt="arrow-icon" />
+        </span>
       </p>
     </section>
   );
