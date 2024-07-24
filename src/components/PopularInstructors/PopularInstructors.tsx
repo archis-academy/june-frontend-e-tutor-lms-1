@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { PopularInstructorsCard } from "../PopularInstructorsCard/PopularInstructorsCard";
 import { PopularInstructorsData } from "./PopularInstructorsData";
+import arrowIcon from "@/public/assets/arrow-right.svg";
 import styles from "./PopularInstructors.module.scss";
 
 export const PopularInstructors = () => {
