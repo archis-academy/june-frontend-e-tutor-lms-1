@@ -1,36 +1,36 @@
-import { HomePageCompaniesType } from "@/types/homePageCompanies";
+import { HomePageCompanies } from "@/types/homePageCompanies";
 
-export const HomePageCompaniesData: HomePageCompaniesType[] = [
+export const HomePageCompaniesData: HomePageCompanies[] = [
   {
-    companyLogo: "/assets/HomePageCompanies/google.svg",
+    companyLogo: "/HomePageCompanies/google.svg",
     website: "https://about.google/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/lenovo.svg",
+    companyLogo: "/HomePageCompanies/lenovo.svg",
     website: "https://www.lenovo.com/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/lexmark.svg",
+    companyLogo: "/HomePageCompanies/lexmark.svg",
     website: "https://www.lexmark.com/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/microsoft.svg",
+    companyLogo: "/HomePageCompanies/microsoft.svg",
     website: "https://www.microsoft.com/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/netflix.svg",
+    companyLogo: "/HomePageCompanies/netflix.svg",
     website: "https://www.netflix.com/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/slack.svg",
+    companyLogo: "/HomePageCompanies/slack.svg",
     website: "https://slack.com/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/verizon.svg",
+    companyLogo: "/HomePageCompanies/verizon.svg",
     website: "https://www.verizon.com/",
   },
   {
-    companyLogo: "/assets/HomePageCompanies/youtube.svg",
+    companyLogo: "/HomePageCompanies/youtube.svg",
     website: "https://www.youtube.com/",
   },
 ];

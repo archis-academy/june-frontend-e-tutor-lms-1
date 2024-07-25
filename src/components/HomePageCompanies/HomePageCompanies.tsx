@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { HomePageCompaniesType } from "@/types/homePageCompanies";
 import { HomePageCompaniesData } from "./HomePageCompaniesData";
 import styles from "./HomePageCompanies.module.scss";
 
 export const HomePageCompanies = () => {
-  const companies: HomePageCompaniesType[] = HomePageCompaniesData;
   return (
     <section className={styles.homePageCompanies}>
       <div className={styles.info}>
@@ -16,9 +14,9 @@ export const HomePageCompanies = () => {
         </p>
       </div>
       <div className={styles.companyLogosWrapper}>
-        {companies.map((item) => {
+        {HomePageCompaniesData.map((item, index) => {
           return (
-            <div className={styles.companyLogoCard}>
+            <div className={styles.companyLogoCard} key={index}>
               <Link href={item.website} target="_blank">
                 <Image
                   src={item.companyLogo}
