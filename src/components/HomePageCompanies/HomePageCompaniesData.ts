@@ -1,4 +1,6 @@
-const HomePageCompaniesData: object[] = [
+import { HomePageCompaniesType } from "@/types/homePageCompanies";
+
+export const HomePageCompaniesData: HomePageCompaniesType[] = [
   { companyLogo: "/assets/HomePageCompanies/google.svg" },
   { companyLogo: "/assets/HomePageCompanies/lenovo.svg" },
   { companyLogo: "/assets/HomePageCompanies/lexmark.svg" },
