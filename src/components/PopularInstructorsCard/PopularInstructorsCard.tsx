@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { PopularInstructors } from "@/types/popularInstructors";
-import starIcon from "@/public/assets/Common/star.svg";
+import starIcon from "@/public/common/star.svg";
 import styles from "./PopularInstructorsCard.module.scss";
 
 export const PopularInstructorsCard: React.FC<PopularInstructors> = ({

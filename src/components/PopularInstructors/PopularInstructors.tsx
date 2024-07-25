@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PopularInstructorsCard } from "../PopularInstructorsCard/PopularInstructorsCard";
 import { PopularInstructorsData } from "./PopularInstructorsData";
-import arrowIcon from "@/public/assets/common/arrow-right.svg";
+import arrowIcon from "@/public/common/arrow-right.svg";
 import styles from "./PopularInstructors.module.scss";
 
 export const PopularInstructors = () => {
