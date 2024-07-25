@@ -89,7 +89,15 @@
       gap: 14px;
     }
     @media screen and (max-width: 640px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 400px;
+    }
+    @media screen and (max-width: 480px) {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
+      width: unset;
     }
   }
   @media screen and (max-width: 1400px) {
