@@ -3,6 +3,7 @@
 .homePageCompanies {
   margin-inline: auto;
   max-width: 1920px;
+  min-width: 300px;
   width: 100%;
   padding-block: 100px;
   display: flex;
@@ -15,12 +16,34 @@
     .title {
       font-size: 32px;
       font-weight: 600;
+      @media screen and (max-width: 1400px) {
+        font-size: 26px;
+      }
+      @media screen and (max-width: 1100px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 640px) {
+        text-align: center;
+      }
     }
     .description {
       width: 312px;
       font-size: 14px;
       line-height: 22px;
       color: $gray;
+      @media screen and (max-width: 1100px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 640px) {
+        width: 260px;
+        margin-inline: auto;
+      }
+    }
+    @media screen and (max-width: 1400px) {
+      width: 340px;
+    }
+    @media screen and (max-width: 1100px) {
+      width: 300px;
     }
   }
   .companyLogosWrapper {
@@ -36,10 +59,36 @@
       box-shadow: 0 0 10px 1px $light-gray;
       .companyLogo {
         transition: transform 0.1s;
+        @media screen and (max-width: 1100px) {
+          width: 70px;
+        }
       }
       .companyLogo:hover {
         transform: scale(110%);
       }
+      @media screen and (max-width: 1400px) {
+        width: 160px;
+        height: 80px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 120px;
+        height: 60px;
+      }
     }
+    @media screen and (max-width: 1400px) {
+      gap: 14px;
+    }
+    @media screen and (max-width: 880px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    gap: 14px;
+    padding-block: 30px;
+  }
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+    padding-block: 10px;
   }
 }
