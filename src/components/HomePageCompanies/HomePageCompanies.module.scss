@@ -1,0 +1,111 @@
+@use "../../app/_variables.scss" as *;
+
+.homePageCompanies {
+  margin-inline: auto;
+  max-width: 1920px;
+  min-width: 300px;
+  width: 100%;
+  padding-block: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  .info {
+    width: 424px;
+    font-family: $primary-font;
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+      @media screen and (max-width: 1400px) {
+        font-size: 26px;
+      }
+      @media screen and (max-width: 1100px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 880px) {
+        text-align: center;
+      }
+    }
+    .description {
+      width: 312px;
+      font-size: 14px;
+      line-height: 22px;
+      color: $gray;
+      @media screen and (max-width: 1100px) {
+        font-size: 12px;
+      }
+      @media screen and (max-width: 880px) {
+        width: 500px;
+      }
+      @media screen and (max-width: 640px) {
+        width: 254px;
+        margin-inline: auto;
+      }
+    }
+    @media screen and (max-width: 1400px) {
+      width: 340px;
+    }
+    @media screen and (max-width: 1100px) {
+      width: 300px;
+    }
+    @media screen and (max-width: 880px) {
+      width: 500px;
+    }
+    @media screen and (max-width: 640px) {
+      width: 300px;
+      text-align: justify;
+    }
+  }
+  .companyLogosWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    .companyLogoCard {
+      width: 200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px 1px $light-gray;
+      .companyLogo {
+        transition: transform 0.1s;
+        @media screen and (max-width: 1100px) {
+          width: 70px;
+        }
+      }
+      .companyLogo:hover {
+        transform: scale(110%);
+      }
+      @media screen and (max-width: 1400px) {
+        width: 160px;
+        height: 80px;
+      }
+      @media screen and (max-width: 1100px) {
+        width: 120px;
+        height: 60px;
+      }
+    }
+    @media screen and (max-width: 1400px) {
+      gap: 14px;
+    }
+    @media screen and (max-width: 640px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 400px;
+    }
+    @media screen and (max-width: 480px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      width: unset;
+    }
+  }
+  @media screen and (max-width: 1400px) {
+    gap: 14px;
+    padding-block: 30px;
+  }
+  @media screen and (max-width: 880px) {
+    flex-direction: column;
+    padding-block: 10px;
+  }
+}
