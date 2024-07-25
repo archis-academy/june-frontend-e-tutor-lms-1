@@ -23,14 +23,7 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-      .iconWrapper {
-        width: 64px;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $white;
-      }
+      box-shadow: 0 4px 8px 0px $light-gray;
       .categoryInfo {
         display: flex;
         flex-direction: column;
