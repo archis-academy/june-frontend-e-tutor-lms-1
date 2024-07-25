@@ -15,8 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={styles.root}> 
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={styles.root}>
+      <body
+        className={inter.className}
+        style={{ margin: 0, boxSizing: "border-box", padding: 0 }}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,0 +1,45 @@
+@use "../../app/_variables.scss" as *;
+
+.homePageCompanies {
+  margin-inline: auto;
+  max-width: 1920px;
+  width: 100%;
+  padding-block: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  .info {
+    width: 424px;
+    font-family: $primary-font;
+    .title {
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .description {
+      width: 312px;
+      font-size: 14px;
+      line-height: 22px;
+      color: $gray;
+    }
+  }
+  .companyLogosWrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    .companyLogoCard {
+      width: 200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px 1px $light-gray;
+      .companyLogo {
+        transition: transform 0.1s;
+      }
+      .companyLogo:hover {
+        transform: scale(110%);
+      }
+    }
+  }
+}
