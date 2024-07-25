@@ -1,7 +1,9 @@
+import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
+
 export default function Home() {
   return (
     <main>
-      <div>Homepage</div>
+      <HomePageCompanies />
     </main>
   );
 }
