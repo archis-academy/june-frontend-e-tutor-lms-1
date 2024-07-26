@@ -18,12 +18,14 @@ export const HomePageCategories = () => {
               key={index}
               style={{ backgroundColor: category.backgroundColor }}
             >
-              <Image
-                src={category.icon}
-                alt="category-icon"
-                width={64}
-                height={64}
-              />
+              <div className={styles.categoryIconWrapper}>
+                <Image
+                  src={category.icon}
+                  alt="category-icon"
+                  width={32}
+                  height={32}
+                />
+              </div>
               <div className={styles.categoryInfo}>
                 <span className={styles.categoryName}>{category.category}</span>
                 <span className={styles.courseNumber}>
