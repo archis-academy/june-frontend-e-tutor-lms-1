@@ -24,6 +24,7 @@ export const HomePageCategories = () => {
                   alt="category-icon"
                   width={32}
                   height={32}
+                  className={styles.categoryIcon}
                 />
               </div>
               <div className={styles.categoryInfo}>

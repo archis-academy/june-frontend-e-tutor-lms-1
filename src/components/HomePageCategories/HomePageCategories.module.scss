@@ -2,6 +2,7 @@
 
 .homePageCategories {
   max-width: 1320px;
+  min-width: 320px;
   width: 100%;
   margin-inline: auto;
   display: flex;
@@ -9,16 +10,42 @@
   align-items: center;
   gap: 30px;
   padding-block: 80px;
+  @media screen and (max-width: 940px) {
+    gap: 20px;
+  }
+  @media screen and (max-width: 750px) {
+    padding-block: 40px;
+  }
   .title {
     font-family: $primary-font;
     font-size: 40px;
     font-weight: 600;
     margin: 0;
+    @media screen and (max-width: 940px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 20px;
+    }
   }
   .categoriesWrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+    @media screen and (max-width: 1400px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media screen and (max-width: 1200px) {
+      gap: 16px;
+    }
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media screen and (max-width: 400px) {
+      gap: 8px;
+    }
+
     .categoryCard {
       width: 312px;
       height: 104px;
@@ -26,6 +53,24 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
+      @media screen and (max-width: 1200px) {
+        width: 270px;
+        height: 90px;
+        gap: 14px;
+      }
+      @media screen and (max-width: 940px) {
+        width: 222px;
+        height: 74px;
+        gap: 8px;
+      }
+      @media screen and (max-width: 750px) {
+        flex-direction: column;
+        width: 170px;
+        height: 100px;
+      }
+      @media screen and (max-width: 400px) {
+        width: 140px;
+      }
       .categoryIconWrapper {
         width: 64px;
         height: 64px;
@@ -33,25 +78,61 @@
         align-items: center;
         justify-content: center;
         background-color: $white;
+        @media screen and (max-width: 1200px) {
+          width: 50px;
+          height: 50px;
+        }
+        @media screen and (max-width: 940px) {
+          width: 36px;
+          height: 36px;
+        }
+        .categoryIcon {
+          @media screen and (max-width: 940px) {
+            width: 26px;
+            height: 26px;
+          }
+        }
       }
       .categoryInfo {
         display: flex;
         flex-direction: column;
         gap: 14px;
         width: 188px;
+        @media screen and (max-width: 1200px) {
+          width: 160px;
+        }
+        @media screen and (max-width: 940px) {
+          gap: 4px;
+        }
+        @media screen and (max-width: 750px) {
+          width: unset;
+          align-items: center;
+        }
         .categoryName {
           text-transform: capitalize;
           font-size: 16px;
           font-weight: 500;
+          @media screen and (max-width: 1200px) {
+            font-size: 14px;
+          }
+          @media screen and (max-width: 400px) {
+            font-size: 12px;
+          }
         }
         .courseNumber {
           font-size: 14px;
           color: $gray2;
+          @media screen and (max-width: 1200px) {
+            font-size: 12px;
+          }
         }
       }
     }
     .categoryCard:nth-child(5) {
       box-shadow: 0 6px 10px 2px $light-gray;
+      @media screen and (max-width: 940px) {
+        box-shadow: 0 4px 6px 1px $light-gray;
+      }
       .categoryIconWrapper {
         background-color: $orange;
       }
@@ -62,6 +143,16 @@
     align-items: center;
     gap: 20px;
     color: $gray2;
+    @media screen and (max-width: 600px) {
+      font-size: 14px;
+    }
+    @media screen and (max-width: 750px) {
+      margin: 0;
+      flex-direction: column;
+    }
+    @media screen and (max-width: 600px) {
+      margin: 0;
+    }
     .browseAllContainer {
       display: flex;
       align-items: center;
