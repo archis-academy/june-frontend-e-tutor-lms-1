@@ -21,6 +21,7 @@
     font-size: 40px;
     font-weight: 600;
     margin: 0;
+
     @media screen and (max-width: 940px) {
       font-size: 30px;
     }
@@ -53,6 +54,8 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
+      text-decoration: none;
+      transition: opacity 0.1s;
       @media screen and (max-width: 1200px) {
         width: 270px;
         height: 90px;
@@ -112,6 +115,7 @@
           text-transform: capitalize;
           font-size: 16px;
           font-weight: 500;
+          color: $black;
           @media screen and (max-width: 1200px) {
             font-size: 14px;
           }
@@ -137,6 +141,9 @@
         background-color: $orange;
       }
     }
+    .categoryCard:hover {
+      opacity: 0.7;
+    }
   }
   .moreCategory {
     display: flex;
@@ -161,6 +168,9 @@
         color: $orange;
         text-decoration: none;
         font-weight: 500;
+      }
+      .browseAll:hover {
+        text-decoration: underline;
       }
     }
   }

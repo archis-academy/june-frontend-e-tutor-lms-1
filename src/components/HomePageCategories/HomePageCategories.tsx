@@ -13,7 +13,8 @@ export const HomePageCategories = () => {
       <div className={styles.categoriesWrapper}>
         {HomePageCategoriesData.map((category, index) => {
           return (
-            <div
+            <Link
+              href="#"
               className={styles.categoryCard}
               key={index}
               style={{ backgroundColor: category.backgroundColor }}
@@ -33,7 +34,7 @@ export const HomePageCategories = () => {
                   {numberFormatter.format(category.numberOfCourses)} Courses
                 </span>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
