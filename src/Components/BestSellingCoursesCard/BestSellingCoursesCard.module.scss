@@ -3,6 +3,7 @@
 .courseCard {
   width: 244px;
   background-color: $white;
+  transition: all 0.2s ease-in-out;
   .cardInfo {
     .categoryPriceRow {
       padding: 16px;
@@ -28,6 +29,7 @@
       line-height: 20px;
       letter-spacing: -0.01em;
       padding: 0 16px 16px 16px;
+      color: $black;
     }
     .ratingStudentsRow {
       display: flex;
@@ -39,6 +41,9 @@
         display: flex;
         align-items: center;
         gap: 4px;
+        .rating {
+          color: $black;
+        }
       }
       .registeredStudents {
         display: flex;
@@ -47,6 +52,7 @@
         .studentNumber {
           font-size: 14px;
           font-weight: 500;
+          color: $black;
         }
         .students {
           color: $gray;
@@ -54,4 +60,9 @@
       }
     }
   }
+}
+
+.courseCard:hover {
+  box-shadow: 0 0 10px 4px $light-gray;
+  background-color: $iceBlue;
 }

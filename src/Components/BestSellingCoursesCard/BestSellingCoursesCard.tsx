@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { BestSellingCoursesType } from "@/types/BestSellingCourses";
+import Link from "next/link";
+import { BestSellingCoursesType } from "@/types/bestSellingCourses";
 import styles from "./BestSellingCoursesCard.module.scss";
 import starIcon from "@/public/common/star.svg";
 
@@ -14,7 +15,7 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
   registeredStudents,
 }) => {
   return (
-    <div className={styles.courseCard}>
+    <Link href="#" target="_blank" className={styles.courseCard}>
       <Image
         src={thumbnail}
         alt="instructor-profile-picture"
@@ -35,7 +36,9 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
         <div className={styles.ratingStudentsRow}>
           <span className={styles.ratingContainer}>
             <Image src={starIcon} alt="star-icon" />
-            <span className={styles.rating}>{review.toString()}</span>
+            <span className={styles.rating}>
+              {review % 1 ? review.toString() : review.toString() + ".0"}
+            </span>
           </span>
           <span className={styles.registeredStudents}>
             <span className={styles.studentNumber}>
@@ -48,6 +51,6 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };

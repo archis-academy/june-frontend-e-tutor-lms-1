@@ -1,4 +1,4 @@
-import { BestSellingCoursesType } from "@/types/BestSellingCourses";
+import { BestSellingCoursesType } from "@/types/bestSellingCourses";
 
 export const BestSellingCoursesData: BestSellingCoursesType[] = [
   {
@@ -68,7 +68,7 @@ export const BestSellingCoursesData: BestSellingCoursesType[] = [
     categoryBgColor: "#EBEBFF",
     price: 43,
     thumbnail: "/BestSellingCourses/pro-in-excel.png",
-    review: 5,
+    review: 5.0,
     registeredStudents: 93213,
   },
   {
