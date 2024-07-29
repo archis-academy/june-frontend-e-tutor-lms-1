@@ -1,10 +1,13 @@
-import styles from "./page.module.css";
-import BestSellingCourses from "../Components/HomePage/BestSellingCourses/BestSellingCourses";
+import { BestSellingCourses } from "@/components/BestSellingCourses/BestSellingCourses";
+import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
+import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
 
 export default function Home() {
-	return (
-		<main className={styles.main}>
-			<BestSellingCourses />
-		</main>
-	);
+  return (
+    <main>
+      <BestSellingCourses />
+      <PopularInstructors />
+      <HomePageCompanies />
+    </main>
+  );
 }
