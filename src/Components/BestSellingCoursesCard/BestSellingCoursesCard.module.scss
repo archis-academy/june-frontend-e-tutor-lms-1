@@ -2,4 +2,56 @@
 
 .courseCard {
   width: 244px;
+  background-color: $white;
+  .cardInfo {
+    .categoryPriceRow {
+      padding: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .category {
+        text-transform: uppercase;
+        padding: 6px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .price {
+        color: $orange;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+    .title {
+      font-size: 14px;
+      font-weight: 500;
+      margin: 0;
+      line-height: 20px;
+      letter-spacing: -0.01em;
+      padding: 0 16px 16px 16px;
+    }
+    .ratingStudentsRow {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      border-top: 1px solid $iceBlue;
+      .ratingContainer {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      .registeredStudents {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        .studentNumber {
+          font-size: 14px;
+          font-weight: 500;
+        }
+        .students {
+          color: $gray;
+        }
+      }
+    }
+  }
 }

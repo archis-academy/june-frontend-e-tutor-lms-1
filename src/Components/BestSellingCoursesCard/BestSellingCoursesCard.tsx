@@ -22,18 +22,31 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
         height={183}
       />
       <div className={styles.cardInfo}>
-        <span
-          className={styles.category}
-          style={{ color: categoryColor, backgroundColor: categoryBgColor }}
-        >
-          {category}
-        </span>
-        <span className={styles.price}>{price}</span>
+        <div className={styles.categoryPriceRow}>
+          <span
+            className={styles.category}
+            style={{ color: categoryColor, backgroundColor: categoryBgColor }}
+          >
+            {category}
+          </span>
+          <span className={styles.price}>${price}</span>
+        </div>
         <p className={styles.title}>{title}</p>
-        <hr />
-        <Image src={starIcon} alt="star-icon" />
-        <span className={styles.rating}>{review}</span>
-        <span className={styles.students}>{registeredStudents} students</span>
+        <div className={styles.ratingStudentsRow}>
+          <span className={styles.ratingContainer}>
+            <Image src={starIcon} alt="star-icon" />
+            <span className={styles.rating}>{review.toString()}</span>
+          </span>
+          <span className={styles.registeredStudents}>
+            <span className={styles.studentNumber}>
+              {((registeredStudents - (registeredStudents % 100)) / 100 -
+                (((registeredStudents - (registeredStudents % 100)) / 100) % 10)) /
+                10}
+              .{((registeredStudents - (registeredStudents % 100)) / 100) % 10}K
+            </span>
+            <span className={styles.students}>students</span>
+          </span>
+        </div>
       </div>
     </div>
   );

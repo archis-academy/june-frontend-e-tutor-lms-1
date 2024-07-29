@@ -7,8 +7,9 @@
   margin-inline: auto;
   display: flex;
   flex-direction: column;
+  gap: 40px;
   align-items: center;
-  padding-block: 50px;
+  padding-block: 70px;
   background-color: $iceBlue;
   .sectionTitle {
     font-size: 40px;
@@ -18,5 +19,6 @@
   .courseCardsWrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
   }
 }

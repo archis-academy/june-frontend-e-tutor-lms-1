@@ -66,7 +66,7 @@ export const BestSellingCoursesData: BestSellingCoursesType[] = [
     category: "marketing",
     categoryColor: "#342F98",
     categoryBgColor: "#EBEBFF",
-    price: 4.3,
+    price: 43,
     thumbnail: "/BestSellingCourses/pro-in-excel.png",
     review: 5,
     registeredStudents: 93213,
