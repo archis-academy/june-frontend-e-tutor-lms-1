@@ -35,6 +35,7 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
         alt="instructor-profile-picture"
         width={244}
         height={183}
+        layout="responsive"
       />
       <div className={styles.cardInfo}>
         <div className={styles.categoryPriceRow}>
