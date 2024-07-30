@@ -18,13 +18,15 @@ export const HomePageCompanies = () => {
           return (
             <div className={styles.companyLogoCard} key={index}>
               <Link href={item.website} target="_blank">
-                <Image
-                  src={item.companyLogo}
-                  width={100}
-                  height={100}
-                  alt="company-logo"
-                  className={styles.companyLogo}
-                />
+                <div className={styles.LogoWrapper}>
+                  <Image
+                    src={item.companyLogo}
+                    fill
+                    sizes="100px"
+                    alt="company-logo"
+                    className={styles.companyLogo}
+                  />
+                </div>
               </Link>
             </div>
           );
