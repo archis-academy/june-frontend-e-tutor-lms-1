@@ -43,8 +43,8 @@ export const HomePageCategories = () => {
         <span className={styles.browseAllContainer}>
           <Link href="/" className={styles.browseAll}>
             Browse All
+            <Image className={styles.arrowIcon} src={arrowIcon} alt="arrow-icon" />
           </Link>
-          <Image className={styles.arrowIcon} src={arrowIcon} alt="arrow-icon" />
         </span>
       </p>
     </section>

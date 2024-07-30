@@ -2,7 +2,7 @@
 
 .homePageCategories {
   max-width: 1320px;
-  min-width: 320px;
+  min-width: 300px;
   width: 100%;
   margin-inline: auto;
   display: flex;
@@ -168,6 +168,9 @@
         color: $orange;
         text-decoration: none;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
       .browseAll:hover {
         text-decoration: underline;
