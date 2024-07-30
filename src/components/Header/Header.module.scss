@@ -5,16 +5,70 @@
   height: 150px;
   position: sticky;
   top: 0;
+  z-index: 1000;
 
   .headerTop {
     display: flex;
     justify-content: space-between;
-
+    background-color: #1d2026;
+    color: #8c94a3;
     .headerNav {
+      display: flex;
+
       .headerNavLinks {
+        text-decoration: none;
         display: flex;
         gap: 20px;
         list-style: none;
+        color: #8c94a3;
+      }
+    }
+    .selectContainer {
+      display: flex;
+      gap: 15px;
+      justify-content: end;
+    }
+
+    .currencySelect,
+    .languageSelect {
+      background-color: #1d2026;
+      color: #8c94a3;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+  .link {
+    color: #8c94a3;
+    text-decoration: none;
+    padding-bottom: 0.25rem;
+    transition: color 0.3s, border-bottom 0.3s;
+    font-size: 14px;
+
+    &:hover,
+    &:focus {
+      color: white;
+      border-top: 2px solid #ff6636;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      width: 100%;
+    }
+
+    &.active {
+      color: white;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: orange;
+        position: absolute;
+        bottom: 0;
+        left: 0;
       }
     }
   }
@@ -22,23 +76,77 @@
   .headerBottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background: #fff;
+
     .headerBottomLeft {
       display: flex;
       gap: 15px;
+      align-items: center;
     }
+
     .logoDiv {
       display: flex;
       gap: 5px;
       align-items: center;
       font-size: 32px;
+      cursor: pointer;
     }
+
     .headerBrowse {
       width: 200px;
       padding: 15px;
+      border: none;
     }
+
     .headerSearch {
       width: 425px;
       padding: 15px;
+      border: none;
+      display: flex;
+      .searchIcon {
+        margin-right: 8px;
+      }
+
+      .headerSearchInput {
+        border: none;
+        outline: none;
+        padding: 5px;
+        font-size: 14px;
+        width: 100%;
+      }
+    }
+    .headerBottomRight {
+      display: flex;
+      align-items: center;
+
+      .headerIcons {
+        display: flex;
+        gap: 10px;
+        img {
+          cursor: pointer;
+        }
+      }
+
+      button {
+        border: none;
+        height: 48px;
+        cursor: pointer;
+        gap: 15px;
+        font-size: 16px;
+        font-weight: 600;
+
+        &.createAccount {
+          color: #ff6636;
+          width: 170px;
+        }
+
+        &.signIn {
+          background-color: #ff6636;
+          color: white;
+          width: 100px;
+        }
+      }
     }
   }
 }

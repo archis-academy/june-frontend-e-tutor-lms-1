@@ -1,50 +1,30 @@
 import React from "react";
-import Link from "next/link";
 import styles from "./Header.module.scss";
+import HeaderLinks from "./HeaderLinks";
 
 const Header: React.FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerTop}>
         <nav className={styles.headerNav}>
-          <ul className={styles.headerNavLinks}>
-            <li>
-              <Link href="/" className={styles.link}>
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/courses" className={styles.link}>
-                Courses
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className={styles.link}>
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className={styles.link}>
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link href="/become-an-instructor" className={styles.link}>
-                Become an Instructor
-              </Link>
-            </li>
-          </ul>
+          <HeaderLinks />
         </nav>
-        <select name="" id="">
-          <option value="english">English</option>
-          <option value="turkish">Turkish</option>
-        </select>
+        <div className={styles.selectContainer}>
+          <select className={styles.currencySelect}>
+            <option value="usd">USD</option>
+            <option value="tl">TL</option>
+          </select>
+          <select className={styles.languageSelect}>
+            <option value="english">English</option>
+            <option value="turkish">Turkish</option>
+          </select>
+        </div>
       </div>
       <div className={styles.headerBottom}>
         <div className={styles.headerBottomLeft}>
           <div className={styles.logoDiv}>
             <img
-              src="/e-tutor.svg"
+              src="/Header/e-tutor.svg"
               alt="etutor-icons"
               className={styles.etutorLogo}
             />
@@ -53,18 +33,27 @@ const Header: React.FC = () => {
           <select name="" id="" className={styles.headerBrowse}>
             <option value="browse">Browse</option>
           </select>
-          <input
-            className={styles.headerSearch}
-            type="text"
-            name=""
-            id=""
-            placeholder="What do you want to learn..."
-          />
+          <div className={styles.headerSearch}>
+            <img
+              src="/Header/search-icon.svg"
+              alt="search"
+              className={styles.searchIcon}
+            />
+            <input
+              className={styles.headerSearchInput}
+              type="text"
+              name=""
+              id=""
+              placeholder="What do you want to learn..."
+            />
+          </div>
         </div>
         <div className={styles.headerBottomRight}>
-          <img src="/notification-icon.svg" alt="notification" />
-          <img src="/heart-icon.svg" alt="heart" />
-          <img src="/cart-icon.svg" alt="cart" />
+          <div className={styles.headerIcons}>
+            <img src="/Header/notification-icon.svg" alt="notification" />
+            <img src="/Header/heart-icon.svg" alt="heart" />
+            <img src="/Header/cart-icon.svg" alt="cart" />
+          </div>
           <button className={styles.createAccount}>Create Account</button>
           <button className={styles.signIn}>Sign In</button>
         </div>
