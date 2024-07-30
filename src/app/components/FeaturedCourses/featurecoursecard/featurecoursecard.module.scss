@@ -1,0 +1,114 @@
+.coursecardsection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid #e5e5e5;
+}
+
+.coursecardsectionbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.coursecardsectionbox h3 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #333;
+}
+
+.coursecardsectionbox p {
+    font-size: 16px;
+    color: #333;
+}
+
+.coursecardcategory {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+
+}
+
+.coursecardcategoryline {
+    display: flex;
+    gap: 5px;
+}
+
+.featuredsectioninformationboxmanyp {
+    font-size: 14px;
+    color: #A1A5B3;
+    text-decoration: line-through;
+}
+
+.coursecardcategorylinep {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.coursecardcategorybox {
+    background-color: #E1F7E3;
+    text-align: center;
+    color: #15711F;
+    padding: 5px;
+}
+
+.featuredsectionperson {
+    display: flex;
+    justify-content: space-between
+}
+
+.featuredsectionpersonbox {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 10px;
+    font-size: 14px;
+
+}
+
+.featuresectionpersonboxnumber {
+    font-size: 14px;
+    font-weight: 500;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    gap: 5px;
+}
+
+.featuredsectionpersonboxnumberp {
+    font-size: 14px;
+    font-weight: 500;
+    color: #A1A5B3;
+}
+
+.featuredsectionusersection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.featuredsectionuserboxone {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    gap: 2px;
+    height: 30px;
+    width: 150px;
+}
+
+.featuredsectionuserboxtwo {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 30px;
+    width: 150px
+}
+
+.featuredsectionuserboxthree {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    height: 30px;
+}
+
