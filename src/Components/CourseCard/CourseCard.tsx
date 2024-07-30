@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BestSellingCoursesType } from "@/types/bestSellingCourses";
-import styles from "./BestSellingCoursesCard.module.scss";
+import styles from "./CourseCard.module.scss";
 import starIcon from "@/public/common/star.svg";
 
-export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
+export const CourseCard: React.FC<BestSellingCoursesType> = ({
   title,
   category,
   categoryColor,
@@ -30,18 +30,25 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
 
   return (
     <Link href="#" target="_blank" className={styles.courseCard}>
-      <Image
-        src={thumbnail}
-        alt="instructor-profile-picture"
-        width={244}
-        height={183}
-        layout="responsive"
-      />
+      <div className={styles.thumbnailWrapper}>
+        <Image
+          src={thumbnail}
+          fill
+          sizes="244px"
+          style={{ objectFit: "contain" }}
+          alt="instructor-profile-picture"
+          priority
+        />
+      </div>
+
       <div className={styles.cardInfo}>
         <div className={styles.categoryPriceRow}>
           <span
             className={styles.category}
-            style={{ color: categoryColor, backgroundColor: categoryBgColor }}
+            style={{
+              color: categoryColor,
+              backgroundColor: categoryBgColor,
+            }}
           >
             {category}
           </span>

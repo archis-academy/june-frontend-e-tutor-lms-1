@@ -1,16 +1,16 @@
-import { BestSellingCoursesCard } from "../BestSellingCoursesCard/BestSellingCoursesCard";
+import { CourseCard } from "../CourseCard/CourseCard";
 import { BestSellingCoursesData } from "./BestSellingCoursesData";
 
 import styles from "./BestSellingCourses.module.scss";
 
-export const BestSellingCourses = () => {
+export const BestSellingCourses: React.FC = () => {
   return (
     <section className={styles.bestSellingCourses}>
       <h1 className={styles.sectionTitle}>Best Selling Courses</h1>
       <div className={styles.courseCardsWrapper}>
         {BestSellingCoursesData.map((card) => {
           return (
-            <BestSellingCoursesCard
+            <CourseCard
               title={card.title}
               category={card.category}
               categoryColor={card.categoryColor}
