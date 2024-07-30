@@ -15,10 +15,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-<<<<<<< HEAD
-    <html lang="en" className={styles.root}> 
-      <body className={inter.className}>{children}</body>
-=======
     <html lang="en" className={styles.root}>
       <body
         className={inter.className}
@@ -26,7 +22,6 @@ export default function RootLayout({
       >
         {children}
       </body>
->>>>>>> master
     </html>
   );
 }
