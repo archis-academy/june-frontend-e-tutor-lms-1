@@ -1,5 +1,11 @@
-import styles from "./page.module.css";
+import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
+import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <PopularInstructors />
+      <HomePageCompanies />
+    </main>
+  );
 }
