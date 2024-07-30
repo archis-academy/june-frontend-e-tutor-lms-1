@@ -14,6 +14,20 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
   review,
   registeredStudents,
 }) => {
+  const formatEnrolledStudentNumber = (studentNumber: number) => {
+    const formattedNumber: string =
+      ((studentNumber - (studentNumber % 100)) / 100 -
+        (((studentNumber - (studentNumber % 100)) / 100) % 10)) /
+        10 +
+      ("." + (((studentNumber - (studentNumber % 100)) / 100) % 10)) +
+      "K";
+    return formattedNumber;
+  };
+
+  const formatRatingNumber = (rating: number) => {
+    return rating % 1 ? rating.toString() : rating.toString() + ".0";
+  };
+
   return (
     <Link href="#" target="_blank" className={styles.courseCard}>
       <Image
@@ -36,16 +50,11 @@ export const BestSellingCoursesCard: React.FC<BestSellingCoursesType> = ({
         <div className={styles.ratingStudentsRow}>
           <span className={styles.ratingContainer}>
             <Image src={starIcon} alt="star-icon" />
-            <span className={styles.rating}>
-              {review % 1 ? review.toString() : review.toString() + ".0"}
-            </span>
+            <span className={styles.rating}>{formatRatingNumber(review)}</span>
           </span>
           <span className={styles.registeredStudents}>
             <span className={styles.studentNumber}>
-              {((registeredStudents - (registeredStudents % 100)) / 100 -
-                (((registeredStudents - (registeredStudents % 100)) / 100) % 10)) /
-                10}
-              .{((registeredStudents - (registeredStudents % 100)) / 100) % 10}K
+              {formatEnrolledStudentNumber(registeredStudents)}
             </span>
             <span className={styles.students}>students</span>
           </span>
