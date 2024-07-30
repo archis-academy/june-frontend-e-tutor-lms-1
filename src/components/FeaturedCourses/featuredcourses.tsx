@@ -10,28 +10,28 @@ const featureCourse: Course[] = [
         category: "Health & Fitness",
         price: "14.00$",
         description: "Investing In Stocks The Complete Course! (13 H...",
-        image: "@/public/corleone.svg"
+        image: "courseone.svg"
     },
     {
         id: 2,
         category: "Personal Development",
         price: "14.00$",
         description: "Google Analytics Certification - Learn How To...",
-        image: "@/public/courseone.svg"
+        image: "coursetwo.svg"
     },
     {
         id: 3,
         category: "Productivity",
         price: "14.00$",
         description: "Adobe XD for Web Design: Essential Principles",
-        image: "../@/public/courseone.svg"
+        image: "coursethree.svg"
     },
     {
         id: 4,
         category: "Music",
         price: "14.00$",
         description: "The Python Mega Course: Build 10 Real World ...",
-        image: "C:\Users\samed\Desktop\june-frontend-e-tutor-lms-1\public\coursefour.svg"
+        image: "coursefour.svg"
     },
 ];
 

@@ -1,7 +1,7 @@
 import React from "react";
-import FeaturedCourses from "@/app/components/FeaturedCourses/featuredcourses";
 import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
 import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
+import FeaturedCourses from "@/components/FeaturedCourses/featuredcourses";
 
 
 export default function Home() {
