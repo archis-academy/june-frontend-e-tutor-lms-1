@@ -1,35 +1,79 @@
+"use client";
+import React, { useState } from "react";
 import Image from "next/image";
 import { CourseCard } from "../CourseCard/CourseCard";
 import { CourseListData } from "./CourseListData";
 import filterIconBlack from "@/public/common/filter-icon-black.svg";
 import searchIcon from "@/public/common/search-icon.svg";
+import dropDownIcon from "@/public/common/drop-down-arrow.svg";
 import styles from "./CourseList.module.scss";
 
 export const CourseList: React.FC = () => {
+  //Handles dropdown list
+  const [sortByDropDownVisibility, setSortByDropDownVisibility] =
+    useState<string>("none");
+  const handleDropDownVisibility = (): void => {
+    setSortByDropDownVisibility((prevVisibility) =>
+      prevVisibility === "none" ? "block" : "none"
+    );
+  };
+
+  //Updates sort key word
+  const [sortKey, setSetKey] = useState<string>("Trending");
+  const handleSortKey = (key: React.MouseEvent<HTMLLIElement>): void => {
+    const newSortKey = (key.target as HTMLElement).textContent || "";
+    setSetKey(newSortKey);
+    setSortByDropDownVisibility("none");
+    //Todo: list courses according to sort key word
+  };
+
   return (
     <section className={styles.courseList}>
-      <div className={styles.filterContainer}>
-        <button className={styles.FilterBtn}>
-          <Image src={filterIconBlack} alt="filter-icon" />
-          <span>Filter</span>
-          <span>{/* Filter counter */}</span>
-        </button>
-        <div className={styles.searchInputWrapper}>
-          <div className={styles.searchIconWrapper}>
-            <Image src={searchIcon} alt="search-icon" />
+      <div className={styles.filterSortContainer}>
+        <div className={styles.filterContainer}>
+          <button className={styles.FilterBtn}>
+            <Image src={filterIconBlack} alt="filter-icon" />
+            <span>Filter</span>
+            <span>{0}</span>
+          </button>
+          <div className={styles.searchInputWrapper}>
+            <div className={styles.searchIconWrapper}>
+              <Image src={searchIcon} alt="search-icon" />
+            </div>
+            <input
+              type="text"
+              className={styles.searchInput}
+              placeholder="Search for a course..."
+              style={{ backgroundImage: `${searchIcon}` }}
+            />
           </div>
-          <input
-            type="text"
-            className={styles.searchInput}
-            placeholder="Search for a course..."
-            style={{ backgroundImage: `${searchIcon}` }}
-          />
+        </div>
+        <div className={styles.sortContainer}>
+          <span className={styles.sortBy}>Sort by:</span>
+          <button className={styles.sortDropDown} onClick={handleDropDownVisibility}>
+            <span>{sortKey}</span>
+            <Image src={dropDownIcon} alt="drop-down-arrow" />
+          </button>
+          <ul
+            className={styles.sortByList}
+            style={{ display: sortByDropDownVisibility }}
+          >
+            {["Trending", "Latest", "Oldest", "Cheapest", "Most Expensive"].map(
+              (key) =>
+                key !== sortKey ? (
+                  <li key={key} className={styles.sortKey} onClick={handleSortKey}>
+                    {key}
+                  </li>
+                ) : null
+            )}
+          </ul>
         </div>
       </div>
       <div className={styles.courseCardsWrapper}>
-        {CourseListData.map((card) => {
+        {CourseListData.map((card, index) => {
           return (
             <CourseCard
+              key={index}
               title={card.title}
               category={card.category}
               categoryColor={card.categoryColor}
