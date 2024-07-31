@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { CourseCard } from "../CourseCard/CourseCard";
 import { CourseListData } from "./CourseListData";
@@ -11,19 +11,30 @@ import styles from "./CourseList.module.scss";
 export const CourseList: React.FC = () => {
   //Handles dropdown list
   const [sortByDropDownVisibility, setSortByDropDownVisibility] =
-    useState<string>("none");
+    useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
   const handleDropDownVisibility = (): void => {
-    setSortByDropDownVisibility((prevVisibility) =>
-      prevVisibility === "none" ? "block" : "none"
-    );
+    setSortByDropDownVisibility((prevVisibility) => !prevVisibility);
   };
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setSortByDropDownVisibility(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   //Updates sort key word
   const [sortKey, setSetKey] = useState<string>("Trending");
   const handleSortKey = (key: React.MouseEvent<HTMLLIElement>): void => {
     const newSortKey = (key.target as HTMLElement).textContent || "";
     setSetKey(newSortKey);
-    setSortByDropDownVisibility("none");
+    setSortByDropDownVisibility(false);
     //Todo: list courses according to sort key word
   };
 
@@ -48,7 +59,7 @@ export const CourseList: React.FC = () => {
             />
           </div>
         </div>
-        <div className={styles.sortContainer}>
+        <div className={styles.sortContainer} ref={dropdownRef}>
           <span className={styles.sortBy}>Sort by:</span>
           <button className={styles.sortDropDown} onClick={handleDropDownVisibility}>
             <span>{sortKey}</span>
@@ -56,7 +67,7 @@ export const CourseList: React.FC = () => {
           </button>
           <ul
             className={styles.sortByList}
-            style={{ display: sortByDropDownVisibility }}
+            style={{ display: sortByDropDownVisibility ? "block" : "none" }}
           >
             {["Trending", "Latest", "Oldest", "Cheapest", "Most Expensive"].map(
               (key) =>
