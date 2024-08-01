@@ -1,3 +1,5 @@
+@use "../../app/_variables.scss" as *;
+
 .header {
   display: flex;
   flex-direction: column;
@@ -6,23 +8,15 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 
   .headerTop {
     display: flex;
+    flex: 1;
     justify-content: space-between;
-    background-color: #1d2026;
+    background-color: $primary-font-color;
     color: #8c94a3;
-    .headerNav {
-      display: flex;
 
-      .headerNavLinks {
-        text-decoration: none;
-        display: flex;
-        gap: 20px;
-        list-style: none;
-        color: #8c94a3;
-      }
-    }
     .selectContainer {
       display: flex;
       gap: 15px;
@@ -31,53 +25,82 @@
 
     .currencySelect,
     .languageSelect {
-      background-color: #1d2026;
+      background-color: $primary-font-color;
       color: #8c94a3;
       border: none;
       padding: 10px;
       border-radius: 5px;
     }
   }
-  .link {
-    color: #8c94a3;
-    text-decoration: none;
-    padding-bottom: 0.25rem;
-    transition: color 0.3s, border-bottom 0.3s;
-    font-size: 14px;
 
-    &:hover,
-    &:focus {
-      color: white;
-      border-top: 2px solid #ff6636;
+  .menuContainer {
+    background-color: $primary-font-color;
+    display: none;
+  }
+
+  .headerNav {
+    display: flex;
+    align-items: center;
+
+    .headerNavLinks {
+      text-decoration: none;
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      color: #8c94a3;
+
+      a {
+        color: #8c94a3;
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        transition: color 0.3s, border-bottom 0.3s;
+        font-size: 14px;
+
+        &:hover,
+        &:focus {
+          color: white;
+          box-shadow: 0 -2px 0 0 #ff6636;
+          padding: 10px 0;
+        }
+      }
     }
+  }
 
-    &:hover::after,
-    &:focus::after {
-      width: 100%;
-    }
+  .headerNavMobile {
+    display: none;
+    .headerNavLinks {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      list-style: none;
+      color: #8c94a3;
+      padding: 0 1rem;
 
-    &.active {
-      color: white;
-      position: relative;
+      a {
+        color: #8c94a3;
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        transition: color 0.3s, border-bottom 0.3s;
+        font-size: 14px;
 
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 2px;
-        background-color: orange;
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        &:hover,
+        &:focus {
+          color: white;
+          box-shadow: -2px 0 0 0 #ff6636;
+          padding-left: 5px;
+        }
       }
     }
   }
 
   .headerBottom {
     display: flex;
+    flex: 1;
     justify-content: space-between;
     align-items: center;
     background: #fff;
+    width: 100%;
 
     .headerBottomLeft {
       display: flex;
@@ -91,62 +114,161 @@
       align-items: center;
       font-size: 32px;
       cursor: pointer;
+      padding-left: 25px;
     }
 
     .headerBrowse {
       width: 200px;
-      padding: 15px;
-      border: none;
+      height: 48px;
+      font-size: 16px;
+      padding: 0 10px;
+      border: 1px solid #e9eaf0;
+      color: #4e5566;
     }
 
     .headerSearch {
       width: 425px;
-      padding: 15px;
-      border: none;
+      height: 48px;
+      padding: 0 10px;
+      border: 1px solid #e9eaf0;
       display: flex;
+
       .searchIcon {
         margin-right: 8px;
+        width: 24px;
       }
 
       .headerSearchInput {
         border: none;
         outline: none;
         padding: 5px;
-        font-size: 14px;
+        font-size: 16px;
         width: 100%;
+        color: #4e5566;
       }
     }
+
     .headerBottomRight {
       display: flex;
       align-items: center;
 
       .headerIcons {
         display: flex;
-        gap: 10px;
+        gap: 20px;
+        padding: 0 20px;
+
         img {
           cursor: pointer;
         }
       }
 
-      button {
-        border: none;
-        height: 48px;
-        cursor: pointer;
+      .buttonContainer {
+        display: flex;
         gap: 15px;
-        font-size: 16px;
-        font-weight: 600;
 
-        &.createAccount {
-          color: #ff6636;
-          width: 170px;
-        }
+        button {
+          border: none;
+          height: 48px;
+          cursor: pointer;
+          gap: 15px;
+          font-size: 16px;
+          font-weight: 600;
 
-        &.signIn {
-          background-color: #ff6636;
-          color: white;
-          width: 100px;
+          &.createAccount {
+            color: #ff6636;
+            width: 170px;
+            background: #ffeee8;
+          }
+
+          &.signIn {
+            background-color: #ff6636;
+            color: white;
+            width: 100px;
+          }
         }
       }
+    }
+  }
+
+  .menuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  @media (max-width: 1300px) {
+    .headerBottom {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+    }
+
+    .headerBottomLeft,
+    .headerBottomRight {
+      width: 100%;
+      display: flex;
+
+      align-items: flex-start;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .menuContainer {
+      display: block;
+    }
+
+    .headerNav {
+      display: none;
+    }
+
+    .headerNavMobile {
+      display: flex;
+      background-color: $primary-font-color;
+    }
+
+    .menuButton {
+      display: block;
+      padding: 1rem;
+    }
+
+    .headerBottom {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px;
+      width: 100%;
+
+      .headerBottomLeft,
+      .headerBottomRight {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .headerBottomLeft {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .headerBottomRight {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 0;
+      }
+    }
+  }
+
+  @media (min-width: 651px) {
+    .headerNav {
+      display: flex;
+      align-items: center;
+    }
+
+    .headerNavMobile {
+      display: none;
     }
   }
 }

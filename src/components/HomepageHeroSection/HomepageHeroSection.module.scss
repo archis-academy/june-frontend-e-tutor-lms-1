@@ -1,41 +1,87 @@
+@use "../../app/_variables.scss" as *;
+
 .heroSection {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: center;
-  padding: 20px;
   background-color: #f0f2f5;
+  padding: 20px;
 
   .textContainer {
-    width: 650px;
+    margin: 0 auto;
+    max-width: 500px;
+
+    h1 {
+      font-size: 48px; // Adjust for smaller screens
+      color: $primary-font-color;
+    }
+
+    p {
+      font-size: 16px; // Adjust for smaller screens
+      color: #4e5566;
+    }
+
+    .createAccountButton {
+      background-color: #ff5722;
+      color: white;
+      height: 56px;
+      width: 198px;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      font-family: $primary-font;
+
+      &:hover {
+        background-color: #e64a19;
+      }
+    }
   }
 
   .imageContainer {
-    position: relative;
-    height: 100%;
-    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
-  h1 {
-    font-size: 72px;
-    color: #1d2026;
+  // Media Query for screens smaller than 768px
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    .imageContainer {
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .textContainer {
+      h1 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .createAccountButton {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
   }
 
-  p {
-    font-size: 24px;
-    color: #4e5566;
-  }
+  // Media Query for screens smaller than 480px
+  @media (max-width: 480px) {
+    .textContainer {
+      h1 {
+        font-size: 28px;
+      }
 
-  .createAccountButton {
-    background-color: #ff5722;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-    border-radius: 5px;
-
-    &:hover {
-      background-color: #e64a19;
+      p {
+        font-size: 12px;
+      }
     }
   }
 }
