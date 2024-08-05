@@ -9,23 +9,30 @@ export const Accordion: React.FC<CourseData> = ({
   subCategories,
   children,
 }) => {
-  const [childrenVisibility, setChildrenVisibility] = useState("none");
-
-  const handlechildrenVisibility = () => {
+  const [subCategoriesVisibility, setSubCategoriesVisibility] = useState("none");
+  const handleSubCategoriesVisibility = () => {
+    setSubCategoriesVisibility((prevVisibility) =>
+      prevVisibility === "none" ? "block" : "none"
+    );
     setChildrenVisibility((prevVisibility) =>
       prevVisibility === "none" ? "block" : "none"
     );
   };
 
+  const [childrenVisibility, setChildrenVisibility] = useState("none");
+
   return (
     <div className={styles.accordion}>
-      <div className={styles.header} onClick={handlechildrenVisibility}>
+      <div className={styles.header} onClick={handleSubCategoriesVisibility}>
         <div className={styles.listIconWrapper}>
           {icon && <Image src={icon} alt="list-icon" fill />}
         </div>
         <h4 className={styles.category}>{category}</h4>
       </div>
-      <div className={styles.subCategories} style={{ display: childrenVisibility }}>
+      <div
+        className={styles.subCategories}
+        style={{ display: subCategoriesVisibility }}
+      >
         {subCategories &&
           subCategories.map((category, index) => {
             return (
@@ -37,7 +44,9 @@ export const Accordion: React.FC<CourseData> = ({
             );
           })}
       </div>
-      <div className={styles.childrenContainer}>{children}</div>
+      <div className={styles.childrenContainer}>
+        <div style={{ display: childrenVisibility }}>{children}</div>
+      </div>
     </div>
   );
 };
