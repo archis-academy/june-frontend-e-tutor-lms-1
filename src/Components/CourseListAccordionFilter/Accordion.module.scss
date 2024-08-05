@@ -1,1 +1,20 @@
 @use "../../app/_variables.scss" as *;
+
+.accordion {
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .category {
+      text-transform: capitalize;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .listIconWrapper {
+      width: 24px;
+      height: 24px;
+      position: relative;
+    }
+  }
+}
