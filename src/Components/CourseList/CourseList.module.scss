@@ -42,6 +42,10 @@
         cursor: pointer;
         width: 170px;
         height: 48px;
+        transition: border-color 0.2s ease-in-out;
+      }
+      .FilterBtn:focus {
+        border-color: $orange;
       }
       .searchInputWrapper {
         position: relative;
@@ -60,6 +64,7 @@
           border: 1px solid $light-gray;
           font-size: 16px;
           padding-inline: 50px;
+          transition: border-color 400ms ease-in-out;
         }
         .searchInput::placeholder {
           color: $gray2;
@@ -69,6 +74,9 @@
         .searchInput::-ms-input-placeholder {
           color: $gray2;
           font-size: 16px;
+        }
+        .searchInput:focus {
+          border-color: $orange;
         }
       }
     }
@@ -89,6 +97,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        font-family: $primary-font;
         font-size: 16px;
         color: $gray2;
         width: 200px;
@@ -97,9 +106,10 @@
         font-size: 16px;
         background-color: white;
         cursor: pointer;
+        transition: border-color 0.2s ease-in-out;
       }
-      .sortDropDown:hover {
-        background-color: $orange;
+      .sortDropDown:focus {
+        border-color: $orange;
       }
       .sortByList {
         position: absolute;
@@ -119,7 +129,7 @@
           background-color: white;
           font-size: 16px;
           color: $gray2;
-          transition: background-color 0.2s;
+          transition: background-color 0.2s ease-in-out;
         }
         .sortKey:hover {
           background-color: $orange;
@@ -127,12 +137,11 @@
       }
     }
   }
-
   .courseCardsWrapper {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 25px;
-
+    position: relative;
     @media screen and (max-width: 1440px) {
       gap: 20px;
     }

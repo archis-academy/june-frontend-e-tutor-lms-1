@@ -7,6 +7,7 @@ import filterIconBlack from "@/public/common/filter-icon-black.svg";
 import searchIcon from "@/public/common/search-icon.svg";
 import dropDownIcon from "@/public/common/drop-down-arrow.svg";
 import styles from "./CourseList.module.scss";
+import { CourseListAccordionFilter } from "../CourseListAccordionFilter/CourseListAccordionFilter";
 
 export const CourseList: React.FC = () => {
   //Handles dropdown list
@@ -97,6 +98,7 @@ export const CourseList: React.FC = () => {
           );
         })}
       </div>
+      <CourseListAccordionFilter />
     </section>
   );
 };
