@@ -5,7 +5,7 @@ import styles from "./CourseListAccordionFilter.module.scss";
 export const CourseListAccordionFilter = () => {
   return (
     <div className={styles.subCategory}>
-      <Accordion category="Category" icon="" subCategories={null}>
+      <Accordion category="Category">
         {categories.map((data, index) => {
           return (
             <Accordion

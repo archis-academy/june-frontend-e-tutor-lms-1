@@ -27,22 +27,31 @@
       width: 100%;
       display: flex;
       gap: 30px;
-      .FilterBtn {
-        display: flex;
-        align-items: center;
-        color: $black;
-        font-size: 16px;
-        border-radius: 0;
-        border: 1px solid $light-gray;
-        background-color: unset;
-        padding-inline: 20px;
-        font-family: $primary-font;
-        font-weight: 600;
-        gap: 20px;
-        cursor: pointer;
-        width: 170px;
-        height: 48px;
-        transition: border-color 0.2s ease-in-out;
+      .filterWrapper {
+        position: relative;
+        .FilterBtn {
+          display: flex;
+          align-items: center;
+          color: $black;
+          font-size: 16px;
+          border-radius: 0;
+          border: 1px solid $light-gray;
+          background-color: unset;
+          padding-inline: 20px;
+          font-family: $primary-font;
+          font-weight: 600;
+          gap: 20px;
+          cursor: pointer;
+          width: 170px;
+          height: 48px;
+          transition: border-color 0.2s ease-in-out;
+        }
+        .filterDropDown {
+          position: absolute;
+          top: 47px;
+          left: -10px;
+          z-index: 1;
+        }
       }
       .FilterBtn:focus {
         border-color: $orange;

@@ -39,15 +39,33 @@ export const CourseList: React.FC = () => {
     //Todo: list courses according to sort key word
   };
 
+  const [filterDropDownVisibility, setFilterDropDownVisibility] = useState("none");
+  const handleFilterDropDownVisibility = () => {
+    setFilterDropDownVisibility((prevVisibility) =>
+      prevVisibility === "none" ? "block" : "none"
+    );
+  };
   return (
     <section className={styles.courseList}>
       <div className={styles.filterSortContainer}>
         <div className={styles.filterContainer}>
-          <button className={styles.FilterBtn}>
-            <Image src={filterIconBlack} alt="filter-icon" />
-            <span>Filter</span>
-            <span>{0}</span>
-          </button>
+          <div className={styles.filterWrapper}>
+            <button
+              className={styles.FilterBtn}
+              onFocus={handleFilterDropDownVisibility}
+            >
+              <Image src={filterIconBlack} alt="filter-icon" />
+              <span>Filter</span>
+              <span>{0}</span>
+            </button>
+
+            <div
+              className={styles.filterDropDown}
+              style={{ display: filterDropDownVisibility }}
+            >
+              <CourseListAccordionFilter />
+            </div>
+          </div>
           <div className={styles.searchInputWrapper}>
             <div className={styles.searchIconWrapper}>
               <Image src={searchIcon} alt="search-icon" />
@@ -98,7 +116,6 @@ export const CourseList: React.FC = () => {
           );
         })}
       </div>
-      <CourseListAccordionFilter />
     </section>
   );
 };

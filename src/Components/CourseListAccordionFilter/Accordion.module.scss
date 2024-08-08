@@ -1,6 +1,9 @@
 @use "../../app/_variables.scss" as *;
 
 .accordion {
+  background-color: $white;
+  width: 200px;
+ 
   .header {
     display: flex;
     align-items: center;

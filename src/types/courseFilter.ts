@@ -3,9 +3,9 @@ type SubCategories = {
   courseNumber: number;
 };
 
-export type CourseData = {
+export interface CourseData {
   category: string;
   icon?: string;
-  subCategories: SubCategories[] | null;
+  subCategories?: SubCategories[];
   children?: React.ReactNode;
 };

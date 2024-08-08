@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { CourseData } from "@/types/courseFilter";
 import styles from "./Accordion.module.scss";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 export const Accordion: React.FC<CourseData> = ({
   category,
@@ -10,6 +10,7 @@ export const Accordion: React.FC<CourseData> = ({
   children,
 }) => {
   const [subCategoriesVisibility, setSubCategoriesVisibility] = useState("none");
+  const [childrenVisibility, setChildrenVisibility] = useState("none");
   const handleSubCategoriesVisibility = () => {
     setSubCategoriesVisibility((prevVisibility) =>
       prevVisibility === "none" ? "block" : "none"
@@ -18,8 +19,7 @@ export const Accordion: React.FC<CourseData> = ({
       prevVisibility === "none" ? "block" : "none"
     );
   };
-
-  const [childrenVisibility, setChildrenVisibility] = useState("none");
+  
 
   return (
     <div className={styles.accordion}>
