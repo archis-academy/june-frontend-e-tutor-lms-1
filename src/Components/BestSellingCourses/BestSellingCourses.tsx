@@ -11,6 +11,7 @@ export const BestSellingCourses: React.FC = () => {
         {CoursesData.slice(0, 10).map((card) => {
           return (
             <CourseCard
+              id={card.id}
               title={card.title}
               category={card.category}
               categoryColor={card.categoryColor}
@@ -19,6 +20,10 @@ export const BestSellingCourses: React.FC = () => {
               thumbnail={card.thumbnail}
               review={card.review}
               registeredStudents={card.registeredStudents}
+              courseOwner={card.courseOwner}
+              description={card.description}
+              duration={card.duration}
+              level={card.level}
             />
           );
         })}

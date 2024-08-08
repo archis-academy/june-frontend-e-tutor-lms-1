@@ -1,6 +1,7 @@
-import { CoursesType } from "@/types/bestSellingCourses";
+import { CoursesType } from "@/types/allCourses";
 export const CoursesData: CoursesType[] = [
   {
+    id: 482193,
     title: "Machine Learning A-Z™: Hands-On Python & R In Data...",
     category: "design",
     categoryColor: "#993D20",
@@ -15,6 +16,7 @@ export const CoursesData: CoursesType[] = [
     description: `"Machine Learning A-Z™: Hands-On Python & R In" is a comprehensive course designed to take you from a beginner to a proficient machine learning practitioner. This course covers a wide range of topics in machine learning, from basic concepts to advanced technologyniques, using Python and R, two of the most popular programming languages in data science.`,
   },
   {
+    id: 917504,
     title: "The Complete 2021 Web Development Bootcamp",
     category: "developments",
     categoryColor: "#342F98",
@@ -29,6 +31,7 @@ export const CoursesData: CoursesType[] = [
     description: `Master web development in 2021 with "The Complete 2021 Web Development Bootcamp." Led by expert instructor Angela Yu, this course takes you from zero to hero, covering HTML, CSS, JavaScript, Node.js, and more. Whether you want to build websites, start a career in technology, or create your own web applications, this comprehensive bootcamp equips you with all the necessary skills.`,
   },
   {
+    id: 356781,
     title: "Learn Python Programming Masterclass",
     category: "business",
     categoryColor: "#15711F",
@@ -43,6 +46,7 @@ export const CoursesData: CoursesType[] = [
     description: `Dive deep into Python with the "Learn Python Programming Masterclass." This course is ideal for those with some coding experience who want to enhance their Python skills. Instructor Tim Buchalka guides you through real-world examples and projects, covering everything from basic syntax to advanced concepts, including object-oriented programming and web development.`,
   },
   {
+    id: 628294,
     title: "The Complete Digital Marketing Course - 12 Courses in 1",
     category: "marketing",
     categoryColor: "#342F98",
@@ -57,6 +61,7 @@ export const CoursesData: CoursesType[] = [
     description: `"The Complete Digital Marketing Course - 12 Courses in 1" is your ultimate guide to mastering digital marketing. Covering everything from SEO, Google Ads, and social media marketing to email marketing and content creation, this course provides all the tools you need to excel in the digital world. Perfect for marketers, entrepreneurs, and business owners.`,
   },
   {
+    id: 735182,
     title: "Reiki Level I, II and Master/Teacher Program",
     category: "it & software",
     categoryColor: "#993D20",
@@ -71,6 +76,7 @@ export const CoursesData: CoursesType[] = [
     description: `Unlock the healing power of Reiki with the "Reiki Level I, II and Master/Teacher Program." Taught by Reiki Master Lisa Powers, this course is designed for anyone looking to learn the art of Reiki healing. You'll gain the knowledge and skills to perform Reiki on yourself and others, eventually mastering the technologyniques to teach and guide others.`,
   },
   {
+    id: 812567,
     title: "The Complete Foundation Stock Trading Course",
     category: "music",
     categoryColor: "#993D20",
@@ -85,6 +91,7 @@ export const CoursesData: CoursesType[] = [
     description: `Learn the essentials of stock trading with "The Complete Foundation Stock Trading Course." Perfect for beginners, this course covers everything from understanding stock markets and technologynical analysis to executing trades and managing a portfolio. Taught by expert trader Sami Abusaad, this course will give you a solid foundation to start trading with confidence.`,
   },
   {
+    id: 926183,
     title: "Beginner to Pro in Excel: Financial Modeling and Valuati...",
     category: "marketing",
     categoryColor: "#342F98",
@@ -99,6 +106,7 @@ export const CoursesData: CoursesType[] = [
     description: `Transform your Excel skills from beginner to pro with "Beginner to Pro in Excel: Financial Modeling and Valuation." This course covers all the Excel functions and tools you need to master financial modeling, including advanced formulas, data analysis, and creating financial statements. Perfect for finance professionals and business students looking to elevate their Excel proficiency.`,
   },
   {
+    id: 573910,
     title: "The Python Mega Course: Build 10 Real World Applications",
     category: "health & fitness",
     categoryColor: "#15711F",
@@ -113,6 +121,7 @@ export const CoursesData: CoursesType[] = [
     description: `"The Python Mega Course: Build 10 Real World Applications" is an immersive, hands-on course designed to take your Python skills to the next level. You’ll build ten practical applications, ranging from simple scripts to complex web applications. This course is ideal for anyone with basic Python knowledge looking to gain real-world coding experience.`,
   },
   {
+    id: 394821,
     title: "Copywriting - Become a Freelance Copywriter, your ow...",
     category: "design",
     categoryColor: "#993D20",
@@ -127,6 +136,7 @@ export const CoursesData: CoursesType[] = [
     description: `Learn the art of persuasive writing with "Copywriting - Become a Freelance Copywriter." This course is perfect for aspiring freelance writers and marketers. Taught by expert Phil Ebiner, you'll discover how to craft compelling copy, attract clients, and build a thriving freelance business from scratch.`,
   },
   {
+    id: 784620,
     title: "Google Analytics Certification - Learn How To Pass The Exam",
     category: "lifestyle",
     categoryColor: "#65390C",
@@ -142,6 +152,7 @@ export const CoursesData: CoursesType[] = [
   },
 
   {
+    id: 165238,
     title: "Artificial Intelligence: From Zero to Hero",
     category: "technology",
     categoryColor: "#342F98",
@@ -156,6 +167,7 @@ export const CoursesData: CoursesType[] = [
     description: `Learn the fundamentals of AI and deep learning with "Artificial Intelligence: From Zero to Hero." This course is designed for anyone interested in understanding AI, covering everything from neural networks to natural language processing, all through hands-on projects and real-world applications.`,
   },
   {
+    id: 941750,
     title: "Mastering Data Visualization with D3.js",
     category: "design",
     categoryColor: "#993D20",
@@ -170,6 +182,7 @@ export const CoursesData: CoursesType[] = [
     description: `Bring your data to life with "Mastering Data Visualization with D3.js." This course teaches you how to create interactive and visually appealing data visualizations using the powerful D3.js library. Perfect for data analysts, web developers, and anyone interested in data storytelling.`,
   },
   {
+    id: 387492,
     title: "Blockchain & Cryptocurrency Explained",
     category: "business",
     categoryColor: "#15711F",
@@ -184,6 +197,7 @@ export const CoursesData: CoursesType[] = [
     description: `Demystify blockchain technologynology with "Blockchain & Cryptocurrency Explained." This course covers the basics of blockchain, the history of cryptocurrency, and how these technologynologies are transforming industries. Ideal for entrepreneurs, investors, and technology enthusiasts looking to understand the future of finance.`,
   },
   {
+    id: 690184,
     title: "Personal Development: Achieve Your Goals",
     category: "personal development",
     categoryColor: "#65390C",
@@ -198,6 +212,7 @@ export const CoursesData: CoursesType[] = [
     description: `Unlock your full potential with "Personal Development: Achieve Your Goals." This course focuses on goal setting, time management, and motivation technologyniques to help you achieve success in both your personal and professional life. Perfect for anyone looking to make positive changes and reach new heights.`,
   },
   {
+    id: 812346,
     title: "Cybersecurity Fundamentals: Protect Your Network",
     category: "it & software",
     categoryColor: "#993D20",
@@ -212,6 +227,7 @@ export const CoursesData: CoursesType[] = [
     description: `Learn how to protect your network from cyber threats with "Cybersecurity Fundamentals." This course covers the essential concepts of cybersecurity, including risk management, encryption, and threat detection, making it ideal for IT professionals and anyone interested in securing their digital assets.`,
   },
   {
+    id: 254719,
     title: "Advanced Excel technologyniques for Data Analysis",
     category: "office productivity",
     categoryColor: "#15711F",
@@ -226,6 +242,7 @@ export const CoursesData: CoursesType[] = [
     description: `Enhance your data analysis skills with "Advanced Excel technologyniques for Data Analysis." This course dives deep into Excel's advanced features, including pivot tables, advanced formulas, and data visualization tools, providing you with the expertise to handle complex data sets efficiently.`,
   },
   {
+    id: 468293,
     title: "Creative Writing: Unlocking Your Imagination",
     category: "personal development",
     categoryColor: "#65390C",
@@ -240,6 +257,7 @@ export const CoursesData: CoursesType[] = [
     description: `Discover the art of storytelling with "Creative Writing: Unlocking Your Imagination." This course is designed to help you develop your creative writing skills, from crafting compelling characters to creating engaging plots. Perfect for aspiring writers and anyone looking to explore their creative potential.`,
   },
   {
+    id: 923471,
     title: "Introduction to Ethical Hacking",
     category: "it & software",
     categoryColor: "#342F98",
@@ -254,6 +272,7 @@ export const CoursesData: CoursesType[] = [
     description: `Start your journey into cybersecurity with "Introduction to Ethical Hacking." This course teaches you the fundamentals of ethical hacking, including penetration testing, vulnerability assessment, and how to protect systems from cyber attacks. Ideal for beginners looking to enter the cybersecurity field.`,
   },
   {
+    id: 784215,
     title: "Digital Photography Masterclass",
     category: "photography & video",
     categoryColor: "#993D20",
@@ -268,6 +287,7 @@ export const CoursesData: CoursesType[] = [
     description: `Capture stunning photos with "Digital Photography Masterclass." This course covers the technologynical and creative aspects of photography, including camera settings, composition, lighting, and post-processing. Perfect for photographers of all levels looking to improve their skills and create beautiful images.`,
   },
   {
+    id: 592347,
     title: "The Complete Guide to Project Management",
     category: "business",
     categoryColor: "#15711F",
@@ -282,6 +302,7 @@ export const CoursesData: CoursesType[] = [
     description: `Master the art of project management with "The Complete Guide to Project Management." This course covers all the key principles, tools, and technologyniques you need to manage projects effectively, from initiation to closing. Ideal for professionals looking to enhance their project management skills.`,
   },
   {
+    id: 816294,
     title: "Music Production with Ableton Live",
     category: "music",
     categoryColor: "#342F98",
@@ -296,6 +317,7 @@ export const CoursesData: CoursesType[] = [
     description: `Create professional music tracks with "Music Production with Ableton Live." This course covers everything you need to know about music production, from sound design and mixing to mastering and live performance. Perfect for aspiring music producers and anyone interested in creating their own music.`,
   },
   {
+    id: 435192,
     title: "Introduction to Financial Accounting",
     category: "finance & accounting",
     categoryColor: "#65390C",
@@ -310,6 +332,7 @@ export const CoursesData: CoursesType[] = [
     description: `Understand the basics of financial accounting with "Introduction to Financial Accounting." This course covers key concepts such as balance sheets, income statements, and cash flow, making it ideal for business students, entrepreneurs, and anyone looking to understand the financial health of a business.`,
   },
   {
+    id: 973524,
     title: "The Ultimate Guide to Public Speaking",
     category: "personal development",
     categoryColor: "#15711F",
@@ -324,6 +347,7 @@ export const CoursesData: CoursesType[] = [
     description: `Boost your confidence and communication skills with "The Ultimate Guide to Public Speaking." This course offers practical tips and technologyniques to help you deliver powerful presentations, engage your audience, and overcome stage fright. Ideal for professionals, students, and anyone looking to improve their public speaking abilities.`,
   },
   {
+    id: 612839,
     title: "Mastering Python for Data Science",
     category: "technology",
     categoryColor: "#342F98",

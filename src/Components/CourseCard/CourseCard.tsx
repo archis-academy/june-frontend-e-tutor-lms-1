@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BestSellingCoursesType } from "@/types/bestSellingCourses";
+import { CoursesType } from "@/types/allCourses";
 import styles from "./CourseCard.module.scss";
 import starIcon from "@/public/common/star.svg";
 
-export const CourseCard: React.FC<BestSellingCoursesType> = ({
+export const CourseCard: React.FC<CoursesType> = ({
   title,
   category,
   categoryColor,
