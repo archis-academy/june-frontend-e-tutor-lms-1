@@ -1,4 +1,4 @@
-export type BestSellingCoursesType = {
+export type CoursesType = {
   title: string;
   category: string;
   categoryColor: string;
@@ -7,4 +7,8 @@ export type BestSellingCoursesType = {
   thumbnail: string;
   review: number;
   registeredStudents: number;
+  courseOwner: string;
+  level: string;
+  duration: number;
+  description: string;
 };
