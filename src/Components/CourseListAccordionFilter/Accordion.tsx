@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { CourseData } from "@/types/courseFilter";
+import { CourseFilterData } from "@/types/courseFilter";
 import styles from "./Accordion.module.scss";
 import { useRef, useState } from "react";
 
-export const Accordion: React.FC<CourseData> = ({
+export const Accordion: React.FC<CourseFilterData> = ({
   category,
   icon,
   subCategories,
@@ -19,7 +19,6 @@ export const Accordion: React.FC<CourseData> = ({
       prevVisibility === "none" ? "block" : "none"
     );
   };
-  
 
   return (
     <div className={styles.accordion}>
@@ -36,7 +35,10 @@ export const Accordion: React.FC<CourseData> = ({
         {subCategories &&
           subCategories.map((category, index) => {
             return (
-              <div className={styles.subCategory} key={index}>
+              <div
+                className={subCategories.isSub ? styles.subCategory : styles.header}
+                key={index}
+              >
                 <input type="checkbox" />
                 <span>{category.name}</span>
                 <span>{category.courseNumber}</span>
