@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CoursesType } from "@/types/allCourses";
+import { CourseType } from "@/types/allCourses";
 import styles from "./CourseCard.module.scss";
 import starIcon from "@/public/common/star.svg";
 
-export const CourseCard: React.FC<CoursesType> = ({
+export const CourseCard: React.FC<CourseType> = ({
   title,
   category,
   categoryColor,
