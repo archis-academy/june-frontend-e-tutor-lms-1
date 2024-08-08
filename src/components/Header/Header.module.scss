@@ -165,26 +165,30 @@
       .buttonContainer {
         display: flex;
         gap: 15px;
+        padding-right: 25px;
 
-        button {
+        .createAccount {
+          color: #ff6636;
+          width: 170px;
+          background: #ffeee8;
           border: none;
           height: 48px;
           cursor: pointer;
           gap: 15px;
           font-size: 16px;
           font-weight: 600;
+        }
 
-          &.createAccount {
-            color: #ff6636;
-            width: 170px;
-            background: #ffeee8;
-          }
-
-          &.signIn {
-            background-color: #ff6636;
-            color: white;
-            width: 100px;
-          }
+        .signIn {
+          background-color: #ff6636;
+          color: white;
+          width: 100px;
+          border: none;
+          height: 48px;
+          cursor: pointer;
+          gap: 15px;
+          font-size: 16px;
+          font-weight: 600;
         }
       }
     }
@@ -196,24 +200,78 @@
     border: none;
     cursor: pointer;
   }
-  @media (max-width: 1300px) {
+
+  @media (max-width: 1350px) {
+    .headerBottom {
+      align-items: center;
+
+      .headerBottomLeft {
+        .headerBrowse {
+          width: 150px;
+        }
+        .headerSearch {
+          width: 240px;
+        }
+      }
+      .headerBottomRight {
+        .buttonContainer {
+          .button {
+            &.createAccount {
+              width: 120px !important;
+              font-size: 12px !important;
+            }
+            &.signIn {
+              width: 80px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1050px) and (min-width: 751px) {
     .headerBottom {
       flex-direction: column;
       align-items: flex-start;
       padding: 10px;
-    }
-
-    .headerBottomLeft,
-    .headerBottomRight {
       width: 100%;
-      display: flex;
 
-      align-items: flex-start;
-      gap: 10px;
+      .headerBottomLeft,
+      .headerBottomRight {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .headerBottomLeft {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        .logoDiv,
+        .headerBrowse,
+        .headerIcons {
+          display: flex;
+          gap: 10px;
+        }
+      }
+
+      .headerBottomRight {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+
+        .headerSearch,
+        .buttonContainer {
+          display: flex;
+          gap: 10px;
+        }
+      }
     }
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 750px) {
     .menuContainer {
       display: block;
     }
@@ -233,27 +291,27 @@
     }
 
     .headerBottom {
-      flex-direction: column;
       align-items: flex-start;
       padding: 10px;
-      width: 100%;
 
       .headerBottomLeft,
       .headerBottomRight {
-        width: 100%;
+        width: 70%;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: column;
       }
 
       .headerBottomLeft {
-        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
+        .logoDiv {
+          display: none;
+        }
       }
 
       .headerBottomRight {
-        flex-direction: column;
         align-items: flex-start;
         gap: 10px;
         padding: 10px 0;
@@ -261,7 +319,7 @@
     }
   }
 
-  @media (min-width: 651px) {
+  @media (min-width: 751px) {
     .headerNav {
       display: flex;
       align-items: center;

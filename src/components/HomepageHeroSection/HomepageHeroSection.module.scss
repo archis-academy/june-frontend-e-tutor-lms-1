@@ -12,12 +12,12 @@
     max-width: 500px;
 
     h1 {
-      font-size: 48px; // Adjust for smaller screens
+      font-size: 48px;
       color: $primary-font-color;
     }
 
     p {
-      font-size: 16px; // Adjust for smaller screens
+      font-size: 16px;
       color: #4e5566;
     }
 
@@ -46,41 +46,57 @@
     }
   }
 
-  // Media Query for screens smaller than 768px
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    text-align: center;
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr auto;
 
     .imageContainer {
-      justify-content: center;
+      justify-content: flex-end;
       margin-top: 20px;
     }
 
     .textContainer {
-      h1 {
-        font-size: 36px;
-      }
-
-      p {
-        font-size: 14px;
-      }
-
-      .createAccountButton {
-        width: 100%;
-        max-width: 300px;
-      }
+      width: 432px;
     }
   }
 
-  // Media Query for screens smaller than 480px
-  @media (max-width: 480px) {
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr;
+
     .textContainer {
+      margin-bottom: 20px;
+      max-width: 100%;
+      text-align: center;
+    }
+
+    .imageContainer {
+      justify-content: center;
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+
+    .textContainer {
+      margin-bottom: 20px;
+      max-width: 100%;
+      text-align: center;
       h1 {
-        font-size: 28px;
+        font-size: 22px;
       }
 
       p {
         font-size: 12px;
+      }
+    }
+
+    .imageContainer {
+      justify-content: center;
+      img {
+        max-width: 100%;
+        height: auto;
       }
     }
   }

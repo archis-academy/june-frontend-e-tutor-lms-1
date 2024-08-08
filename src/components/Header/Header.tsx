@@ -49,7 +49,7 @@ const Header: React.FC = () => {
               alt="etutor-icons"
               className={styles.etutorLogo}
             />
-            <p className={styles.etutor}>E-tutor</p>
+            <span className={styles["e-tutor"]}>E-Tutor</span>
           </div>
           <select className={styles.headerBrowse}>
             <option value="browse">Browse</option>
