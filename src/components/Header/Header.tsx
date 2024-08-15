@@ -7,10 +7,16 @@ import { useState } from "react";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.headerTop}>
@@ -77,15 +83,19 @@ const Header: React.FC = () => {
         </div>
         <div className={styles.headerBottomRight}>
           <div className={styles.headerIcons}>
-            <a href="#">
+            <div className={styles.notifications} onClick={toggleDropdown}>
               <img src="/Header/notification-icon.svg" alt="notification" />
-            </a>
-            <a href="#">
-              <img src="/Header/heart-icon.svg" alt="heart" />
-            </a>
-            <a href="#">
-              <img src="/Header/cart-icon.svg" alt="cart" />
-            </a>
+              {isDropdownOpen && (
+                <div className={styles.dropdownMenu}>
+                  <a href="#">
+                    <img src="/Header/heart-icon.svg" alt="heart" />
+                  </a>
+                  <a href="#">
+                    <img src="/Header/cart-icon.svg" alt="cart" />
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
           <div className={styles.buttonContainer}>
             <button className={styles.createAccount}>Create Account</button>

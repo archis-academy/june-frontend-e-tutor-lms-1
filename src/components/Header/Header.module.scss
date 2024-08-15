@@ -153,12 +153,43 @@
       align-items: center;
 
       .headerIcons {
-        display: flex;
-        gap: 20px;
-        padding: 0 20px;
+        position: relative;
+        .notifications {
+          padding: 2px;
+          border-radius: 50%;
+          border: 1px solid #4e5566;
+          img {
+            cursor: pointer;
+          }
+        }
 
-        img {
-          cursor: pointer;
+        .dropdownIcons {
+          // display: flex;
+          // gap: 20px;
+          // padding: 0 20px;
+
+          // img {
+          //   cursor: pointer;
+          // }
+          display: none;
+        }
+        .dropdownMenu {
+          position: absolute;
+
+          left: 0;
+          background: white;
+          border: 1px solid #e9eaf0;
+
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          a {
+            img {
+              cursor: pointer;
+            }
+          }
         }
       }
 
@@ -215,24 +246,25 @@
       }
       .headerBottomRight {
         .buttonContainer {
-          .button {
-            &.createAccount {
-              width: 120px !important;
-              font-size: 12px !important;
-            }
-            &.signIn {
-              width: 80px !important;
-            }
+          display: flex;
+          gap: 15px;
+
+          .createAccount {
+            width: 120px;
+            font-size: 12px;
+          }
+          .signIn {
+            width: 80px;
+            font-size: 12px;
           }
         }
       }
     }
   }
 
-  @media (max-width: 1050px) and (min-width: 751px) {
+  @media (max-width: 1110px) and (min-width: 951px) {
     .headerBottom {
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       padding: 10px;
       width: 100%;
 
@@ -248,11 +280,12 @@
         align-items: center;
         gap: 10px;
 
-        .logoDiv,
-        .headerBrowse,
-        .headerIcons {
-          display: flex;
-          gap: 10px;
+        .logoDiv .e-tutor {
+          display: none;
+        }
+        .headerSearch {
+          width: 235px;
+          font-size: 12px;
         }
       }
 
@@ -267,11 +300,59 @@
           display: flex;
           gap: 10px;
         }
+        .headerIcons {
+          display: flex;
+          gap: 5px;
+        }
       }
     }
   }
+  @media (max-width: 950px) {
+    .headerBottom {
+      align-items: center;
+      padding: 10px;
+      width: 100%;
 
-  @media (max-width: 750px) {
+      .headerBottomLeft,
+      .headerBottomRight {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .headerBottomLeft {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        .logoDiv .e-tutor,
+        .headerBrowse {
+          display: none;
+        }
+        .headerSearch {
+          width: 235px;
+          font-size: 12px;
+        }
+      }
+
+      .headerBottomRight {
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+
+        .headerSearch,
+        .buttonContainer {
+          display: flex;
+          gap: 10px;
+        }
+        .headerIcons {
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 760px) {
     .menuContainer {
       display: block;
     }
@@ -291,35 +372,79 @@
     }
 
     .headerBottom {
-      align-items: flex-start;
+      align-items: center;
+      justify-content: flex-start;
       padding: 10px;
+      gap: 5px;
 
       .headerBottomLeft,
       .headerBottomRight {
-        width: 70%;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        flex-direction: column;
       }
 
       .headerBottomLeft {
-        align-items: flex-start;
-        gap: 10px;
+        align-items: center;
+        gap: 0;
+
         .logoDiv {
-          display: none;
+          padding: 5px;
+          .etutorLogo {
+            width: 25px;
+          }
+
+          .e-tutor {
+            display: none;
+          }
+        }
+        .headerSearch {
+          width: 155px;
+          height: 35px;
+          align-items: center;
+
+          .searchIcon {
+            height: 20px;
+          }
+          .headerSearchInput {
+            font-size: 10px;
+          }
         }
       }
-
       .headerBottomRight {
-        align-items: flex-start;
-        gap: 10px;
-        padding: 10px 0;
+        flex-direction: row-reverse;
+        gap: 5px;
+        .headerIcons {
+          .notifications {
+            display: block;
+          }
+
+          .dropdownIcons {
+            display: none;
+          }
+        }
+
+        .buttonContainer {
+          display: flex;
+          gap: 5px;
+          padding-right: 0;
+
+          .createAccount {
+            height: 35px;
+            width: 71px;
+            font-size: 8px;
+          }
+          .signIn {
+            height: 35px;
+            font-size: 8px;
+            width: 40px;
+          }
+        }
       }
     }
   }
 
-  @media (min-width: 751px) {
+  @media (min-width: 761px) {
     .headerNav {
       display: flex;
       align-items: center;
@@ -327,6 +452,26 @@
 
     .headerNavMobile {
       display: none;
+    }
+    .headerBottomRight {
+      .buttonContainer {
+        display: flex;
+        gap: 15px;
+      }
+      .headerIcons {
+        .notifications {
+          display: block;
+        }
+
+        .dropdownIcons {
+          display: flex;
+          gap: 20px;
+
+          img {
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 }
