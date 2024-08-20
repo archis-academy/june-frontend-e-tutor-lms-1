@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { CourseCard } from "../CourseCard/CourseCard";
-import { CourseListData } from "./CourseListData";
+import { CoursesData } from "@/utils/CoursesData";
 import filterIconBlack from "@/public/common/filter-icon-black.svg";
 import searchIcon from "@/public/common/search-icon.svg";
 import dropDownIcon from "@/public/common/drop-down-arrow.svg";
@@ -39,32 +39,16 @@ export const CourseList: React.FC = () => {
     //Todo: list courses according to sort key word
   };
 
-  const [filterDropDownVisibility, setFilterDropDownVisibility] = useState("none");
-  const handleFilterDropDownVisibility = () => {
-    setFilterDropDownVisibility((prevVisibility) =>
-      prevVisibility === "none" ? "block" : "none"
-    );
-  };
   return (
     <section className={styles.courseList}>
       <div className={styles.filterSortContainer}>
         <div className={styles.filterContainer}>
           <div className={styles.filterWrapper}>
-            <button
-              className={styles.FilterBtn}
-              onFocus={handleFilterDropDownVisibility}
-            >
+            <button className={styles.FilterBtn}>
               <Image src={filterIconBlack} alt="filter-icon" />
               <span>Filter</span>
               <span>{0}</span>
             </button>
-
-            <div
-              className={styles.filterDropDown}
-              style={{ display: filterDropDownVisibility }}
-            >
-              <CourseListAccordionFilter />
-            </div>
           </div>
           <div className={styles.searchInputWrapper}>
             <div className={styles.searchIconWrapper}>
@@ -100,10 +84,11 @@ export const CourseList: React.FC = () => {
         </div>
       </div>
       <div className={styles.courseCardsWrapper}>
-        {CourseListData.map((card, index) => {
+        {CoursesData.map((card, index) => {
           return (
             <CourseCard
               key={index}
+              id={card.id}
               title={card.title}
               category={card.category}
               categoryColor={card.categoryColor}
@@ -112,10 +97,15 @@ export const CourseList: React.FC = () => {
               thumbnail={card.thumbnail}
               review={card.review}
               registeredStudents={card.registeredStudents}
+              courseOwner={card.courseOwner}
+              level={card.level}
+              duration={card.duration}
+              description={card.description}
             />
           );
         })}
       </div>
+      <CourseListAccordionFilter />
     </section>
   );
 };
