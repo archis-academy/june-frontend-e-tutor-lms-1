@@ -1,13 +1,11 @@
-import React from "react";
-import SingleCourseFeedback from '@/components/SingleCourseFeedback/SingleCourseFeedback';
+import React from 'react';
+import StudentFeedback from '@/Components/SingleCourseFeedback/SingleCourseFeedback';
+
 const CoursePage = ({ params }: { params: { courseID: string } }) => {
-
-
-    
   return (
     <div>
-      Single Course Page {params.courseID}
-      <SingleCourseFeedback />
+      <h1>Single Course Page {params.courseID}</h1>
+      <StudentFeedback />
     </div>
   );
 };

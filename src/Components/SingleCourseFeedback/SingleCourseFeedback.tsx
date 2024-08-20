@@ -1,68 +1,63 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
-import FeedbackDatabase from '@/utils/feedbackDatabase/feedbackDatabase';
-import './SingleCourseFeedback.scss';
+import FeedbackDatabase from '@/utils/feedbackDatabase';
+import './StudentFeedback.scss';
 
 interface Feedback {
   id: number;
   name: string;
+  profileImage: string;
   comment: string;
+  rating: number; 
   date: string;
 }
 
-const SingleCourseFeedback: React.FC = () => {
+const StudentFeedback: React.FC = () => {
   const feedbackDB = new FeedbackDatabase();
-  
-  const [feedback, setFeedback] = useState<Feedback[]>([]);
-  const [name, setName] = useState('');
-  const [comment, setComment] = useState('');
+
+  const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
+  const [filterRating, setFilterRating] = useState<number | null>(null);
 
   useEffect(() => {
-    const allFeedbacks = feedbackDB.getAllFeedbacks();
-    setFeedback(allFeedbacks);
-  }, []);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (name && comment) {
-      const newFeedback: Feedback = {
-        id: feedback.length + 1,
-        name,
-        comment,
-        date: new Date().toISOString(), 
-      };
-      feedbackDB.addFeedback(newFeedback); 
-      setFeedback([newFeedback, ...feedback]);
-      setName('');
-      setComment('');
+    if (filterRating !== null) {
+      setFeedbacks(feedbackDB.getFeedbacksByRating(filterRating));
+    } else {
+      setFeedbacks(feedbackDB.getAllFeedbacks());
     }
+  }, [filterRating]);
+
+  const handleFilterChange = (rating: number) => {
+    setFilterRating(rating);
   };
 
   return (
-    <div className="feedback-container">
-      <h2>Course Feedback</h2>
-      <form onSubmit={handleSubmit} className="feedback-form">
-        <input
-          type="text"
-          placeholder="Your name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <textarea
-          placeholder="Your feedback"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-        <button type="submit">Submit Feedback</button>
-      </form>
-
+    <div className="student-feedback">
+      <div className="feedback-header">
+        <h2>Student Feedback</h2>
+        <div className="filter">
+          <label>Filter by rating:</label>
+          {[5, 4, 3, 2, 1].map(star => (
+            <button key={star} onClick={() => handleFilterChange(star)}>
+              {star} Stars
+            </button>
+          ))}
+          <button onClick={() => setFilterRating(null)}>Show All</button>
+        </div>
+      </div>
       <div className="feedback-list">
-        {feedback.map((item) => (
-          <div key={item.id} className="feedback-item">
-            <h4>{item.name}</h4>
-            <p>{item.comment}</p>
-            <span>{new Date(item.date).toLocaleString()}</span>
+        {feedbacks.map(feedback => (
+          <div key={feedback.id} className="feedback-item">
+            <div className="profile">
+              <img src={feedback.profileImage} alt={`${feedback.name} profile`} />
+              <div>
+                <h4>{feedback.name}</h4>
+                <div className="rating">
+                  {'★'.repeat(feedback.rating)}{'☆'.repeat(5 - feedback.rating)}
+                </div>
+              </div>
+            </div>
+            <p>{feedback.comment}</p>
+            <span className="date">{new Date(feedback.date).toLocaleDateString()}</span>
+            <div className="divider"></div>
           </div>
         ))}
       </div>
@@ -70,4 +65,4 @@ const SingleCourseFeedback: React.FC = () => {
   );
 };
 
-export default SingleCourseFeedback;
+export default StudentFeedback;
