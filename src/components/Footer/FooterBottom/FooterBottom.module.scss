@@ -1,0 +1,61 @@
+.footer {
+    background-color: #1D2026; 
+    color: white;
+}
+
+.footerBox {
+    padding: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.menuContainer {
+    position: relative;
+}
+
+.menuItem {
+    margin: 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menuItem a {
+    margin-right: 5px;
+    color: white; 
+    text-decoration: none; 
+}
+
+.arrow {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid white;
+}
+
+.subMenu {
+    display: none; 
+    margin-top: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menuContainer.open .subMenu {
+    display: block; 
+}
+
+.subMenuItem {
+    margin: 5px 0;
+    color: white;
+}
