@@ -3,12 +3,7 @@ import { CourseFilterData, SubCategories, SubTitles } from "@/types/courseFilter
 import styles from "./AccordionItem.module.scss";
 import downArrow from "@/public/common/drop-down-arrow.svg";
 
-export const AccordionItem: React.FC<CourseFilterData> = ({
-  id,
-  title,
-  icon,
-  children,
-}) => {
+export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) => {
   return (
     <div className={styles.accordionItem}>
       <div className={styles.titleContainer}>
@@ -33,7 +28,7 @@ export const AccordionItem: React.FC<CourseFilterData> = ({
                   </span>
                 </div>
                 {category.children &&
-                  category.children.map((subCourse: any, index: number) => {
+                  category.children.map((subCourse: SubTitles, index: number) => {
                     return (
                       <div className={styles.subTitleContainer} key={index}>
                         <div className={styles.subTitleTitleContainer}>

@@ -10,7 +10,6 @@ export type SubCategories = {
 };
 
 export interface CourseFilterData {
-  id: number;
   title: string;
   icon?: string;
   children?: SubTitles[] | SubCategories[];

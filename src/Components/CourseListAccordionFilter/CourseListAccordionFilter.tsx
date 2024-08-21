@@ -9,7 +9,6 @@ export const CourseListAccordionFilter = () => {
         return (
           <AccordionItem
             key={index}
-            id={item.id}
             title={item.title}
             children={item.children}
             icon={item.icon}

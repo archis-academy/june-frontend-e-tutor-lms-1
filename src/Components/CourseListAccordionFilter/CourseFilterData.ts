@@ -3,7 +3,6 @@ import { CourseFilterData } from "@/types/courseFilter";
 export const categories: CourseFilterData[] = [
   {
     title: "category",
-    id: 0,
     children: [
       {
         title: "development",
@@ -161,6 +160,13 @@ export const categories: CourseFilterData[] = [
           { title: "wellness", courseNumber: 265, isSub: true },
         ],
       },
+    ],
+  },
+  {
+    title: "tools",
+    children: [
+      { title: "html5", courseNumber: 94, isSub: true },
+      { title: "css 3", courseNumber: 61, isSub: true },
     ],
   },
 ];
