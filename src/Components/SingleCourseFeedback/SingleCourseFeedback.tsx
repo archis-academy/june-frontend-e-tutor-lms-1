@@ -78,8 +78,10 @@ const StudentFeedback: React.FC = () => {
         ))}
       </div>
       <button className="load-more" onClick={loadMoreFeedback}>
-        Load More
-      </button>
+  <span className="load-more-text">Load More</span>
+  <span className="loading-spinner"></span>
+</button>
+
     </div>
   );
 };
