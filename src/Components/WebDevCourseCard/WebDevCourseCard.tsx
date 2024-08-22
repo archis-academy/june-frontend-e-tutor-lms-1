@@ -8,7 +8,7 @@ interface WebDevCourseCardProps {
 
 export const WebDevCourseCard: React.FC<WebDevCourseCardProps> = ({ course }) => {
   return (
-    <div className={styles.courseCard}>
+    <div className={styles.webDevCard}>
       <img src={course.thumbnail} alt={course.title} className={styles.thumbnail} />
       <div className={styles.courseInfo}>
         <span
