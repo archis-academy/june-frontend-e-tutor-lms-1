@@ -7,6 +7,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "development",
         icon: "/CourseListFilter/cpu.svg",
+        isSubCategory: true,
         children: [
           { title: "web development", courseNumber: 574, isSub: true },
           { title: "data science", courseNumber: 568, isSub: true },
@@ -20,6 +21,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "business",
         icon: "/CourseListFilter/hand-shake.svg",
+        isSubCategory: true,
         children: [
           { title: "entrepreneurship", courseNumber: 150, isSub: true },
           { title: "business strategy", courseNumber: 432, isSub: true },
@@ -33,6 +35,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "finance and accounting",
         icon: "/CourseListFilter/credit-card.svg",
+        isSubCategory: true,
         children: [
           { title: "financial analysis", courseNumber: 210, isSub: true },
           { title: "accounting", courseNumber: 324, isSub: true },
@@ -46,6 +49,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "IT and software",
         icon: "/CourseListFilter/chart-bar-horizontal.svg",
+        isSubCategory: true,
         children: [
           { title: "networking", courseNumber: 340, isSub: true },
           { title: "security", courseNumber: 560, isSub: true },
@@ -59,6 +63,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "office productivity",
         icon: "/CourseListFilter/bug-droid.svg",
+        isSubCategory: true,
         children: [
           { title: "microsoft office", courseNumber: 480, isSub: true },
           { title: "google workspace", courseNumber: 210, isSub: true },
@@ -72,6 +77,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "personal development",
         icon: "/CourseListFilter/receipt.svg",
+        isSubCategory: true,
         children: [
           { title: "personal productivity", courseNumber: 370, isSub: true },
           { title: "leadership", courseNumber: 460, isSub: true },
@@ -85,6 +91,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "design",
         icon: "/CourseListFilter/pen-nib.svg",
+        isSubCategory: true,
         children: [
           { title: "graphic design", courseNumber: 590, isSub: true },
           { title: "web design", courseNumber: 450, isSub: true },
@@ -98,6 +105,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "marketing",
         icon: "/CourseListFilter/megaphone.svg",
+        isSubCategory: true,
         children: [
           { title: "digital marketing", courseNumber: 710, isSub: true },
           { title: "social media marketing", courseNumber: 620, isSub: true },
@@ -111,6 +119,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "lifestyle",
         icon: "/CourseListFilter/package.svg",
+        isSubCategory: true,
         children: [
           { title: "arts and crafts", courseNumber: 260, isSub: true },
           { title: "travel", courseNumber: 195, isSub: true },
@@ -124,6 +133,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "photography and video",
         icon: "/CourseListFilter/camera.svg",
+        isSubCategory: true,
         children: [
           { title: "photography", courseNumber: 720, isSub: true },
           { title: "video design", courseNumber: 380, isSub: true },
@@ -137,6 +147,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "music",
         icon: "/CourseListFilter/headset.svg",
+        isSubCategory: true,
         children: [
           { title: "music theory", courseNumber: 520, isSub: true },
           { title: "instruments", courseNumber: 395, isSub: true },
@@ -150,6 +161,7 @@ export const categories: CourseFilterData[] = [
       {
         title: "health and fitness",
         icon: "/CourseListFilter/first-aid-kit.svg",
+        isSubCategory: true,
         children: [
           { title: "yoga", courseNumber: 345, isSub: true },
           { title: "nutrition", courseNumber: 240, isSub: true },
@@ -167,6 +179,48 @@ export const categories: CourseFilterData[] = [
     children: [
       { title: "html5", courseNumber: 94, isSub: true },
       { title: "css 3", courseNumber: 61, isSub: true },
+      { title: "react", courseNumber: 324, isSub: true },
+      { title: "web flow", courseNumber: 26, isSub: true },
+      { title: "node.js", courseNumber: 86, isSub: true },
+      { title: "laravel", courseNumber: 13, isSub: true },
+      { title: "saas", courseNumber: 6, isSub: true },
+      { title: "wordpress", courseNumber: 89, isSub: true },
+    ],
+  },
+  {
+    title: "rating",
+    children: [
+      { title: "★ 5 stars", courseNumber: 235, isSub: true },
+      { title: "★ 4 stars & up", courseNumber: 364, isSub: true },
+      { title: "★ 3 stars & up", courseNumber: 568, isSub: true },
+      { title: "★ 2 stars & up", courseNumber: 1243, isSub: true },
+      { title: "★ 1 stars & up", courseNumber: 2364, isSub: true },
+    ],
+  },
+  {
+    title: "course level",
+    children: [
+      { title: "all levels", courseNumber: 944, isSub: true },
+      { title: "beginner", courseNumber: 631, isSub: true },
+      { title: "intermediate", courseNumber: 324, isSub: true },
+      { title: "expert", courseNumber: 426, isSub: true },
+    ],
+  },
+  {
+    title: "price",
+    children: [
+      { title: "paid", courseNumber: 944, isSub: true },
+      { title: "free", courseNumber: 5631, isSub: true },
+    ],
+  },
+  {
+    title: "duration",
+    children: [
+      { title: "6-12 months", courseNumber: 135, isSub: true },
+      { title: "3-6 months", courseNumber: 632, isSub: true },
+      { title: "1-3 months", courseNumber: 2424, isSub: true },
+      { title: "1-4 weeks", courseNumber: 473, isSub: true },
+      { title: "1-7 days", courseNumber: 437, isSub: true },
     ],
   },
 ];

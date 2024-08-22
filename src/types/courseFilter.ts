@@ -6,6 +6,7 @@ export type SubTitles = {
 export type SubCategories = {
   title: string;
   icon: string;
+  isSubCategory: boolean;
   children: SubTitles[];
 };
 

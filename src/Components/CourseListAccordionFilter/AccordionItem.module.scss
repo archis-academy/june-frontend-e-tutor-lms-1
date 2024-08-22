@@ -41,27 +41,27 @@
         transform: rotate(180deg);
       }
     }
-    .subTitleContainer {
-      padding-inline: 20px;
-      border: 1px solid $light-gray;
-      border-bottom: transparent;
-      .subTitleTitleContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+  }
+}
+.subTitleContainer {
+  padding-inline: 20px;
+  border: 1px solid $light-gray;
+  border-bottom: transparent;
+  .subTitleTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-        .subTitleTitle {
-          text-transform: capitalize;
-          font-size: 14px;
-          color: $dark-gray;
-          flex: 2;
-          margin-left: 10px;
-        }
-        .subTitleStudents {
-          font-size: 12px;
-          color: $gray;
-        }
-      }
+    .subTitleTitle {
+      text-transform: capitalize;
+      font-size: 14px;
+      color: $dark-gray;
+      flex: 2;
+      margin-left: 10px;
+    }
+    .subTitleStudents {
+      font-size: 12px;
+      color: $gray;
     }
   }
 }

@@ -2,4 +2,7 @@
 
 .accordionContainer {
   width: 312px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

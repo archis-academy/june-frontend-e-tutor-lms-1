@@ -14,35 +14,51 @@ export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) =
       </div>
       <div className={styles.content}>
         {children &&
-          children.map((subCategory, index) => {
-            const category = subCategory as SubCategories;
-            return (
-              <div className={styles.subCategoryContainer} key={index}>
-                <div className={styles.subCategoryTitleContainer}>
-                  <div className={styles.subCategoryIconWrapper}>
-                    <Image src={category.icon} alt="sub-category-icon" fill />
-                  </div>
-                  <p className={styles.subCategoryTitle}>{category.title}</p>
-                  <span className={styles.subDownArrowContainer}>
-                    <Image src={downArrow} alt="drop-down-arrow-icon" />
-                  </span>
-                </div>
-                {category.children &&
-                  category.children.map((subCourse: SubTitles, index: number) => {
-                    return (
-                      <div className={styles.subTitleContainer} key={index}>
-                        <div className={styles.subTitleTitleContainer}>
-                          <input type="checkbox" />
-                          <p className={styles.subTitleTitle}>{subCourse.title}</p>
-                          <p className={styles.subTitleStudents}>
-                            {subCourse.courseNumber}
-                          </p>
-                        </div>
+          children.map((child, index) => {
+            const category = child as SubCategories;
+            const title = child as SubTitles;
+            if (category.isSubCategory) {
+              return (
+                <div className={styles.subCategoryContainer} key={index}>
+                  <div className={styles.subCategoryTitleContainer}>
+                    {category.icon && (
+                      <div className={styles.subCategoryIconWrapper}>
+                        <Image src={category.icon} alt="sub-category-icon" fill />
                       </div>
-                    );
-                  })}
-              </div>
-            );
+                    )}
+                    <p className={styles.subCategoryTitle}>{category.title}</p>
+
+                    <span className={styles.subDownArrowContainer}>
+                      <Image src={downArrow} alt="drop-down-arrow-icon" />
+                    </span>
+                  </div>
+                  {category.children &&
+                    category.children.map((subCourse: SubTitles, index: number) => {
+                      return (
+                        <div className={styles.subTitleContainer} key={index}>
+                          <div className={styles.subTitleTitleContainer}>
+                            <input type="checkbox" />
+                            <p className={styles.subTitleTitle}>{subCourse.title}</p>
+                            <p className={styles.subTitleStudents}>
+                              {subCourse.courseNumber}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                </div>
+              );
+            } else if (title.isSub) {
+              return (
+                <div className={styles.subTitleContainer} key={index}>
+                  <div className={styles.subTitleTitleContainer}>
+                    <input type="checkbox" />
+                    <p className={styles.subTitleTitle}>{title.title}</p>
+                    <p className={styles.subTitleStudents}>{title.courseNumber}</p>
+                  </div>
+                </div>
+              );
+            }
           })}
       </div>
     </div>
