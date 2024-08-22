@@ -13,6 +13,11 @@
   width: 100%;
   margin-inline: auto;
   border: 1px solid $light-gray;
+  // position: absolute;
+  // z-index: 1;
+  // background-color: #ffffff;
+  // left: 50%; 
+  // transform: translate(-50%, -40%);
 
   @media screen and (max-width: 1700px) {
     max-width: 1300px;
