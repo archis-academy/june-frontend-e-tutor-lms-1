@@ -1,18 +1,27 @@
 import Image from "next/image";
+import { useState } from "react";
 import { CourseFilterData, SubCategories, SubTitles } from "@/types/courseFilter";
 import styles from "./AccordionItem.module.scss";
 import downArrow from "@/public/common/drop-down-arrow.svg";
 
 export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) => {
+  const [childMenu, setChildMenu] = useState("none");
+  const handleChildrenMenu = () => {
+    setChildMenu((preVisibility) => (preVisibility == "block" ? "none" : "block"));
+  };
+  const [childTitle, setChildTitle] = useState("none");
+  const handleChildrenTitle = () => {
+    setChildTitle((preVisibility) => (preVisibility == "block" ? "none" : "block"));
+  };
   return (
     <div className={styles.accordionItem}>
       <div className={styles.titleContainer}>
         <p className={styles.title}>{title}</p>
-        <span className={styles.downArrowContainer}>
+        <span className={styles.downArrowContainer} onClick={handleChildrenMenu}>
           <Image src={downArrow} alt="drop-down-arrow-icon" />
         </span>
       </div>
-      <div className={styles.content}>
+      <div className={styles.content} style={{ display: childMenu }}>
         {children &&
           children.map((child, index) => {
             const category = child as SubCategories;
@@ -28,14 +37,21 @@ export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) =
                     )}
                     <p className={styles.subCategoryTitle}>{category.title}</p>
 
-                    <span className={styles.subDownArrowContainer}>
+                    <span
+                      className={styles.subDownArrowContainer}
+                      onClick={handleChildrenTitle}
+                    >
                       <Image src={downArrow} alt="drop-down-arrow-icon" />
                     </span>
                   </div>
                   {category.children &&
                     category.children.map((subCourse: SubTitles, index: number) => {
                       return (
-                        <div className={styles.subTitleContainer} key={index}>
+                        <div
+                          className={styles.subTitleContainer}
+                          key={index}
+                          style={{ display: childTitle }}
+                        >
                           <div className={styles.subTitleTitleContainer}>
                             <input type="checkbox" />
                             <p className={styles.subTitleTitle}>{subCourse.title}</p>
