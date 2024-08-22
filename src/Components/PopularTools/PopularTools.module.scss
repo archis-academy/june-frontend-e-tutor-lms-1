@@ -21,6 +21,12 @@
   border-radius: 8px;
   text-align: center;
   width: 150px;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0px 12px 32px 0px #1d20261a;
+    color: #ff6636;
+    background-color: white;
+  }
 }
 
 .toolName {

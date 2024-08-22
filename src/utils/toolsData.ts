@@ -1,6 +1,6 @@
-import { ToolData } from "../types/toolData";
+import { ToolDataType } from "../types/toolData";
 
-export const toolsData: ToolData[] = [
+export const toolsData: ToolDataType[] = [
   { id: 1, name: "HTML 5", courseCount: 2736 },
   { id: 2, name: "CSS 3", courseCount: 13932 },
   { id: 3, name: "Javascript", courseCount: 52822 },

@@ -11,18 +11,20 @@ export const WebDevCourseCard: React.FC<WebDevCourseCardProps> = ({ course }) =>
     <div className={styles.webDevCard}>
       <img src={course.thumbnail} alt={course.title} className={styles.thumbnail} />
       <div className={styles.courseInfo}>
-        <span
-          className={styles.category}
-          style={{
-            backgroundColor: course.categoryBgColor,
-            color: course.categoryColor,
-          }}
-        >
-          {course.category}
-        </span>
+        <div className={styles.categoryPrice}>
+          <span
+            className={styles.category}
+            style={{
+              backgroundColor: course.categoryBgColor,
+              color: course.categoryColor,
+            }}
+          >
+            {course.category}
+          </span>
+          <span className={styles.price}>${course.price}</span>
+        </div>
         <h3 className={styles.title}>{course.title}</h3>
         <div className={styles.details}>
-          <span className={styles.price}>${course.price}</span>
           <span className={styles.rating}>★ {course.review}</span>
           <span className={styles.students}>
             {course.registeredStudents} students

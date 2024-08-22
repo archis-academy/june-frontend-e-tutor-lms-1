@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./PopularTools.module.scss";
 import { devCourseDataType } from "@/types/devCourseData";
+import { ToolDataType } from "@/types/toolData";
 
 interface PopularToolsProps {
-  tools: devCourseDataType[];
+  tools: ToolDataType[];
 }
 
 export const PopularTools: React.FC<PopularToolsProps> = ({ tools }) => {

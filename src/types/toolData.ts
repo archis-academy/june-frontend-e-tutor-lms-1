@@ -1,5 +1,4 @@
-// types/toolData.ts
-export interface ToolData {
+export interface ToolDataType {
   id: number;
   name: string;
   courseCount: number;
