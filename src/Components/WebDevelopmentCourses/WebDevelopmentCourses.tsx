@@ -1,4 +1,3 @@
-// src/components/WebDevelopmentCourses.tsx
 import React from "react";
 import styles from "./WebDevelopmentCourses.module.scss";
 import { devCourseDataType } from "@/types/devCourseData";
