@@ -3,10 +3,12 @@ import { BestSellingCourses } from "@/components/BestSellingCourses/BestSellingC
 import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
 import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
 import  FeatureCourse  from "@/components/FeaturedCourses/FeaturedCourses";
+import DescriptionComponent from "../Components/SingleCourseDescriptionComponent/SingleCourseDescriptionComponent";
 
 export default function Home() {
   return (
     <main>
+      <DescriptionComponent />
       <HomePageCategories />
       <BestSellingCourses />
       <FeatureCourse/>
