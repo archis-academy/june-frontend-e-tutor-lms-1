@@ -19,6 +19,30 @@ export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) =
     const children =
       e.target.parentElement.parentNode.querySelector("p").parentElement.parentNode
         .children;
+
+    const subCategories: any = Array.from(
+      e.target.parentElement.parentNode.querySelector("p").parentElement.parentNode
+        .parentNode.children
+    );
+
+    subCategories.find((event: any) => {
+      const subTitles: any = Array.from(event.children);
+      subTitles.shift();
+      subTitles.map((sub: any) => {
+        event.childNodes[0].childNodes[2].style.transform = "rotate(0)";
+        sub.style.display = "none";
+      });
+      /*   if (event.children[0] != e.target.parentElement) {
+      }
+ */
+      //console.log(event);
+    });
+    /*  subCategories.map((sub: any) => {
+      if (e.target.parentElement != sub.children[0]) {
+        console.log(sub);
+      }
+    }); */
+
     const arrow: any = Array.from(children)[0];
     arrow.childNodes[2].style.transform == "rotate(180deg)"
       ? (arrow.childNodes[2].style.transform = "rotate(0)")
