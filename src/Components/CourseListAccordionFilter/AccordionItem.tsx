@@ -6,18 +6,42 @@ import downArrow from "@/public/common/drop-down-arrow.svg";
 
 export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) => {
   const [childMenu, setChildMenu] = useState("none");
+  const [subCategoryArrow, setSubCategoryArrow] = useState("rotate(180deg)");
+  const [subTitleArrow, setSubTitleArrow] = useState("rotate(180deg)");
   const handleChildrenMenu = () => {
+    setSubCategoryArrow((prevDirection) =>
+      prevDirection === "rotate(180deg)" ? "rotate(0deg)" : "rotate(180deg)"
+    );
     setChildMenu((preVisibility) => (preVisibility == "block" ? "none" : "block"));
   };
   const [childTitle, setChildTitle] = useState("none");
-  const handleChildrenTitle = () => {
-    setChildTitle((preVisibility) => (preVisibility == "block" ? "none" : "block"));
+  const handleChildrenTitle = (e: any) => {
+    const children =
+      e.target.parentElement.parentNode.querySelector("p").parentElement.parentNode
+        .children;
+    const arrow: any = Array.from(children)[0];
+    arrow.childNodes[2].style.transform == "rotate(180deg)"
+      ? (arrow.childNodes[2].style.transform = "rotate(0)")
+      : (arrow.childNodes[2].style.transform = "rotate(180deg)");
+    //console.log(children);
+    const childrenArr = Array.from(children);
+    childrenArr.shift();
+    childrenArr.map((event: any) => {
+      event.style.display == "none"
+        ? (event.style.display = "block")
+        : (event.style.display = "none");
+    });
   };
+
   return (
     <div className={styles.accordionItem}>
       <div className={styles.titleContainer}>
         <p className={styles.title}>{title}</p>
-        <span className={styles.downArrowContainer} onClick={handleChildrenMenu}>
+        <span
+          className={styles.downArrowContainer}
+          style={{ transform: subCategoryArrow }}
+          onClick={handleChildrenMenu}
+        >
           <Image src={downArrow} alt="drop-down-arrow-icon" />
         </span>
       </div>
@@ -39,6 +63,7 @@ export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) =
 
                     <span
                       className={styles.subDownArrowContainer}
+                      style={{ transform: subTitleArrow }}
                       onClick={handleChildrenTitle}
                     >
                       <Image src={downArrow} alt="drop-down-arrow-icon" />
