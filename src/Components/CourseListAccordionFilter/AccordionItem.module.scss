@@ -72,6 +72,21 @@
   padding-inline: 20px;
   border: 1px solid $light-gray;
   border-bottom: transparent;
+  .checkBox {
+    cursor: pointer;
+    accent-color: $orange;
+    width: 20px;
+    height: 20px;
+
+    &:checked ~ .subTitleTitle {
+      color: $orange;
+      font-weight: 500;
+    }
+    &:checked ~ .subTitleStudents {
+      font-weight: 600;
+    }
+  }
+
   .subTitleTitleContainer {
     display: flex;
     justify-content: space-between;

@@ -39,12 +39,21 @@ export const CourseList: React.FC = () => {
     //Todo: list courses according to sort key word
   };
 
+  const [accordionVisibility, setAccordionVisibility] = useState("none");
+
+  const showAccordion = () => setAccordionVisibility("block");
+  const hideAccordion = () => setAccordionVisibility("none");
+
   return (
     <section className={styles.courseList}>
       <div className={styles.filterSortContainer}>
         <div className={styles.filterContainer}>
           <div className={styles.filterWrapper}>
-            <button className={styles.FilterBtn}>
+            <button
+              className={styles.FilterBtn}
+              onFocus={showAccordion}
+              onBlur={hideAccordion}
+            >
               <Image src={filterIconBlack} alt="filter-icon" />
               <span>Filter</span>
               <span>{0}</span>
@@ -84,6 +93,12 @@ export const CourseList: React.FC = () => {
         </div>
       </div>
       <div className={styles.courseCardsWrapper}>
+        <div
+          className={styles.accordionFilter}
+          style={{ display: accordionVisibility }}
+        >
+          <CourseListAccordionFilter />
+        </div>
         {CoursesData.map((card, index) => {
           return (
             <CourseCard
@@ -105,7 +120,6 @@ export const CourseList: React.FC = () => {
           );
         })}
       </div>
-      <CourseListAccordionFilter />
     </section>
   );
 };
