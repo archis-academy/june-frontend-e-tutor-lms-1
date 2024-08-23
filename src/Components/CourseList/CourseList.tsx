@@ -40,20 +40,33 @@ export const CourseList: React.FC = () => {
   };
 
   const [accordionVisibility, setAccordionVisibility] = useState("none");
+  const filterRef = useRef<HTMLDivElement>(null);
 
-  const showAccordion = () => setAccordionVisibility("block");
-  const hideAccordion = () => setAccordionVisibility("none");
+  const toggleAccordionVisibility = () => {
+    setAccordionVisibility((prevVisibility) =>
+      prevVisibility === "none" ? "block" : "none"
+    );
+  };
+
+  const handleClickOutsideFilter = (event: MouseEvent) => {
+    if (filterRef.current && !filterRef.current.contains(event.target as Node)) {
+      setAccordionVisibility("none");
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutsideFilter);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutsideFilter);
+    };
+  }, []);
 
   return (
     <section className={styles.courseList}>
       <div className={styles.filterSortContainer}>
         <div className={styles.filterContainer}>
           <div className={styles.filterWrapper}>
-            <button
-              className={styles.FilterBtn}
-              onFocus={showAccordion}
-              onBlur={hideAccordion}
-            >
+            <button className={styles.FilterBtn} onClick={toggleAccordionVisibility}>
               <Image src={filterIconBlack} alt="filter-icon" />
               <span>Filter</span>
               <span>{0}</span>
@@ -96,6 +109,7 @@ export const CourseList: React.FC = () => {
         <div
           className={styles.accordionFilter}
           style={{ display: accordionVisibility }}
+          ref={filterRef}
         >
           <CourseListAccordionFilter />
         </div>
