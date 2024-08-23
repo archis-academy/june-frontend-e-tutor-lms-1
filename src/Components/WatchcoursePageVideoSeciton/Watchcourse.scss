@@ -1,0 +1,168 @@
+.watchcourse {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+  
+    &-header {
+      width: 1920px;
+      height: 98px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      background-color: #f8f9fa;
+  
+      .back-button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #ff6600;
+        color: white;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 16px;
+      }
+  
+      .info {
+        flex-grow: 1;
+  
+        h1 {
+          font-size: 24px;
+          margin-bottom: 8px;
+        }
+  
+        .details {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+  
+          .icon {
+            margin-right: 8px;
+          }
+  
+          .file-icon {
+            color: transparent;
+            background-color: orange;
+          }
+  
+          .play-icon {
+            color: purple;
+          }
+  
+          .clock-icon {
+            color: orange;
+          }
+        }
+      }
+  
+      .review-button {
+        border: 1px solid rgba(255, 102, 54, 1);
+        color: rgba(255, 102, 54, 1);
+        padding: 8px 16px;
+        border-radius: 4px;
+      }
+    }
+  
+    .video-section {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      video {
+        width: 1229px;
+        height: 690px;
+        background-color: black;
+      }
+  
+      .video-info {
+        width: 1228px;
+        height: 40px;
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+  
+        .title {
+          font-size: 18px;
+          color: #333;
+        }
+  
+        .metadata {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+    }
+  
+    .course-contents {
+      width: 603px;
+      margin-top: 32px;
+  
+      .content-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+  
+        .progress-text {
+          color: green;
+        }
+      }
+  
+      .progress-bar {
+        width: 603px;
+        height: 4px;
+        background-color: #eee;
+        margin-top: 8px;
+  
+        .progress {
+          height: 100%;
+          background-color: orange;
+        }
+      }
+  
+      .lecture-list {
+        margin-top: 16px;
+  
+        .lecture {
+          padding: 16px;
+          border-top: 1px solid #ccc;
+  
+          .title {
+            font-size: 16px;
+            cursor: pointer;
+          }
+  
+          .details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+  
+            .check-icon {
+              color: orange;
+            }
+  
+            .play-icon {
+              color: purple;
+            }
+  
+            .clock-icon {
+              color: orange;
+            }
+  
+            .complete-button {
+              background-color: #ff6600;
+              color: white;
+              border: none;
+              padding: 4px 8px;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  
