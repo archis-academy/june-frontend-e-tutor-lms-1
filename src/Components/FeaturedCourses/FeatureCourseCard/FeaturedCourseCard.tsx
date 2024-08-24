@@ -57,7 +57,7 @@ const FeatureCourseCard: React.FC<CourseType> = ({
             <p className={styles.oldPrice}>${formatPrice(price)}</p>
           </div>
         </div>
-        <p className={styles.description}>{description.slice(0, 44)}...</p>
+        <p className={styles.description}>{description.slice(0, 40)}...</p>
         <div className={`${styles.flex} ${styles.ownerAndRating}`}>
           <div className={`${styles.flex} ${styles.ownerWrapper}`}>
             <div className={styles.ownerThumb}>
