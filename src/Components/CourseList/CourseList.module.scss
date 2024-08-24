@@ -23,6 +23,12 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 1440px) {
+      max-width: 1080px;
+    }
+    @media screen and (max-width: 1150px) {
+      max-width: 930px;
+    }
     .filterContainer {
       width: 100%;
       display: flex;
@@ -74,6 +80,9 @@
           font-size: 16px;
           padding-inline: 50px;
           transition: border-color 400ms ease-in-out;
+          @media screen and (max-width: 1150px) {
+            width: 400px;
+          }
         }
         .searchInput::placeholder {
           color: $gray2;
@@ -148,8 +157,16 @@
   }
   .courseCardsArea {
     display: flex;
+    justify-content: space-between;
+    max-width: 1320px;
+    width: 100%;
+    @media screen and (max-width: 1440px) {
+      max-width: 1080px;
+    }
+    @media screen and (max-width: 1150px) {
+      max-width: 930px;
+    }
     .accordionFilter {
-      margin-right: 6px;
     }
     .courseCardsWrapper {
       display: grid;
@@ -159,6 +176,9 @@
       height: 1500px;
       @media screen and (max-width: 1440px) {
         gap: 20px;
+      }
+      @media screen and (max-width: 1150px) {
+        height: 1200px;
       }
       @media screen and (max-width: 990px) {
         gap: 30px;
@@ -181,8 +201,18 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 8px;
       position: relative;
+      height: 1800px;
       @media screen and (max-width: 1440px) {
-        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        height: 2200px;
+        & > a:nth-last-child(-n + 2) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 1150px) {
+        gap: 40px;
+        height: 1900px;
       }
       @media screen and (max-width: 990px) {
         gap: 30px;
