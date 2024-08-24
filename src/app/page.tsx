@@ -13,6 +13,7 @@ export default function Home() {
       <FeatureCourse/>
       <PopularInstructors />
       <HomePageCompanies />
+      <Footer />
     </main>
   );
 }

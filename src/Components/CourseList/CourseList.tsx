@@ -66,20 +66,21 @@ export const CourseList: React.FC = () => {
     <section className={styles.courseList}>
       <div className={styles.filterSortContainer}>
         <div className={styles.filterContainer}>
-          <div className={styles.filterWrapper}>
-            <button
-              className={styles.FilterBtn}
-              onClick={toggleAccordionVisibility}
-              ref={filterBtnRef}
-            >
-              <Image src={filterIconBlack} alt="filter-icon" />
-              <span>Filter</span>
-              <span>{0}</span>
-            </button>
-          </div>
+          <button
+            className={styles.FilterBtn}
+            onClick={toggleAccordionVisibility}
+            ref={filterBtnRef}
+          >
+            <div className={styles.filterIconWrapper}>
+              <Image src={filterIconBlack} alt="filter-icon" fill={true} />
+            </div>
+            <span>Filter</span>
+            <span>{0}</span>
+          </button>
+
           <div className={styles.searchInputWrapper}>
             <div className={styles.searchIconWrapper}>
-              <Image src={searchIcon} alt="search-icon" />
+              <Image src={searchIcon} alt="search-icon"  fill/>
             </div>
             <input
               type="text"

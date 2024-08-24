@@ -10,10 +10,18 @@
     justify-content: space-between;
     padding-inline: 20px;
     cursor: pointer;
-
+    @media screen and (max-width: 990px) {
+      padding-inline: 10px;
+    }
+    @media screen and (max-width: 500px) {
+      padding-inline: 20px;
+    }
     .title {
       text-transform: uppercase;
       font-weight: 500;
+      @media screen and (max-width: 990px) {
+        font-size: 14px;
+      }
     }
     .downArrowContainer {
       transition: all 0.2s;
@@ -28,7 +36,6 @@
       &:hover {
         background-color: $orange;
       }
-      /*    transform: rotate(180deg); */
     }
   }
   .subCategoryContainer {
@@ -39,16 +46,40 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media screen and (max-width: 990px) {
+        padding-inline: 10px;
+      }
+      @media screen and (max-width: 500px) {
+        padding-inline: 20px;
+      }
 
       .subCategoryIconWrapper {
         position: relative;
         width: 24px;
         height: 24px;
+        @media screen and (max-width: 990px) {
+          width: 18px;
+          height: 18px;
+        }
+        @media screen and (max-width: 500px) {
+          width: 24px;
+          height: 24px;
+        }
       }
       .subCategoryTitle {
         text-transform: capitalize;
         flex: 2;
         margin-left: 20px;
+        @media screen and (max-width: 990px) {
+          font-size: 12px;
+          margin-left: 10px;
+          letter-spacing: -0.5px;
+        }
+        @media screen and (max-width: 500px) {
+          font-size: 14px;
+          margin-left: 20px;
+          letter-spacing: 0;
+        }
       }
       .subDownArrowContainer {
         cursor: pointer;
@@ -72,18 +103,31 @@
   padding-inline: 20px;
   border: 1px solid $light-gray;
   border-bottom: transparent;
+  @media screen and (max-width: 990px) {
+    padding-inline: 10px;
+  }
+  @media screen and (max-width: 500px) {
+    padding-inline: 20px;
+  }
   .checkBox {
     cursor: pointer;
     accent-color: $orange;
     width: 20px;
     height: 20px;
-
     &:checked ~ .subTitleTitle {
       color: $orange;
       font-weight: 500;
     }
     &:checked ~ .subTitleStudents {
       font-weight: 600;
+    }
+    @media screen and (max-width: 990px) {
+      width: 14px;
+      height: 14px;
+    }
+    @media screen and (max-width: 500px) {
+      width: 20px;
+      height: 20px;
     }
   }
 
@@ -98,6 +142,17 @@
       color: $dark-gray;
       flex: 2;
       margin-left: 10px;
+      @media screen and (max-width: 990px) {
+        font-size: 12px;
+        margin-inline: 4px;
+        letter-spacing: -0.5px;
+      }
+      @media screen and (max-width: 500px) {
+        font-size: 12px;
+        margin: 0;
+        margin-left: 10px;
+        letter-spacing: 0;
+      }
     }
     .subTitleStudents {
       font-size: 12px;

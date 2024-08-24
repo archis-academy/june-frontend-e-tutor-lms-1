@@ -5,4 +5,17 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  @media screen and (max-width: 990px) {
+    width: 200px;
+    gap: 10px;
+  }
+  @media screen and (max-width: 650px) {
+    width: 150px;
+    gap: 6px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 280px;
+    margin: 0 auto 30px auto;
+    gap: 6px;
+  }
 }

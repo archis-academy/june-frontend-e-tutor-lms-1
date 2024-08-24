@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
-import Footer from "@/components/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +21,6 @@ export default function RootLayout({
         style={{ margin: 0, boxSizing: "border-box", padding: 0 }}
       >
         {children}
-        <Footer />
       </body>
     </html>
   );
