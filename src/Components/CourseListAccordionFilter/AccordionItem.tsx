@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from "react";
 import { CourseFilterData, SubCategories, SubTitles } from "@/types/courseFilter";
 import styles from "./AccordionItem.module.scss";
 import downArrow from "@/public/common/drop-down-arrow.svg";
@@ -14,38 +14,25 @@ export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) =
     );
     setChildMenu((preVisibility) => (preVisibility == "block" ? "none" : "block"));
   };
-  const [childTitle, setChildTitle] = useState("none");
-  const handleChildrenTitle = (e: any) => {
+
+  const handleChildrenTitle = (e: React.MouseEvent<HTMLSpanElement>) => {
     const children =
-      e.target.parentElement.parentNode.querySelector("p").parentElement.parentNode
-        .children;
+      e.currentTarget.parentElement?.parentNode?.querySelector("p")?.parentElement
+        ?.parentNode?.children;
 
-    const subCategories: any = Array.from(
-      e.target.parentElement.parentNode.querySelector("p").parentElement.parentNode
-        .parentNode.children
-    );
-
-    /*   subCategories.find((event: any) => {
-      const subTitles: any = Array.from(event.children);
-      subTitles.shift();
-
-      subTitles.map((sub: any) => {
-        event.childNodes[0].childNodes[2].style.transform = "rotate(0)";
-        sub.style.display = "none";
-      });
-    }); */
-    //Handles arrow direction
-    const arrow: any = Array.from(children)[0];
-    arrow.childNodes[2].style.transform == "rotate(180deg)"
-      ? (arrow.childNodes[2].style.transform = "rotate(0)")
-      : (arrow.childNodes[2].style.transform = "rotate(180deg)");
-    //Sets
-    const childrenArr = Array.from(children);
-    childrenArr.shift();
-    childrenArr.map((event: any) => {
-      event.style.display == "none"
-        ? (event.style.display = "block")
-        : (event.style.display = "none");
+    const childrenArray = Array.from(children as HTMLCollectionOf<HTMLElement>);
+    // Handle the arrow rotation
+    const arrow = childrenArray[0] as HTMLElement;
+    const arrowIcon = arrow.childNodes[2] as HTMLElement;
+    if (arrowIcon) {
+      arrowIcon.style.transform =
+        arrowIcon.style.transform === "rotate(180deg)"
+          ? "rotate(0)"
+          : "rotate(180deg)";
+    }
+    // Toggle visibility of the other children elements
+    childrenArray.slice(1).forEach((child: HTMLElement) => {
+      child.style.display = child.style.display === "none" ? "block" : "none";
     });
   };
 
@@ -91,7 +78,7 @@ export const AccordionItem: React.FC<CourseFilterData> = ({ title, children }) =
                         <div
                           className={styles.subTitleContainer}
                           key={index}
-                          style={{ display: childTitle }}
+                          style={{ display: "none" }}
                         >
                           <div className={styles.subTitleTitleContainer}>
                             <input type="checkbox" className={styles.checkBox} />

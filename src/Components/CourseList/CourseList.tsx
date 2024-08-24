@@ -47,6 +47,7 @@ export const CourseList: React.FC = () => {
       prevVisibility === "none" ? "block" : "none"
     );
   };
+  const filterBtnRef = useRef<HTMLButtonElement>(null);
 
   const handleClickOutsideFilter = (event: MouseEvent) => {
     if (filterRef.current && !filterRef.current.contains(event.target as Node)) {
@@ -66,7 +67,11 @@ export const CourseList: React.FC = () => {
       <div className={styles.filterSortContainer}>
         <div className={styles.filterContainer}>
           <div className={styles.filterWrapper}>
-            <button className={styles.FilterBtn} onClick={toggleAccordionVisibility}>
+            <button
+              className={styles.FilterBtn}
+              onClick={toggleAccordionVisibility}
+              ref={filterBtnRef}
+            >
               <Image src={filterIconBlack} alt="filter-icon" />
               <span>Filter</span>
               <span>{0}</span>
@@ -105,7 +110,7 @@ export const CourseList: React.FC = () => {
           </ul>
         </div>
       </div>
-      <div className={styles.courseCardsWrapper}>
+      <div className={styles.courseCardsArea}>
         <div
           className={styles.accordionFilter}
           style={{ display: accordionVisibility }}
@@ -113,26 +118,34 @@ export const CourseList: React.FC = () => {
         >
           <CourseListAccordionFilter />
         </div>
-        {CoursesData.map((card, index) => {
-          return (
-            <CourseCard
-              key={index}
-              id={card.id}
-              title={card.title}
-              category={card.category}
-              categoryColor={card.categoryColor}
-              categoryBgColor={card.categoryBgColor}
-              price={card.price}
-              thumbnail={card.thumbnail}
-              review={card.review}
-              registeredStudents={card.registeredStudents}
-              courseOwner={card.courseOwner}
-              level={card.level}
-              duration={card.duration}
-              description={card.description}
-            />
-          );
-        })}
+        <div
+          className={
+            accordionVisibility == "none"
+              ? styles.courseCardsWrapper
+              : styles.courseCardsWrapperFilterOn
+          }
+        >
+          {CoursesData.slice(0, 20).map((card, index) => {
+            return (
+              <CourseCard
+                key={index}
+                id={card.id}
+                title={card.title}
+                category={card.category}
+                categoryColor={card.categoryColor}
+                categoryBgColor={card.categoryBgColor}
+                price={card.price}
+                thumbnail={card.thumbnail}
+                review={card.review}
+                registeredStudents={card.registeredStudents}
+                courseOwner={card.courseOwner}
+                level={card.level}
+                duration={card.duration}
+                description={card.description}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );
