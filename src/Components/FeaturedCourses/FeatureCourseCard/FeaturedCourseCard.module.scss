@@ -1,0 +1,105 @@
+@use "../../../app/_variables.scss" as *;
+.courseCard * {
+  margin: 0;
+  box-sizing: border-box;
+}
+.courseCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $light-gray;
+  width: 648px;
+  .courseImage {
+    position: relative;
+    min-width: 220px;
+    height: 188px;
+  }
+  .cardContent {
+    width: 428px;
+    height: 188px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    .priceAndCategory {
+      justify-content: space-between;
+      .category {
+        font-family: $primary-font;
+        font-size: 12px;
+        font-weight: 500;
+        padding: 6px;
+        text-transform: uppercase;
+      }
+      .prices {
+        gap: 10px;
+        .newPrice {
+          font-size: 18px;
+        }
+        .oldPrice {
+          font-size: 14px;
+          color: $gray;
+          text-decoration: line-through;
+        }
+      }
+    }
+    .description {
+      text-transform: capitalize;
+      font-weight: 500;
+    }
+    .ownerAndRating {
+      justify-content: space-between;
+      .ownerWrapper {
+        gap: 14px;
+        justify-content: space-between;
+        .ownerThumb {
+          position: relative;
+          width: 24px;
+          height: 24px;
+        }
+        .ownerName {
+          font-size: 14px;
+          letter-spacing: -0.01em;
+          text-transform: capitalize;
+          color: $gray2;
+        }
+      }
+      .ratingWrapper {
+        justify-content: space-between;
+        .ratings {
+          gap: 10px;
+          font-size: 14px;
+          .rating {
+            font-weight: 500;
+          }
+          .rateNumber {
+            color: $gray;
+          }
+        }
+      }
+    }
+    .courseDetailsWrapper {
+      justify-content: space-between;
+      width: 100%;
+      .studentDetails {
+        gap: 6px;
+        font-size: 14px;
+        .registeredStudents {
+          font-weight: 500;
+        }
+        .students {
+          color: $gray2;
+        }
+      }
+      .levelAndDuration {
+        gap: 6px;
+        font-size: 14px;
+        color: $gray2;
+        text-transform: capitalize;
+      }
+    }
+    .flex {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
