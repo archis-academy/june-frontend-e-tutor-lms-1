@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Footer from "@/components/Footer/Footer";
 import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         style={{ margin: 0, boxSizing: "border-box", padding: 0 }}
       >
         {children}
+        <Footer />
       </body>
     </html>
   );

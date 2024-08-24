@@ -3,7 +3,7 @@ import { BestSellingCourses } from "@/components/BestSellingCourses/BestSellingC
 import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
 import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
 import  FeatureCourse  from "@/components/FeaturedCourses/FeaturedCourses";
-import Footer from "@/components/Footer/Footer";
+
 
 export default function Home() {
   return (
@@ -13,7 +13,6 @@ export default function Home() {
       <FeatureCourse/>
       <PopularInstructors />
       <HomePageCompanies />
-      <Footer />
     </main>
   );
 }
