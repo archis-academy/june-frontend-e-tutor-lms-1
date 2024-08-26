@@ -1,50 +1,68 @@
-"use client";
 import Image from "next/image";
-import Etour from "../../../../public/etutorlogo.png";
-import Facebook from "../../../../public/facebook.png";
-import Twitter from "../../../../public/Twiter.png";
-import Linkledin from "../../../../public/Linkedin.png";
-import Youtube from "../../../../public/youtube.png";
-import Apple from "../../../../public/applelogo.png";
-import Google from "../../../../public/googleapp.png";
-
-import { useState } from "react";
+import ETutorLogo from "@/public/Footer/e-tutor-logo.svg";
+import Facebook from "@/public/Footer/facebook.svg";
+import Twitter from "@/public/Footer/twitter.svg";
+import Linkledin from "@/public/Footer/linkedin.svg";
+import Youtube from "@/public/Footer/youtube.svg";
+import Apple from "@/public/Footer/apple.svg";
+import Instagram from "@/public/Footer/insta.svg";
+import Google from "@/public/Footer/google-play.svg";
+import downArrow from "@/public/Footer/down-arrow.svg";
 import styles from "./FooterBottom.module.scss";
 
 export default function FooterBottom() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   return (
     <footer className={styles.footer}>
-      <div className={styles.footersectionbox}>
-        <div className={styles.footersectionboxleft}>
-          <Image src={Etour} width={175} height={50} alt="logo" />
-          <p>
+      <div className={styles.footerWrapper}>
+        <div className={styles.socialWrapper}>
+          <div className={styles.logoWrapper}>
+            <Image src={ETutorLogo} alt="logo" />
+          </div>
+          <p className={styles.description}>
             Aliquam rhoncus ligula est, non pulvinar elit convallis nec. Donec mattis
-            odio at..
+            odio at.
           </p>
-          <div className={styles.footersectionsocial}>
-            <a href="https://www.facebook.com/">
-              <Image src={Facebook} width={20} height={20} alt="logo" />
+          <div className={styles.socialIconsWrapper}>
+            <a
+              className={styles.socialIcon}
+              href="https://www.facebook.com/"
+              target="_blank"
+            >
+              <Image src={Facebook} alt="logo" />
             </a>
-            <a href="https://twitter.com/">
-              <Image src={Twitter} width={20} height={20} alt="logo" />
+            <a
+              className={styles.socialIcon}
+              href="https://twitter.com/"
+              target="_blank"
+            >
+              <Image src={Instagram} alt="logo" />
             </a>
-            <a href="https://www.linkledin.com/">
-              <Image src={Linkledin} width={20} height={20} alt="logo" />
+            <a
+              className={styles.socialIcon}
+              href="https://www.linkledin.com/"
+              target="_blank"
+            >
+              <Image src={Linkledin} alt="logo" />
             </a>
-            <a href="https://www.youtube.com/">
-              <Image src={Youtube} width={20} height={20} alt="logo" />
+            <a
+              className={styles.socialIcon}
+              href="https://twitter.com/"
+              target="_blank"
+            >
+              <Image src={Twitter} alt="logo" />
+            </a>
+            <a
+              className={styles.socialIcon}
+              href="https://www.youtube.com/"
+              target="_blank"
+            >
+              <Image src={Youtube} alt="logo" />
             </a>
           </div>
         </div>
-        <div className={styles.footersectionboxmiddle}>
-          <div className={styles.footersectionboxmiddlebox}>
-            <h3>Top 4 Category</h3>
+        <div className={styles.linksWrapper}>
+          <div className={styles.linkColumn}>
+            <h3>Top 4 Categories</h3>
             <ul>
               <li>
                 <a href="#">Finance & Accounting</a>
@@ -60,7 +78,7 @@ export default function FooterBottom() {
               </li>
             </ul>
           </div>
-          <div className={styles.footersectionboxmiddlebox}>
+          <div className={styles.linkColumn}>
             <h3>Quick Links</h3>
             <ul>
               <li>
@@ -77,7 +95,7 @@ export default function FooterBottom() {
               </li>
             </ul>
           </div>
-          <div className={styles.footersectionboxmiddlebox}>
+          <div className={styles.linkColumn}>
             <h3>Support</h3>
             <ul>
               <li>
@@ -95,44 +113,37 @@ export default function FooterBottom() {
             </ul>
           </div>
         </div>
-        <div className={styles.footersectionboxright}>
-          <h3>Downlaod our app</h3>
-          <div className={styles.footersectionboxrightapp}>
-            <Image src={Apple} width={30} height={30} alt="logo" />
+        <div className={styles.downloadsContainer}>
+          <h3>download our app</h3>
+          <div className={styles.storeWrapper}>
+            <Image src={Apple} alt="logo" />
             <div>
-              <h3>Download now</h3>
+              <h2>Download now</h2>
               <a href="https://www.apple.com/tr/watch/">App Store</a>
             </div>
           </div>
-          <div className={styles.footersectionboxrightapp}>
-            <Image src={Google} width={30} height={30} alt="logo" />
+          <div className={styles.storeWrapper}>
+            <Image src={Google} alt="logo" />
             <div>
-              <h3>Download now</h3>
+              <h2>Download now</h2>
               <a href="https://play.google.com/">App Store</a>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.footerBox}>
-        <p>© 2021 - Eduflex. Designed by Templatecookie. All rights reserved</p>
-        <div
-          className={styles.menuContainer + (menuOpen ? " " + styles.open : "")}
-          onClick={toggleMenu}
-        >
-          <div className={styles.menuItem}>
-            <a href="#link1">English</a>
-            <span className={styles.arrow}></span>
-          </div>
-          {menuOpen && (
-            <div className={styles.subMenu}>
-              <div className={styles.subMenuItem}>
-                <a href="#link2">Turkish</a>
-              </div>
-              <div className={styles.subMenuItem}>
-                <a href="#link3">French</a>
-              </div>
-            </div>
-          )}
+      <div className={styles.copyrightWrapper}>
+        <p>
+          © 2021 - Eduflex. Designed by <span>Templatecookie</span>. All rights
+          reserved
+        </p>
+        <div className={styles.languageSelection}>
+          <select className={styles.menuContainer}>
+            <option>English</option>
+            <option>Turkish</option>
+          </select>
+          <span>
+            <Image src={downArrow} alt="down-arrow" />
+          </span>
         </div>
       </div>
     </footer>
