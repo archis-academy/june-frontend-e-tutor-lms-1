@@ -126,7 +126,7 @@ export default function FooterBottom() {
             <Image src={Google} alt="logo" />
             <div>
               <h2>Download now</h2>
-              <a href="https://play.google.com/">App Store</a>
+              <a href="https://play.google.com/">Google Play</a>
             </div>
           </div>
         </div>
