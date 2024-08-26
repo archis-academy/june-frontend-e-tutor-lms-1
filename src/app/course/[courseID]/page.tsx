@@ -1,12 +1,12 @@
 import React from "react";
-import WatchCoursePage from "../../../Components/WatchCoursePage/WatchCoursePage";
+import WatchCourse from "../../../Components/WatchCourse/WatchCourse";
 
 const CoursePage = ({ params }: { params: { courseID: string } }) => {
   return (
     <>
       <div>Single Course Page {params.courseID}</div>
       <div>
-        <WatchCoursePage />
+        <WatchCourse />
       </div>
     </>
   );

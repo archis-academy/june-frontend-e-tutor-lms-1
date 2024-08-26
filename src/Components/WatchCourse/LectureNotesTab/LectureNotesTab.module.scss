@@ -1,0 +1,48 @@
+@import "../../app/variables";
+.lectureNotesTab {
+  h2 {
+    color: $third-color;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+
+  h4 {
+    $third-color: #1d2026;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: $secondary-color;
+  }
+  ul {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 10px;
+    }
+  }
+  .lectureContent {
+    display: flex;
+    justify-content: space-between;
+  }
+  .downloadNotes {
+    padding: 10px 20px;
+    gap: 8px;
+    background-color: #ffeee8;
+    color: #ff6636;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    display: inline-block;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+}

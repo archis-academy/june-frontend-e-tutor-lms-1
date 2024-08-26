@@ -1,0 +1,80 @@
+@import "../../app/variables";
+
+.attachFileTab {
+  h2 {
+    color: $third-color;
+    margin-bottom: 15px;
+    font-size: 24px;
+  }
+  h4 {
+    $third-color: #1d2026;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  h3 {
+    $third-color: #1d2026;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .fileCountBadge {
+    background-color: #ff6347;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 5px;
+    position: absolute;
+    top: -5px;
+    right: -10px;
+  }
+
+  .WatchFile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+  .infoNumberCont {
+    display: flex;
+    gap: 40px 20px;
+  }
+  .numberInfoBox {
+    color: #6e7485;
+  }
+  .fileInfo {
+    font-size: 14px;
+    color: #6e7485;
+  }
+
+  .watchDownloadFile {
+    padding: 20px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+    .watch-download-file {
+      padding: 5px 10px;
+      background-color: #ff6347;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .infoNumberCont {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
