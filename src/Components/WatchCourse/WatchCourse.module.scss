@@ -50,3 +50,25 @@
   top: -5px;
   right: -10px;
 }
+
+@media (max-width: 514px) {
+  .WatchContainer {
+    margin: 5px;
+    max-width: none;
+  }
+  .WatchTabs {
+    padding: 1px 1px;
+  }
+  .fileCountBadge {
+    font-size: 6px;
+  }
+  .descriptionTab {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .WatchTabs a {
+    padding: 5px !important;
+  }
+}

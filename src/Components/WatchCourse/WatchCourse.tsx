@@ -19,6 +19,7 @@ const WatchCourse: React.FC = () => {
         >
           Description
         </a>
+
         <a
           href="#lectureNotes"
           className={activeTab === "lectureNotes" ? "active" : ""}
