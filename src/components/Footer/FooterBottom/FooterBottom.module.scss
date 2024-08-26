@@ -1,61 +1,164 @@
 .footer {
-    background-color: #1D2026; 
-    color: white;
+  background-color: #1d2026;
+  color: white;
+}
+
+.footersection {
+  background-color: #1d2026;
+  margin-bottom: -17px;
+  padding: 20px;
+}
+
+.footersectionbox {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footersectionboxleft p {
+  color: #8c94a3;
+  max-width: 350px;
+}
+
+.footersectionsocial {
+  display: flex;
+  margin-top: 20px;
+  gap: 15px;
+}
+
+.footersectionsocial a {
+  background: #363b4766;
+  padding: 14px;
+}
+
+.footersectionsocial a:hover {
+  background: #ff6636;
+}
+
+.footersectionboxmiddle {
+  display: flex;
+  gap: 20px;
+}
+
+.footersectionboxmiddlebox {
+  display: flex;
+  flex-direction: column;
+}
+
+.footersectionboxmiddlebox h3 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.footersectionboxmiddlebox ul li {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.footersectionboxmiddlebox ul li a {
+  color: #8c94a3;
+  font-size: 14px;
+  text-decoration: none;
+  margin-top: 5px;
+  list-style-type: none;
+}
+
+.footersectionboxmiddlebox ul li a:hover {
+  color: white;
+  border-bottom: 1px solid #ff6636;
+}
+
+.footersectionboxright {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #1d2026;
+  border: none;
+}
+
+.footersectionboxright h3 {
+  color: #fff;
+  font-size: 16px;
+}
+
+.footersectionboxrightapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #363b4766;
+  padding: 5px;
+  gap: 20px;
+}
+
+.footersectionboxrightapp div h3 {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  color: #b7bac7;
+}
+
+.footersectionboxrightapp div a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 .footerBox {
-    padding: 50px;
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer p {
-    font-size: 15px;
-    font-weight: 600;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .menuContainer {
-    position: relative;
+  position: relative;
 }
 
 .menuItem {
-    margin: 5px 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  margin: 5px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .menuItem a {
-    margin-right: 5px;
-    color: white; 
-    text-decoration: none; 
+  margin-right: 5px;
+  color: white;
+  text-decoration: none;
 }
 
 .arrow {
-    display: inline-block;
-    margin-left: 5px;
-    width: 0;
-    height: 0;
-    border-left: 5px solid transparent;
-    border-right: 5px solid transparent;
-    border-top: 5px solid white;
+  display: inline-block;
+  margin-left: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
 }
 
 .subMenu {
-    display: none; 
-    margin-top: 10px;
-    padding: 0;
-    list-style-type: none;
+  display: none;
+  margin-top: 10px;
+  padding: 0;
+  list-style-type: none;
 }
 
 .menuContainer.open .subMenu {
-    display: block; 
+  display: block;
 }
 
 .subMenuItem {
-    margin: 5px 0;
-    color: white;
+  margin: 5px 0;
+  color: white;
 }
