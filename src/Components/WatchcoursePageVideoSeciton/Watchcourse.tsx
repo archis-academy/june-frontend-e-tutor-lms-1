@@ -1,16 +1,39 @@
-import React, { useState } from 'react';
-import { videos } from '@/utils/videoDatabse';
-import './Watchcourse.scss';
+"use client";
+
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faClock,
+  faPlay,
+  faCheck,
+  faChevronDown,
+  faChevronUp,
+} from "@fortawesome/free-solid-svg-icons";
+
+import { videos } from "@/utils/videoDatabse";
+import "./Watchcourse.scss";
+import { faFolder } from "@fortawesome/free-solid-svg-icons/faFolder";
 
 const Watchcourse: React.FC = () => {
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
-  const [completed, setCompleted] = useState<boolean[]>(new Array(videos.length).fill(false));
+  const [completed, setCompleted] = useState<boolean[]>(
+    new Array(videos.length).fill(false)
+  );
+  const [expandedSections, setExpandedSections] = useState<string[]>([]);
 
   const handleVideoChange = (videoId: number) => {
-    const video = videos.find(v => v.id === videoId);
+    const video = videos.find((v) => v.id === videoId);
     if (video) {
       setCurrentVideo(video);
     }
+  };
+
+  const toggleSection = (section: string) => {
+    setExpandedSections((prevState) =>
+      prevState.includes(section)
+        ? prevState.filter((sec) => sec !== section)
+        : [...prevState, section]
+    );
   };
 
   const handleMarkComplete = (index: number) => {
@@ -19,65 +42,133 @@ const Watchcourse: React.FC = () => {
     setCompleted(updatedCompleted);
   };
 
+  const sections = Array.from(new Set(videos.map((video) => video.section)));
+
   return (
     <div className="watchcourse">
-      {/* Header */}
       <header className="watchcourse-header">
         <button className="back-button">←</button>
         <div className="info">
           <h1>{currentVideo.title}</h1>
           <div className="details">
-            <span className="icon file-icon">📁</span>
-            <span className="text">6 Sections</span>
-            <span className="icon play-icon">▶</span>
+            <FontAwesomeIcon icon={faFolder} className="icon folder-icon" />
             <span className="text">{videos.length} lectures</span>
-            <span className="icon clock-icon">⏰</span>
+            <FontAwesomeIcon icon={faPlay} className="icon play-icon" />
+            <span className="text">{currentVideo.lectures} lectures</span>
+            <FontAwesomeIcon icon={faClock} className="icon clock-icon" />
             <span className="text">{currentVideo.duration}</span>
           </div>
         </div>
         <button className="review-button">Write a Review</button>
+        <button className="next-button">Next lecture</button>
       </header>
 
-      {/* Video Section */}
-      <div className="video-section">
-        <video width="1229" height="690" controls>
-          <source src={currentVideo.url} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="video-info">
-          <div className="title">{currentVideo.title}</div>
-          <div className="metadata">
-            <span>Last updated: {currentVideo.lastUpdated}</span>
-            <span>Comments: {currentVideo.comments}</span>
+      <div className="content-wrapper">
+        <div className="video-section">
+          <video width="1229" height="690" controls>
+            <source src={currentVideo.url} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="video-info">
+            <div className="title">{currentVideo.title}</div>
+            <div className="metadata">
+              <span>Last updated: {currentVideo.lastUpdated}</span>
+              <span>Comments: {currentVideo.comments}</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Course Contents */}
-      <div className="course-contents">
-        <div className="content-header">
-          <span>Course Contents</span>
-          <span className="progress-text">Course Progress: {completed.filter(Boolean).length / videos.length * 100}%</span>
-        </div>
-        <div className="progress-bar">
-          <div className="progress" style={{ width: `${(completed.filter(Boolean).length / videos.length) * 100}%` }}></div>
-        </div>
-        <div className="lecture-list">
-          {videos.map((video, index) => (
-            <div key={video.id} className="lecture">
-              <div className="title" onClick={() => handleVideoChange(video.id)}>
-                {video.title}
-                <span className="check-icon">{completed[index] ? '✔' : ''}</span>
+        <div className="course-contents">
+          <div className="content-header">
+            <span>Course Contents</span>
+            <span className="progress-text">
+              %
+              {((completed.filter(Boolean).length / videos.length) * 100).toFixed(0)}{" "}
+              Completed
+            </span>
+          </div>
+          <div className="progress-bar">
+            <div
+              className="progress"
+              style={{
+                width: `${
+                  (completed.filter(Boolean).length / videos.length) * 100
+                }%`,
+              }}
+            ></div>
+          </div>
+          <div className="lecture-list">
+            {sections.map((section, sectionIndex) => (
+              <div key={sectionIndex} className="section-group">
+                <div
+                  className="section-header"
+                  onClick={() => toggleSection(section)}
+                >
+                  <h3>{section}</h3>
+                  <div className="section-details">
+                    <FontAwesomeIcon icon={faPlay} style={{ color: "purple" }} />
+                    <span>
+                      {videos.filter((video) => video.section === section).length}{" "}
+                      lectures
+                    </span>
+                    <FontAwesomeIcon icon={faClock} style={{ color: "orange" }} />
+                    <span>
+                      {videos
+                        .filter((video) => video.section === section)
+                        .reduce(
+                          (total, video) => total + parseFloat(video.duration),
+                          0
+                        )}{" "}
+                      min
+                    </span>
+                    {expandedSections.includes(section) ? (
+                      <FontAwesomeIcon icon={faChevronUp} />
+                    ) : (
+                      <FontAwesomeIcon icon={faChevronDown} />
+                    )}
+                  </div>
+                </div>
+                {expandedSections.includes(section) && (
+                  <div className="lecture-list">
+                    {videos
+                      .filter((video) => video.section === section)
+                      .map((video, index) => (
+                        <div
+                          key={video.id}
+                          className={`lecture ${
+                            currentVideo.id === video.id ? "active" : ""
+                          }`}
+                        >
+                          <div
+                            className="title"
+                            onClick={() => handleVideoChange(video.id)}
+                          >
+                            <input
+                              type="checkbox"
+                              checked={completed[videos.indexOf(video)]}
+                              onChange={() =>
+                                handleMarkComplete(videos.indexOf(video))
+                              }
+                              className="checkbox"
+                            />
+                            <span>{video.title}</span>
+                          </div>
+                          <div className="details">
+                            <FontAwesomeIcon
+                              icon={
+                                completed[videos.indexOf(video)] ? faCheck : faPlay
+                              }
+                              className="play-icon"
+                            />
+                            <span>{video.duration}</span>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
-              <div className="details">
-                <span className="play-icon">{currentVideo.id === video.id ? '▶' : '⏸'}</span>
-                <span className="clock-icon">{video.duration}</span>
-                <button onClick={() => handleMarkComplete(index)} className="complete-button">
-                  {completed[index] ? 'Mark Incomplete' : 'Mark Complete'}
-                </button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
