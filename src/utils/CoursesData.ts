@@ -1,5 +1,5 @@
-import { CoursesType } from "@/types/allCourses";
-export const CoursesData: CoursesType[] = [
+import { CourseType } from "@/types/allCourses";
+export const CoursesData: CourseType[] = [
   {
     id: 482193,
     title: "Machine Learning A-Z™: Hands-On Python & R In Data...",
