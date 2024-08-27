@@ -52,7 +52,9 @@
         font-size: 12px;
         font-weight: 500;
         @media screen and (max-width: 1150px) {
-          padding: 4px;
+          padding: 2px;
+          font-size: 10px;
+          letter-spacing: -0.4px;
         }
         @media screen and (max-width: 650px) {
           letter-spacing: -0.07em;
