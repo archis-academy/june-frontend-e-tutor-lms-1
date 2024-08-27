@@ -1,0 +1,62 @@
+@use "../../app/_variables.scss" as *;
+
+.RelatedCourses {
+  padding: 20px;
+  max-width: 1920px;
+  min-width: 300px;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding-block: 70px;
+  background-color: $iceBlue;
+
+  @media screen and (max-width: 1150px) {
+    gap: 20px;
+    padding-block: 40px;
+  }
+  @media screen and (max-width: 350px) {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .sectionTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    @media screen and (max-width: 1150px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 350px) {
+      font-size: 20px;
+    }
+  }
+
+  .courseCardsWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media screen and (max-width: 1440px) {
+      gap: 20px;
+    }
+    @media screen and (max-width: 990px) {
+      gap: 30px;
+      padding-inline: 30px;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 650px) {
+      gap: 16px;
+      padding-inline: 10px;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width: 530px) {
+      gap: 6px;
+      padding-inline: 0px;
+      flex-wrap: wrap;
+    }
+  }
+}
