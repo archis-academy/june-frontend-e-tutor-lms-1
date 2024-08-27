@@ -14,10 +14,10 @@ export interface Video {
 export const videos: Video[] = [
   {
       id: 1,
-      title: "Get Started with Our Platform: An Introduction",
-      url: "https://example.com/video1",
+      title: "Archi's Academy - Code your Future",
+      url: "https://www.youtube.com/watch?v=l1PlKz92fjQ",
       description: "An introductory video to help you get started with our platform. Learn about key features and how to navigate through the site.",
-      duration: "5m 12s",
+      duration: "2m ",
       section: "Getting Started",
       lectures: 1,
       completed: false,

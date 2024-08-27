@@ -1,12 +1,11 @@
-import Watchcourse from "@/Components/WatchcoursePageVideoSeciton/Watchcourse";
 import React from "react";
+import Watchcourse from "@/Components/WatchcoursePageVideoSeciton/Watchcourse";
 
-const CoursePage = ({ params }: { params: { courseID: string } }) => {
-
+const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
   return (
     <div>
-      Single Course Page {params.courseID}
-     <Watchcourse />
+      <h1>Single Course Page: {params.courseID}</h1>
+      <Watchcourse />
     </div>
   );
 };

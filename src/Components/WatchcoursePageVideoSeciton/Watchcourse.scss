@@ -14,13 +14,16 @@
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background-color: #ff6600;
-      color: white;
+      background-color: white;
+      color: rgb(0, 0, 0);
       font-size: 24px;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-right: 16px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .info {
@@ -34,7 +37,7 @@
       .details {
         display: flex;
         align-items: center;
-        margin-left: 16px;
+        gap: 16px;
 
         .icon {
           margin-right: 8px;
@@ -80,6 +83,7 @@
 
     .video-section {
       width: 1220px;
+      height: 690px;
       margin-left: 10px;
 
       video {
@@ -111,6 +115,7 @@
 
     .course-contents {
       width: 603px;
+      margin-left: 16px;
 
       align-items: center;
       margin-right: 16px;
@@ -187,7 +192,6 @@
               width: 100%;
               font-size: 16px;
               color: #333;
-          
 
               input.checkbox {
                 margin-right: 10px;
@@ -233,6 +237,7 @@
     .content-wrapper {
       flex-direction: column;
       align-items: center;
+      margin-left: 16px;
 
       .video-section,
       .course-contents {

@@ -8,11 +8,12 @@ import {
   faCheck,
   faChevronDown,
   faChevronUp,
+  faFolder,
 } from "@fortawesome/free-solid-svg-icons";
-
+import ReactPlayer from "react-player";
+import Link from "next/link";
 import { videos } from "@/utils/videoDatabse";
 import "./Watchcourse.scss";
-import { faFolder } from "@fortawesome/free-solid-svg-icons/faFolder";
 
 const Watchcourse: React.FC = () => {
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
@@ -47,7 +48,10 @@ const Watchcourse: React.FC = () => {
   return (
     <div className="watchcourse">
       <header className="watchcourse-header">
-        <button className="back-button">←</button>
+        <Link href="/course" className="back-button">
+          ←
+        </Link>
+
         <div className="info">
           <h1>{currentVideo.title}</h1>
           <div className="details">
@@ -65,10 +69,13 @@ const Watchcourse: React.FC = () => {
 
       <div className="content-wrapper">
         <div className="video-section">
-          <video width="1229" height="690" controls>
-            <source src={currentVideo.url} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <ReactPlayer
+            url={currentVideo.url}
+            controls
+            width="100%"
+            height="100%"
+            className="react-player"
+          />
           <div className="video-info">
             <div className="title">{currentVideo.title}</div>
             <div className="metadata">
