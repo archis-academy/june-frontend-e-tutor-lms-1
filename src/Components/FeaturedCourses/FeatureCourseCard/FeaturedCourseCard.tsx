@@ -1,11 +1,11 @@
 import React from "react";
-import { CourseType } from "@/types/allCourses";
 import Image from "next/image";
-import Kevin from "@/public/kevin.svg";
+import { CourseType } from "@/types/allCourses";
+import Kevin from "@/public/FeaturedCourses/kevin.svg";
 import star from "@/public/star.svg";
-import user from "@/public/user.svg";
-import barChart from "@/public/barchat.svg";
-import clock from "@/public/clock.svg";
+import user from "@/public/FeaturedCourses/user.svg";
+import barChart from "@/public/FeaturedCourses/barchat.svg";
+import clock from "@/public/FeaturedCourses/clock.svg";
 import styles from "./FeaturedCourseCard.module.scss";
 
 const FeatureCourseCard: React.FC<CourseType> = ({

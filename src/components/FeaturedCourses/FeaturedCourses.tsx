@@ -1,4 +1,3 @@
-import { CourseType } from "@/types/allCourses";
 import FeatureCourseCard from "./FeatureCourseCard/FeaturedCourseCard";
 import { CoursesData } from "@/utils/CoursesData";
 import styles from "./FeaturedCourses.module.scss";
