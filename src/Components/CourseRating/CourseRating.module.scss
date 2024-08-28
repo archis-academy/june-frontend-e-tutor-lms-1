@@ -1,37 +1,53 @@
-.course-rating {
+.courseRating {
   display: flex;
   font-family: Arial, sans-serif;
-  background-color: red($color: #ff0000);
 
-  .rating-summary {
+  .ratingBox {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
 
-    .rating-value {
-      h2 {
-        font-size: 2.5rem;
-        margin: 0;
-      }
+    h2 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
 
-      p {
-        margin: 5px 0 0;
-        font-size: 1rem;
+    .stars {
+      margin: 10px 0;
+
+      .star {
+        width: 20px;
+        height: 20px;
+        margin-right: 2px;
+        filter: brightness(0) saturate(100%) invert(35%) sepia(0%) saturate(7457%)
+          hue-rotate(156deg) brightness(91%) contrast(84%);
+
+        &.filled {
+          filter: brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(5501%)
+            hue-rotate(4deg) brightness(101%) contrast(104%);
+        }
       }
     }
 
-    .rating-stars {
-      /* Add styles for stars */
-      margin-top: 10px;
+    p {
+      margin: 0;
+      font-size: 1rem;
     }
   }
 
-  .rating-details {
-    .rating-row {
+  .ratingDetails {
+    .ratingRow {
       display: flex;
       align-items: center;
       margin-bottom: 10px;
+
+      .stars {
+        margin-right: 10px;
+      }
 
       p {
         width: 100px;
@@ -40,7 +56,7 @@
       }
 
       img {
-        height: 8px; /* Adjust height based on the actual size of your PNG */
+        height: 8px;
         margin: 0 10px;
         flex-grow: 1;
       }
