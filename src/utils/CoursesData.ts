@@ -228,7 +228,7 @@ export const CoursesData: CourseType[] = [
   },
   {
     id: 254719,
-    title: "Advanced Excel technologyniques for Data Analysis",
+    title: "Advanced Excel technologyniques for Data ",
     category: "office productivity",
     categoryColor: "#15711F",
     categoryBgColor: "#E1F7E3",
@@ -258,7 +258,7 @@ export const CoursesData: CourseType[] = [
   },
   {
     id: 923471,
-    title: "Introduction to Ethical Hacking",
+    title: "Introduction to Ethical Hacking 101",
     category: "it & software",
     categoryColor: "#342F98",
     categoryBgColor: "#EBEBFF",
@@ -273,7 +273,7 @@ export const CoursesData: CourseType[] = [
   },
   {
     id: 784215,
-    title: "Digital Photography Masterclass",
+    title: "Digital Photography Masterclass All Levels",
     category: "photography & video",
     categoryColor: "#993D20",
     categoryBgColor: "#FFEEE8",

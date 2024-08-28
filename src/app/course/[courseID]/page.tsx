@@ -1,4 +1,5 @@
 import React from "react";
+import StudentFeedback from "@/Components/SingleCourseFeedback/SingleCourseFeedback";
 import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
 
 const CoursePage = ({ params }: { params: { courseID: string } }) => {
@@ -6,7 +7,11 @@ const CoursePage = ({ params }: { params: { courseID: string } }) => {
     <>
       <div>Single Course Page {params.courseID}</div>
       <div>
-        <RelatedCourses />
+        <h1>
+          {" "}
+          <RelatedCourses />
+        </h1>
+        <StudentFeedback />
       </div>
     </>
   );
