@@ -1,24 +1,34 @@
 import React from "react";
 import styles from "./WebDevelopmentCourses.module.scss";
-import { devCourseDataType } from "@/types/devCourseData";
-import { WebDevCourseCard } from "../WebDevCourseCard/WebDevCourseCard";
+import { CoursesData } from "@/utils/CoursesData";
+import { CourseCard } from "../CourseCard/CourseCard";
 
-interface WebDevelopmentCoursesProps {
-  courses: devCourseDataType[];
-}
-
-export const WebDevelopmentCourses: React.FC<WebDevelopmentCoursesProps> = ({
-  courses,
-}) => {
+export const WebDevelopmentCourses: React.FC = () => {
   return (
     <section className={styles.webDevelopmentCourses}>
       <h1 className={styles.sectionTitle}>
         Best selling courses in Web Development
       </h1>
       <div className={styles.courseCardsWrapper}>
-        {courses.slice(0, 5).map((course) => (
-          <WebDevCourseCard key={course.id} course={course} />
-        ))}
+        {CoursesData.slice(0, 5).map((card) => {
+          return (
+            <CourseCard
+              id={card.id}
+              title={card.title}
+              category={card.category}
+              categoryColor={card.categoryColor}
+              categoryBgColor={card.categoryBgColor}
+              price={card.price}
+              thumbnail={card.thumbnail}
+              review={card.review}
+              registeredStudents={card.registeredStudents}
+              courseOwner={card.courseOwner}
+              description={card.description}
+              duration={card.duration}
+              level={card.level}
+            />
+          );
+        })}
       </div>
     </section>
   );

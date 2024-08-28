@@ -1,7 +1,6 @@
 @use "../../app/_variables.scss" as *;
 
 .webDevelopmentCourses {
-  padding: 20px;
   max-width: 1920px;
   min-width: 300px;
   width: 100%;
@@ -21,42 +20,41 @@
     max-width: 320px;
     width: 100%;
   }
-
   .sectionTitle {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
     @media screen and (max-width: 1150px) {
-      font-size: 30px;
+      font-size: 18px;
     }
     @media screen and (max-width: 350px) {
-      font-size: 20px;
+      font-size: 12px;
     }
   }
-
   .courseCardsWrapper {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 30px;
-
     @media screen and (max-width: 1440px) {
       gap: 20px;
     }
     @media screen and (max-width: 990px) {
       gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
       padding-inline: 30px;
-      flex-wrap: wrap;
     }
     @media screen and (max-width: 650px) {
       gap: 16px;
+      grid-template-columns: repeat(3, 1fr);
       padding-inline: 10px;
-      flex-wrap: wrap;
     }
     @media screen and (max-width: 530px) {
       gap: 6px;
+      grid-template-columns: repeat(2, 1fr);
       padding-inline: 0px;
-      flex-wrap: wrap;
     }
+  }
+  .courseCardsWrapper * {
+    text-decoration: none;
   }
 }
