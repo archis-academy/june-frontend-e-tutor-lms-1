@@ -1,5 +1,5 @@
 import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
-import { relatedCourses } from "../../../utils/relatedCourses";
+
 import React from "react";
 
 const CategoryPage = ({ params }: { params: { categoryID: string } }) => {
@@ -7,7 +7,7 @@ const CategoryPage = ({ params }: { params: { categoryID: string } }) => {
     <div>
       <p>Category Page</p>
       <div>
-        <RelatedCourses courses={relatedCourses} />
+        <RelatedCourses />
       </div>
     </div>
   );

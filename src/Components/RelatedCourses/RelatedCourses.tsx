@@ -1,20 +1,40 @@
 import React from "react";
 import styles from "./RelatedCourses.module.scss";
-import { relatedCoursesType } from "@/types/relatedCourses";
-import { RelatedCourseCard } from "../RelatedCoursesCard/RelatedCoursesCard";
+import { CoursesData } from "@/utils/CoursesData";
+import { CourseCard } from "../CourseCard/CourseCard";
+import ArrrowRight from "@/public/common/ArrowRight.png";
 
-interface RelatedCoursesProps {
-  courses: relatedCoursesType[];
-}
-
-export const RelatedCourses: React.FC<RelatedCoursesProps> = ({ courses }) => {
+export const RelatedCourses: React.FC = () => {
   return (
     <section className={styles.RelatedCourses}>
-      <h1 className={styles.sectionTitle}>Related Courses</h1>
+      <div className={styles.sectionHeader}>
+        <h1 className={styles.sectionTitle}>Related Courses</h1>
+        <button className={styles.viewAllButton}>
+          View All
+          <img src={ArrrowRight.src} alt="Arrow Right Icon" />
+        </button>
+      </div>
       <div className={styles.courseCardsWrapper}>
-        {courses.slice(0, 5).map((course) => (
-          <RelatedCourseCard key={course.id} course={course} />
-        ))}
+        {CoursesData.slice(0, 5).map((card) => {
+          return (
+            <CourseCard
+              key={card.id}
+              id={card.id}
+              title={card.title}
+              category={card.category}
+              categoryColor={card.categoryColor}
+              categoryBgColor={card.categoryBgColor}
+              price={card.price}
+              thumbnail={card.thumbnail}
+              review={card.review}
+              registeredStudents={card.registeredStudents}
+              courseOwner={card.courseOwner}
+              description={card.description}
+              duration={card.duration}
+              level={card.level}
+            />
+          );
+        })}
       </div>
     </section>
   );
