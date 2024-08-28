@@ -25,7 +25,7 @@ export const CourseCard: React.FC<CourseType> = ({
   };
 
   const formatRatingNumber = (rating: number) => {
-    return rating % 1 ? rating.toString() : rating.toString() + ".0";
+    return rating % 1 ? rating.toString() : rating.toString() + ".00";
   };
 
   return (
