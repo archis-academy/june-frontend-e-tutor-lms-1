@@ -81,7 +81,7 @@
   .content-wrapper {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 
     .video-section {
       width: 1220px;
@@ -280,6 +280,7 @@
       flex-direction: column;
       align-items: center;
       margin-left: 16px;
+      margin: 0 auto;
 
       .video-section,
       .course-contents {
@@ -298,8 +299,8 @@
 
       .students-avatar {
         img {
-          width: 24px;
-          height: 24px;
+          width: 30px;
+          height: 30px;
         }
       }
 
