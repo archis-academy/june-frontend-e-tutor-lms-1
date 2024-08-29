@@ -27,6 +27,7 @@
     width: 100%;
     align-items: center;
     padding-inline: 20px;
+    margin-left: 130px;
 
     @media screen and (max-width: 1150px) {
       padding-inline: 10px;
@@ -54,7 +55,7 @@
       border: none;
       color: $orange;
       cursor: pointer;
-      margin-right: 86px;
+      margin-right: 140px;
       padding: 10px 20px;
 
       img {
