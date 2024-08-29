@@ -7,10 +7,9 @@ const CoursePage = ({ params }: { params: { courseID: string } }) => {
     <>
       <div>Single Course Page {params.courseID}</div>
       <div>
-        <h1>
-          {" "}
-          <RelatedCourses />
-        </h1>
+        <RelatedCourses />
+      </div>
+      <div>
         <StudentFeedback />
       </div>
     </>
