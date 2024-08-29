@@ -38,9 +38,11 @@
         display: flex;
         align-items: center;
         gap: 16px;
-
+      
         .icon {
          gap: 16px;
+         width: 20px;
+         height: 20px;
         }
 
         .play-icon {
@@ -172,6 +174,10 @@
               font-size: 14px;
               color: #666;
             }
+             .section-details img{
+              width: 20px;
+              height: 20px;
+            }
           }
 
           .lecture {
@@ -206,15 +212,20 @@
             .details {
               display: flex;
               gap: 10px;
-
+           
               .play-icon {
                 color: purple;
                 margin-right: 8px;
                 margin-left: 8px;
+                width: 20px;
+                height: 20px;
+             
               }
 
               .clock-icon {
                 color: orange;
+                width: 20px;
+                height: 20px;
               }
 
               .complete-button {

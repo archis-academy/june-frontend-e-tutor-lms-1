@@ -48,11 +48,11 @@ const Watchcourse: React.FC = () => {
         <div className="info">
           <h1>{currentVideo.title}</h1>
           <div className="details">
-            <img src={folder} alt="Folder Icon" className="icon" />
+            <img src={folder.src} alt="Folder Icon" className="icon" />
             <span className="text">{videos.length} lectures</span>
-            <img src={lecture} alt="Lecture Icon" className="icon play-icon" />
+            <img src={lecture.src} alt="Lecture Icon" className="icon play-icon" />
             <span className="text">{currentVideo.lectures} lectures</span>
-            <img src={duration} alt="Duration Icon" className="icon clock-icon" />
+            <img src={duration.src} alt="Duration Icon" className="icon clock-icon" />
             <span className="text">{currentVideo.duration}</span>
           </div>
         </div>
@@ -74,6 +74,9 @@ const Watchcourse: React.FC = () => {
             <div className="metadata">
               <span>Last updated: {currentVideo.lastUpdated}</span>
               <span>Comments: {currentVideo.comments}</span>
+            </div>
+            <div className="students">
+              
             </div>
           </div>
         </div>
@@ -107,7 +110,7 @@ const Watchcourse: React.FC = () => {
                   <h3>{section}</h3>
                   <div className="section-details">
                     <img
-                      src={lecture}
+                      src={lecture.src}
                       alt="Lecture Icon"
                       className="icon"
                     />
@@ -116,7 +119,7 @@ const Watchcourse: React.FC = () => {
                       lectures
                     </span>
                     <img
-                      src={duration}
+                      src={duration.src}
                       alt="Duration Icon"
                       className="icon"
                     />
@@ -130,7 +133,7 @@ const Watchcourse: React.FC = () => {
                       min
                     </span>
                     <img
-                      src={expandedSections.includes(section) ? chevronUp : chevronDown}
+                      src={expandedSections.includes(section) ? chevronUp.src : chevronDown.src}
                       alt={expandedSections.includes(section) ? "Collapse Icon" : "Expand Icon"}
                       className="icon"
                     />
@@ -164,7 +167,7 @@ const Watchcourse: React.FC = () => {
                           <div className="details">
                             <img
                               src={
-                                completed[videos.indexOf(video)] ? check : lecture
+                                completed[videos.indexOf(video)] ? check.src : lecture.src
                               }
                               alt={completed[videos.indexOf(video)] ? "Completed Icon" : "Lecture Icon"}
                               className="icon play-icon"
