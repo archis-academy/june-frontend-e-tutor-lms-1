@@ -3,14 +3,18 @@ import StudentFeedback from "@/Components/SingleCourseFeedback/SingleCourseFeedb
 import WatchCourse from "@/Components/WatchCourse/WatchCourse";
 
 const CoursePage = ({ params }: { params: { courseID: string } }) => {
+  const alreadyBought = false;
   return (
-    <>
-      <div>Single Course Page {params.courseID}</div>
-      <div>
+    <div>
+      {alreadyBought ? (
+        <>
+          <h1>Single Course Page {params.courseID}</h1>
+          <StudentFeedback />
+        </>
+      ) : (
         <WatchCourse />
-        <StudentFeedback />
-      </div>
-    </>
+      )}
+    </div>
   );
 };
 
