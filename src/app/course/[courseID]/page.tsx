@@ -6,7 +6,9 @@ const CoursePage = ({ params }: { params: { courseID: string } }) => {
   return (
     <div>
       <h1>Single Course Page {params.courseID}</h1>
-      <CourseRating />
+      <div>
+        <CourseRating />
+      </div>
       <StudentFeedback />
     </div>
   );

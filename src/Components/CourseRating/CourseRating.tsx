@@ -39,6 +39,9 @@ const StarRating: React.FC<StarRatingProps> = ({ filledStars }) => {
 const CourseRating: React.FC = () => {
   return (
     <div className={styles.courseRating}>
+      <div className={styles.ratingTitle}>
+        <h3>Course Rating</h3>
+      </div>
       <div className={styles.ratingBox}>
         <h2>4.8</h2>
         <StarRating filledStars={4.5} />
