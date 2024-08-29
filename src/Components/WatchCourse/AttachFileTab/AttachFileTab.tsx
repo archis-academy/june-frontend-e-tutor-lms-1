@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./AttachFileTab.module.scss";
-import FileText from "@/public/common/FileText.png";
+import FileText from "@/public/common/FileText.svg";
 
 const AttachFileTab: React.FC = () => {
   return (
