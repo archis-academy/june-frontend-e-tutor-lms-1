@@ -38,11 +38,11 @@
         display: flex;
         align-items: center;
         gap: 16px;
-      
+
         .icon {
-         gap: 16px;
-         width: 20px;
-         height: 20px;
+          gap: 16px;
+          width: 20px;
+          height: 20px;
         }
 
         .play-icon {
@@ -103,6 +103,34 @@
         align-items: center;
         margin-left: 10px;
 
+        .students {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          font-size: 14px;
+          left: 0;
+          font-family: "Inter", sans-serif;
+
+          .students-info p {
+            margin: 0;
+            margin-left: 6px;
+
+            .view {
+              font-size: 14px;
+              font-weight: 600;
+              line-height: 20px;
+              letter-spacing: -0.01em;
+              text-align: left;
+            }
+          }
+          .students-inf {
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 16px;
+            text-align: left;
+            color: gray;
+          }
+        }
         .title {
           font-size: 18px;
           color: #333;
@@ -174,7 +202,7 @@
               font-size: 14px;
               color: #666;
             }
-             .section-details img{
+            .section-details img {
               width: 20px;
               height: 20px;
             }
@@ -212,14 +240,13 @@
             .details {
               display: flex;
               gap: 10px;
-           
+
               .play-icon {
                 color: purple;
                 margin-right: 8px;
                 margin-left: 8px;
                 width: 20px;
                 height: 20px;
-             
               }
 
               .clock-icon {
@@ -255,7 +282,7 @@
         width: 100%;
         max-width: 100%;
         margin-left: 0;
-        margin-top: 0 auto;
+        margin-top: 70px;
       }
 
       .video-section {
