@@ -3,13 +3,15 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faClock,
-  faPlay,
   faCheck,
   faChevronDown,
   faChevronUp,
-  faFolder,
 } from "@fortawesome/free-solid-svg-icons";
+
+import duration from "../../../public/Icons/Duration.svg";
+import lectures from "../../../public/IconsLecture.svg";
+import folder from "../../../public/IconsLectures.svg"
+
 import ReactPlayer from "react-player";
 import Link from "next/link";
 import { videos } from "@/utils/videoDatabse";
@@ -55,11 +57,11 @@ const Watchcourse: React.FC = () => {
         <div className="info">
           <h1>{currentVideo.title}</h1>
           <div className="details">
-            <FontAwesomeIcon icon={faFolder} className="icon folder-icon" />
+            <FontAwesomeIcon icon={folder} className="icon folder-icon" />
             <span className="text">{videos.length} lectures</span>
-            <FontAwesomeIcon icon={faPlay} className="icon play-icon" />
+            <FontAwesomeIcon icon={lectures} className="icon play-icon" />
             <span className="text">{currentVideo.lectures} lectures</span>
-            <FontAwesomeIcon icon={faClock} className="icon clock-icon" />
+            <FontAwesomeIcon icon={duration} className="icon clock-icon" />
             <span className="text">{currentVideo.duration}</span>
           </div>
         </div>
@@ -113,12 +115,12 @@ const Watchcourse: React.FC = () => {
                 >
                   <h3>{section}</h3>
                   <div className="section-details">
-                    <FontAwesomeIcon icon={faPlay} style={{ color: "purple" }} />
+                    <FontAwesomeIcon icon={lectures} style={{ color: "purple" }} />
                     <span>
                       {videos.filter((video) => video.section === section).length}{" "}
                       lectures
                     </span>
-                    <FontAwesomeIcon icon={faClock} style={{ color: "orange" }} />
+                    <FontAwesomeIcon icon={duration} style={{ color: "orange" }} />
                     <span>
                       {videos
                         .filter((video) => video.section === section)
@@ -163,7 +165,7 @@ const Watchcourse: React.FC = () => {
                           <div className="details">
                             <FontAwesomeIcon
                               icon={
-                                completed[videos.indexOf(video)] ? faCheck : faPlay
+                                completed[videos.indexOf(video)] ? faCheck : lectures
                               }
                               className="play-icon"
                             />
