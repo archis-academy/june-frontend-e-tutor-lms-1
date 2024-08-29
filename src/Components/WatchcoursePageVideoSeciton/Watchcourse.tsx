@@ -1,17 +1,11 @@
 "use client";
-
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCheck,
-  faChevronDown,
-  faChevronUp,
-} from "@fortawesome/free-solid-svg-icons";
-
+import folder from "../../../public/Icons/FolderNotchOpen.svg";
+import lecture from "../../../public/Icons/Lectures.svg";
 import duration from "../../../public/Icons/Duration.svg";
-import lectures from "../../../public/IconsLecture.svg";
-import folder from "../../../public/IconsLectures.svg"
-
+import check from "../../../public/Icons/check.svg";
+import chevronDown from "../../../public/Icons/chevrondownminor.svg";
+import chevronUp from "../../../public/Icons/chevronup.svg";
 import ReactPlayer from "react-player";
 import Link from "next/link";
 import { videos } from "@/utils/videoDatabse";
@@ -50,18 +44,15 @@ const Watchcourse: React.FC = () => {
   return (
     <div className="watchcourse">
       <header className="watchcourse-header">
-        <Link href="/course" className="back-button">
-          ←
-        </Link>
-
+        <Link href="/course" className="back-button">←</Link>
         <div className="info">
           <h1>{currentVideo.title}</h1>
           <div className="details">
-            <FontAwesomeIcon icon={folder} className="icon folder-icon" />
+            <img src={folder} alt="Folder Icon" className="icon" />
             <span className="text">{videos.length} lectures</span>
-            <FontAwesomeIcon icon={lectures} className="icon play-icon" />
+            <img src={lecture} alt="Lecture Icon" className="icon play-icon" />
             <span className="text">{currentVideo.lectures} lectures</span>
-            <FontAwesomeIcon icon={duration} className="icon clock-icon" />
+            <img src={duration} alt="Duration Icon" className="icon clock-icon" />
             <span className="text">{currentVideo.duration}</span>
           </div>
         </div>
@@ -115,12 +106,20 @@ const Watchcourse: React.FC = () => {
                 >
                   <h3>{section}</h3>
                   <div className="section-details">
-                    <FontAwesomeIcon icon={lectures} style={{ color: "purple" }} />
+                    <img
+                      src={lecture}
+                      alt="Lecture Icon"
+                      className="icon"
+                    />
                     <span>
                       {videos.filter((video) => video.section === section).length}{" "}
                       lectures
                     </span>
-                    <FontAwesomeIcon icon={duration} style={{ color: "orange" }} />
+                    <img
+                      src={duration}
+                      alt="Duration Icon"
+                      className="icon"
+                    />
                     <span>
                       {videos
                         .filter((video) => video.section === section)
@@ -130,11 +129,11 @@ const Watchcourse: React.FC = () => {
                         )}{" "}
                       min
                     </span>
-                    {expandedSections.includes(section) ? (
-                      <FontAwesomeIcon icon={faChevronUp} />
-                    ) : (
-                      <FontAwesomeIcon icon={faChevronDown} />
-                    )}
+                    <img
+                      src={expandedSections.includes(section) ? chevronUp : chevronDown}
+                      alt={expandedSections.includes(section) ? "Collapse Icon" : "Expand Icon"}
+                      className="icon"
+                    />
                   </div>
                 </div>
                 {expandedSections.includes(section) && (
@@ -163,11 +162,12 @@ const Watchcourse: React.FC = () => {
                             <span>{video.title}</span>
                           </div>
                           <div className="details">
-                            <FontAwesomeIcon
-                              icon={
-                                completed[videos.indexOf(video)] ? faCheck : lectures
+                            <img
+                              src={
+                                completed[videos.indexOf(video)] ? check : lecture
                               }
-                              className="play-icon"
+                              alt={completed[videos.indexOf(video)] ? "Completed Icon" : "Lecture Icon"}
+                              className="icon play-icon"
                             />
                             <span>{video.duration}</span>
                           </div>
