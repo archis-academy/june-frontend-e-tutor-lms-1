@@ -1,0 +1,126 @@
+.comment-section {
+  font-family: Arial, sans-serif;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .comment {
+    margin-bottom: 20px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+
+      .comment-author {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .comment-date {
+        font-size: 0.875rem;
+        color: #999;
+      }
+    }
+
+    &-text {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+      color: #007bff;
+      cursor: pointer;
+
+      svg {
+        margin-right: 5px;
+      }
+    }
+
+    .reply {
+      margin-left: 40px;
+      margin-top: 10px;
+
+      .comment-author {
+        font-size: 0.95rem;
+        color: #555;
+        font-weight: 600;
+      }
+
+      .comment-date {
+        font-size: 0.85rem;
+        color: #999;
+      }
+
+      .comment-text {
+        font-size: 0.9rem;
+        color: #666;
+        line-height: 1.4;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .comment-form {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+
+    .comment-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      margin-right: 10px;
+    }
+
+    .post-reply-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.95rem;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+
+  .load-more-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+  }
+}
