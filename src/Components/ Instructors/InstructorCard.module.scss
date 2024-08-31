@@ -6,9 +6,12 @@
   margin-bottom: 16px;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  width: 600px; /* Kartın genişliğini ayarlayabilirsiniz */
 }
 
 .image {
+  border-radius: 50%;
   margin-right: 16px;
 }
 
@@ -21,6 +24,7 @@
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 4px;
+  color: #333;
 }
 
 .title {
@@ -37,8 +41,15 @@
   color: #888;
 }
 
+.stats div {
+  display: flex;
+  align-items: center;
+}
+
 .stats img {
   margin-right: 4px;
+  width: 14px;
+  height: 14px;
 }
 
 .description {
