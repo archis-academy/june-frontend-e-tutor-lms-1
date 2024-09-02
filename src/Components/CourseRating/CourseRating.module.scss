@@ -2,15 +2,23 @@
 
 .courseRating {
   display: flex;
-  font-family: Arial, sans-serif;
+  flex-direction: column; // Başlık üstte, kutu ve detaylar altta hizalanacak.
+  align-items: start; // İçeriklerin ortalanması için.
 
   .ratingTitle {
-    font-size: "Inter", sans-serif;
-    font-weight: 600px;
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
     font-size: 24px;
     line-height: 32px;
-    max-width: 100%;
+    margin-bottom: 20px; // Başlık ile kutu arasında boşluk bırakır.
+    text-align: center;
+  }
+
+  .ratingContent {
+    // Yeni bir sarmalayıcı oluşturuyoruz.
     display: flex;
+    flex-direction: row; // Kutu ve detayları yan yana hizalar.
+    align-items: flex-start; // Başlık ile aynı hizaya getirir.
   }
 
   .ratingBox {
@@ -21,6 +29,7 @@
     padding: 10px;
     border: 1px solid #ddd;
     background-color: #f9f9f9;
+    padding: 20px;
 
     h2 {
       font-size: 2.5rem;
