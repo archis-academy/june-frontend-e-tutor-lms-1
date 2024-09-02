@@ -16,26 +16,28 @@ const InstructorCard: React.FC<Instructor> = ({
   description,
 }) => {
   return (
-    <div className={styles.card}>
-      <img src={image} alt={name} className={styles.image} />
-      <div className={styles.content}>
-        <div className={styles.name}>{name}</div>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.stats}>
-          <div>
-            <img src={star.src} alt="rating" />
-            {rating} Course rating
+    <div className={styles.cardContainer}>
+      <div className={styles.card}>
+        <img src={image} alt={name} className={styles.image} />
+        <div className={styles.content}>
+          <div className={styles.name}>{name}</div>
+          <div className={styles.title}>{title}</div>
+          <div className={styles.stats}>
+            <div>
+              <img src={star.src} alt="rating" />
+              {rating} Course rating
+            </div>
+            <div>
+              <img src={users.src} alt="students" />
+              {formatNumber(students)} Students
+            </div>
+            <div>
+              <img src={playCircle.src} alt="courses" />
+              {formatCourseCount(courses)} Courses
+            </div>
           </div>
-          <div>
-            <img src={users.src} alt="students" />
-            {formatNumber(students)} Students
-          </div>
-          <div>
-            <img src={playCircle.src} alt="courses" />
-            {formatCourseCount(courses)} Courses
-          </div>
+          <div className={styles.description}>{description}</div>
         </div>
-        <div className={styles.description}>{description}</div>
       </div>
     </div>
   );

@@ -30,7 +30,9 @@ const InstructorList: React.FC = () => {
 
   return (
     <div>
-      {instructors.map((instructor, index) => (
+      <h2 className="heading">Course instructor (02)</h2>
+      <InstructorCard {...instructors[0]} />
+      {instructors.slice(1).map((instructor, index) => (
         <InstructorCard key={index} {...instructor} />
       ))}
     </div>
