@@ -1,68 +1,3 @@
-// .description-component {
-//   max-width: 872px;
-//   display: flex;
-//   flex-direction: column;
-//   // gap: 40px;
-//   margin: 0 auto;
-//   .description-component-description {
-//     max-width: 872px;
-//     display: flex;
-//     flex-direction: column;
-//     // gap: 20px;
-//     .description-component-description-heading {
-//       font-family: Inter;
-//       font-size: 24px;
-//       font-weight: 600;
-//       line-height: 32px;
-//       letter-spacing: -0.01em;
-//       text-align: left;
-//     }
-//     .description-component-description-paragraph {
-//       font-family: Inter;
-//       font-size: 14px;
-//       font-weight: 400;
-//       line-height: 22px;
-//       letter-spacing: -0.01em;
-//       text-align: left;
-//     }
-//   }
-//   .description-component-course-content {
-//     max-width: 872px;
-//     display: flex;
-//     flex-direction: column;
-//     background-color: #e1f7e366;
-//     // gap: 24px;
-//     .description-component-course-content-heading {
-//       font-family: Inter;
-//       font-size: 24px;
-//       font-weight: 600;
-//       line-height: 32px;
-//       letter-spacing: -0.01em;
-//       text-align: left;
-//     }
-//     .description-component-course-content-paragraph {
-//       display: grid;
-//       grid-template-columns: 1fr 1fr;
-//       gap: 20px;
-//       padding: 40px;
-//       p {
-//         display: flex;
-//       }
-//     }
-//   }
-//   .description-component-whom-course {
-//     max-width: 872px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 40px;
-//   }
-//   .description-component-course-requirements {
-//     max-width: 872px;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 40px;
-//   }
-// }
 .description-component {
   margin: 0 auto;
   display: flex;
@@ -86,7 +21,7 @@
       letter-spacing: -0.01em;
       text-align: left;
       margin-bottom: 40px;
-      color: #4E5566;
+      color: #4e5566;
     }
   }
   .description-component-course-content {
@@ -104,71 +39,67 @@
       margin: 10px;
     }
     .description-component-course-content-paragraph {
-        display: grid;
-        // grid-template-columns: repeat(auto-fill, minmax(300,1fr));
-        grid-template-columns: repeat(2, 1fr);
-      p{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      p {
         display: flex;
+        font-family: Inter;
+        font-size: clamp(10px, 4vw, 14px);
+        font-weight: 400;
+        line-height: clamp(18px, 4vw, 22px);
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: #4e5566;
+      }
+    }
+  }
+  .description-component-whom-course {
+    display: flex;
+    flex-direction: column;
+    .description-component-whom-course-heading {
+      font-family: Inter;
+      font-size: clamp(14px, 4vw, 24px);
+      font-weight: 600;
+      line-height: clamp(22px, 4vw, 32px);
+      letter-spacing: -0.01em;
+    }
+    p {
+      display: flex;
+      gap: 10px;
       font-family: Inter;
       font-size: clamp(10px, 4vw, 14px);
       font-weight: 400;
       line-height: clamp(18px, 4vw, 22px);
       letter-spacing: -0.01em;
       text-align: left;
-      color: #4E5566;
-    }
-    }
-  }
-  .description-component-whom-course{
-    display: flex;
-    flex-direction: column;
-    .description-component-whom-course-heading{
-font-family: Inter;
-font-size: clamp(14px, 4vw, 24px);
-font-weight: 600;
-line-height:clamp(22px, 4vw, 32px);
-letter-spacing: -0.01em;
-
-    }
-    p{
-        display: flex;
-        gap: 10px;
-font-family: Inter;
-font-size: clamp(10px, 4vw, 14px);
-font-weight: 400;
-line-height: clamp(18px, 4vw, 22px);
-letter-spacing: -0.01em;
-text-align: left;
-color: #4E5566;
-
+      color: #4e5566;
     }
   }
-  .description-component-course-requirements{
+  .description-component-course-requirements {
     display: flex;
     flex-direction: column;
-    h4{
-font-family: Inter;
-font-size: clamp(14px, 4vw, 24px);
-font-weight: 600;
-line-height: clamp(22px,4vw, 32px);
-letter-spacing: -0.01em;
-padding: 20px 0;
-margin: 0;
-
+    h4 {
+      font-family: Inter;
+      font-size: clamp(14px, 4vw, 24px);
+      font-weight: 600;
+      line-height: clamp(22px, 4vw, 32px);
+      letter-spacing: -0.01em;
+      padding: 20px 0;
+      margin: 0;
     }
-    ul{
-        padding: 0 0 0 20px;
-        margin: 0;
-li{
-font-family: Inter;
-font-size: 14px;
-font-weight: 400;
-line-height: 22px;
-letter-spacing: -0.01em;
-text-align: left;
-color: #4E5566;
-padding: 12px 0;
-}
+    ul {
+      padding: 0 0 0 20px;
+      margin: 0;
+      li {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 22px;
+        letter-spacing: -0.01em;
+        text-align: left;
+        color: #4e5566;
+        padding: 12px 0;
+      }
     }
   }
 }
