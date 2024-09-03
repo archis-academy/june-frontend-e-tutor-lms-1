@@ -8,7 +8,6 @@ import { CoursesData } from "@/utils/CoursesData";
 
 interface CourseDetailProps {
   id: number;
-
   description: string;
 }
 
