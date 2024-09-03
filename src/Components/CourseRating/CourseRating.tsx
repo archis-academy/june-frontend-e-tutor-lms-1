@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./CourseRating.module.scss";
-import star from "@/public/common/emptyStar.svg";
+import emptyStar from "@/public/common/emptyStar.svg";
+import filledStar from "@/public/common/filledStar.svg";
+import halfStar from "@/public/common/halfStar.svg";
 import bar5 from "@/public/common/bar-5.png";
 import bar4 from "@/public/common/bar-4.png";
 import bar3 from "@/public/common/bar-3.png";
@@ -15,22 +17,37 @@ const StarRating: React.FC<StarRatingProps> = ({ filledStars }) => {
   const stars = [];
 
   for (let i = 0; i < 5; i++) {
-    stars.push(
-      <img
-        key={i}
-        src={star.src}
-        alt="star"
-        className={`${styles.star} ${i < filledStars ? styles.filled : ""}`}
-        style={
-          i < filledStars - 0.5
-            ? {
-                filter:
-                  "brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(5501%) hue-rotate(4deg) brightness(101%) contrast(104%)",
-              }
-            : {}
-        }
-      />
-    );
+    if (i < filledStars - 0.5) {
+      stars.push(
+        <img
+          key={i}
+          src={filledStar.src}
+          alt="filled star"
+          className={styles.star}
+          style={{
+            filter:
+              "brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(5501%) hue-rotate(4deg) brightness(101%) contrast(104%)",
+          }}
+        />
+      );
+    } else if (i < filledStars) {
+      stars.push(
+        <img
+          key={i}
+          src={halfStar.src}
+          alt="half star"
+          className={styles.star}
+          style={{
+            filter:
+              "brightness(0) saturate(100%) invert(70%) sepia(49%) saturate(5501%) hue-rotate(4deg) brightness(101%) contrast(104%)",
+          }}
+        />
+      );
+    } else {
+      stars.push(
+        <img key={i} src={emptyStar.src} alt="empty star" className={styles.star} />
+      );
+    }
   }
 
   return <div className={styles.stars}>{stars}</div>;
