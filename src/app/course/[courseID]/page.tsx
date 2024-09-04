@@ -12,13 +12,13 @@ const CoursePage = ({ params }: { params: { courseID: string } }) => {
         {alreadyBought ? (
           <>
             <StudentFeedback />
+            <div>
+              <RelatedCourses />
+            </div>
           </>
         ) : (
           <WatchCourse />
         )}
-      </div>
-      <div>
-        <RelatedCourses />
       </div>
     </>
   );
