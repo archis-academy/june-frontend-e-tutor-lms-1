@@ -1,5 +1,4 @@
 import React from "react";
-import Watchcourse from "@/Components/WatchcoursePageVideoSeciton/Watchcourse";
 import StudentFeedback from "@/Components/SingleCourseFeedback/SingleCourseFeedback";
 import CourseRating from "@/Components/CourseRating/CourseRating";
 
@@ -7,7 +6,7 @@ import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
 import WatchCourse from "@/Components/WatchCourse/WatchCourse";
 
 const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
-  const alreadyBought = false;
+  const alreadyBought = true;
   return (
     <>
       <div>Single Course Page {params.courseID}</div>
