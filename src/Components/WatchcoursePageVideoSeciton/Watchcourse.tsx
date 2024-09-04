@@ -6,11 +6,13 @@ import duration from "../../../public/Icons/Duration.svg";
 import check from "../../../public/Icons/check.svg";
 import chevronDown from "../../../public/Icons/chevrondownminor.svg";
 import chevronUp from "../../../public/Icons/chevronup.svg";
-import  avatar1 from "../../../public/Avatars/alex.svg";
-import  avatar2 from "../../../public/Avatars/man.svg";
-import  avatar3 from "../../../public/Avatars/manAvatar.svg";
-import  avatar4 from "../../../public/Avatars/woman.svg";
-import  avatar5 from "../../../public/Avatars/womanAvatar.svg";
+import BackBtn from "../../../public/Icons/Button.svg";
+
+import avatar1 from "../../../public/Avatars/alex.svg";
+import avatar2 from "../../../public/Avatars/man.svg";
+import avatar3 from "../../../public/Avatars/manAvatar.svg";
+import avatar4 from "../../../public/Avatars/woman.svg";
+import avatar5 from "../../../public/Avatars/womanAvatar.svg";
 
 import ReactPlayer from "react-player";
 import Link from "next/link";
@@ -50,7 +52,9 @@ const Watchcourse: React.FC = () => {
   return (
     <div className="watchcourse">
       <header className="watchcourse-header">
-        <Link href="/course" className="back-button">←</Link>
+        <Link href="/course" className="back-button">
+          <img src={BackBtn.src} alt="back" />
+        </Link>
         <div className="info">
           <h1>{currentVideo.title}</h1>
           <div className="details">
@@ -58,7 +62,11 @@ const Watchcourse: React.FC = () => {
             <span className="text">{videos.length} Sections </span>
             <img src={lecture.src} alt="Lecture Icon" className="icon play-icon" />
             <span className="text">{currentVideo.lectures} lectures</span>
-            <img src={duration.src} alt="Duration Icon" className="icon clock-icon" />
+            <img
+              src={duration.src}
+              alt="Duration Icon"
+              className="icon clock-icon"
+            />
             <span className="text">{currentVideo.duration}</span>
           </div>
         </div>
@@ -76,27 +84,24 @@ const Watchcourse: React.FC = () => {
             className="react-player"
           />
           <div className="video-info">
-          <div className="students">
-            <div className="students-avatar">
-
-            <img src={avatar1.src}></img>
-             <img src={avatar2.src}></img>
-             <img src={avatar3.src}></img>
-             <img src={avatar4.src}></img>
-             <img src={avatar5.src}></img>
-
-            </div>
-             <div className="students-info">
-              <p className="view"> 512 </p>
-              <p className="students-inf">Students watching</p>
-            </div>
+            <div className="students">
+              <div className="students-avatar">
+                <img src={avatar1.src}></img>
+                <img src={avatar2.src}></img>
+                <img src={avatar3.src}></img>
+                <img src={avatar4.src}></img>
+                <img src={avatar5.src}></img>
+              </div>
+              <div className="students-info">
+                <p className="view"> 512 </p>
+                <p className="students-inf">Students watching</p>
+              </div>
             </div>
             <div className="title">{currentVideo.title}</div>
             <div className="metadata">
               <span>Last updated: {currentVideo.lastUpdated}</span>
               <span>Comments: {currentVideo.comments}</span>
             </div>
-       
           </div>
         </div>
 
@@ -128,20 +133,12 @@ const Watchcourse: React.FC = () => {
                 >
                   <h3>{section}</h3>
                   <div className="section-details">
-                    <img
-                      src={lecture.src}
-                      alt="Lecture Icon"
-                      className="icon"
-                    />
+                    <img src={lecture.src} alt="Lecture Icon" className="icon" />
                     <span>
                       {videos.filter((video) => video.section === section).length}{" "}
                       lectures
                     </span>
-                    <img
-                      src={duration.src}
-                      alt="Duration Icon"
-                      className="icon"
-                    />
+                    <img src={duration.src} alt="Duration Icon" className="icon" />
                     <span>
                       {videos
                         .filter((video) => video.section === section)
@@ -152,8 +149,16 @@ const Watchcourse: React.FC = () => {
                       min
                     </span>
                     <img
-                      src={expandedSections.includes(section) ? chevronUp.src : chevronDown.src}
-                      alt={expandedSections.includes(section) ? "Collapse Icon" : "Expand Icon"}
+                      src={
+                        expandedSections.includes(section)
+                          ? chevronUp.src
+                          : chevronDown.src
+                      }
+                      alt={
+                        expandedSections.includes(section)
+                          ? "Collapse Icon"
+                          : "Expand Icon"
+                      }
                       className="icon"
                     />
                   </div>
@@ -186,9 +191,15 @@ const Watchcourse: React.FC = () => {
                           <div className="details">
                             <img
                               src={
-                                completed[videos.indexOf(video)] ? check.src : lecture.src
+                                completed[videos.indexOf(video)]
+                                  ? check.src
+                                  : lecture.src
                               }
-                              alt={completed[videos.indexOf(video)] ? "Completed Icon" : "Lecture Icon"}
+                              alt={
+                                completed[videos.indexOf(video)]
+                                  ? "Completed Icon"
+                                  : "Lecture Icon"
+                              }
                               className="icon play-icon"
                             />
                             <span>{video.duration}</span>
