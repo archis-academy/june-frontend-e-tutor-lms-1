@@ -12,6 +12,63 @@
     line-height: 1.6;
     margin-bottom: 15px;
     color: $secondary-color;
+    position: relative;
+  }
+
+  .comment__replyOption {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+
+    .comment__replyIcon {
+      margin-right: 5px;
+    }
+
+    .comment__replyText {
+      font-size: 12px;
+      color: $secondary-color;
+      cursor: pointer;
+    }
+  }
+
+  &__replyBox {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+
+    &__input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      font-size: 14px;
+      color: $secondary-color;
+      margin-right: 10px;
+    }
+
+    &__button {
+      background-color: #f97316;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  }
+
+  &__loadMore {
+    display: flex;
+    align-items: center;
+    background-color: #ffeee8;
+    padding: 10px;
+    margin-top: 15px;
+    justify-content: center;
+  }
+
+  &__spinner {
+    margin-left: 10px;
   }
 }
 
@@ -35,55 +92,63 @@
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
+  }
 
-    &__username {
-      font-weight: bold;
-      color: $third-color; // Kullanıcı adı için üçüncül renk
-    }
+  &__username {
+    font-weight: bold;
+    color: $third-color; // User name color
+  }
 
-    &__role {
-      background-color: #564ffd;
-      color: white;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      margin-left: 0.5rem;
-    }
+  &__point {
+    margin-left: 8px;
+  }
 
-    &__point {
-      margin-left: 0.5rem;
-    }
-
-    &__time {
-      margin-left: auto;
-      font-size: 0.875rem;
-      color: #6e7485; // Zaman etiketi için gri ton
-    }
+  &__time {
+    margin-left: 8px;
+    font-size: 0.875rem;
+    color: #6e7485; // Time ago color
   }
 
   &__text {
     font-size: 1rem;
     margin-bottom: 0.75rem;
-    color: $secondary-color; // Yorum metni için ikincil renk
+    color: $secondary-color; // Comment text color
   }
 
   &__replies {
     margin-left: 2rem;
 
-    .comment__reply {
+    .comment__replyItem {
       display: flex;
       align-items: flex-start;
       margin-bottom: 1rem;
 
-      &-icon {
+      &Icon {
         margin-right: 0.5rem;
       }
     }
   }
 
-  &__line {
-    margin-top: 1.5rem;
-    width: 100%;
-    height: 1px;
-    background-color: #e0e0e0;
+  &__replyBox {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+    &__input {
+      padding: 10px;
+      border: 1px solid #e0e0e0;
+      border-radius: 5px;
+      margin-right: 10px;
+      flex: 1;
+    }
+
+    &__button {
+      background-color: #f97316;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 }

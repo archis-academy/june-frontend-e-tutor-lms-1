@@ -4,7 +4,7 @@ import { CommentProps } from "@/types/commentTab";
 import { comments } from "@/utils/commentData";
 import point from "@/public/CommentAvatar/point.svg";
 import chatsCircle from "@/public/CommentAvatar/ChatsCircle.svg";
-import line from "@/public/CommentAvatar/line.svg";
+import spinner from "@/public/CommentAvatar/spinner.svg";
 
 const Comment: React.FC<CommentProps> = ({
   username,
@@ -24,24 +24,40 @@ const Comment: React.FC<CommentProps> = ({
       <div className={styles.comment__content}>
         <div className={styles.comment__header}>
           <span className={styles.comment__username}>{username}</span>
-          {role && (
-            <span className={styles.comment__role} style={{ color: "#564FFD" }}>
-              ADMIN
-            </span>
+          {username === "Ronald Richards" && (
+            <>
+              <img src={point.src} alt="point" className={styles.comment__point} />
+              <span className={styles.comment__time}>{timeAgo}</span>
+            </>
           )}
-          {role && (
-            <img src={point.src} alt="point" className={styles.comment__point} />
-          )}
-          <span className={styles.comment__time} style={{ color: "#6E7485" }}>
-            {timeAgo}
-          </span>
         </div>
-        <p className={styles.comment__text}>{content}</p>
+        <p className={styles.comment__text}>
+          {content}
+          <div className={styles.comment__replyOption}>
+            <img
+              src={chatsCircle.src}
+              alt="reply"
+              className={styles.comment__replyIcon}
+            />
+            <span className={styles.comment__replyText}>Reply</span>
+          </div>
+        </p>
+
+        {username === "Theresa Webb" && (
+          <div className={styles.comment__replyBox}>
+            <input
+              type="text"
+              placeholder="Write your reply"
+              className={styles.comment__input}
+            />
+            <button className={styles.comment__button}>Post Reply</button>
+          </div>
+        )}
 
         {replies && replies.length > 0 && (
           <div className={styles.comment__replies}>
             {replies.map((reply) => (
-              <div key={reply.id} className={styles.comment__reply}>
+              <div key={reply.id} className={styles.comment__replyItem}>
                 <img
                   src={chatsCircle.src}
                   alt="reply"
@@ -53,8 +69,6 @@ const Comment: React.FC<CommentProps> = ({
           </div>
         )}
       </div>
-
-      <img src={line.src} alt="separator" className={styles.comment__line} />
     </div>
   );
 };
@@ -64,31 +78,30 @@ const CommentsTab: React.FC = () => {
     <div className={styles.commentsTab}>
       <h2>Comments({comments.length})</h2>
 
-      {comments.map((comment, index) => (
+      {comments.map((comment) => (
         <div key={comment.id}>
-          {comment.username === "Ronald Richards" && (
-            <div>
-              <Comment {...comment} />
-
-              {comments
-                .filter(
-                  (subComment) =>
-                    subComment.username &&
-                    ["Kristin Watson", "Cody Fisher"].includes(subComment.username)
-                )
-                .map((subComment) => (
-                  <div key={subComment.id}>
-                    <Comment {...subComment} />
-                  </div>
-                ))}
-            </div>
-          )}
-          {/* Diğer yorumlar */}
-          {!["Ronald Richards", "Kristin Watson", "Cody Fisher"].includes(
-            comment.username || ""
-          ) && <Comment {...comment} />}
+          <Comment {...comment} />
         </div>
       ))}
+
+      {/* Write your reply box and Post reply button */}
+      <div className={styles.commentsTab__replyBox}>
+        <input
+          type="text"
+          placeholder="Write your reply"
+          className={styles.commentsTab__input}
+        />
+        <button className={styles.commentsTab__button}>Post Reply</button>
+      </div>
+
+      <div className={styles.commentsTab__loadMore}>
+        <span>Load More</span>
+        <img
+          src={spinner.src}
+          alt="Loading"
+          className={styles.commentsTab__spinner}
+        />
+      </div>
     </div>
   );
 };
