@@ -136,16 +136,6 @@
 
   &__replies {
     margin-left: 2rem;
-
-    .comment__replyItem {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-
-      &Icon {
-        margin-right: 0.5rem;
-      }
-    }
   }
 
   &__chatsIcon {

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import styles from "./CommentsTab.module.scss";
 import { CommentProps } from "@/types/commentTab";
@@ -5,7 +6,6 @@ import { comments } from "@/utils/commentData";
 import point from "@/public/CommentAvatar/point.svg";
 import chatsCircle from "@/public/CommentAvatar/ChatsCircle.svg";
 import line from "@/public/CommentAvatar/line.svg";
-import theresaAvatar from "@/public/CommentAvatar/theresa_avatar.svg"; // Theresa için avatar
 
 const Comment: React.FC<CommentProps> = ({
   username,
@@ -45,11 +45,6 @@ const Comment: React.FC<CommentProps> = ({
           <div className={styles.comment__replies}>
             {replies.map((reply) => (
               <div key={reply.id} className={styles.comment__replyItem}>
-                <img
-                  src={chatsCircle.src}
-                  alt="reply"
-                  className={styles.comment__replyIcon}
-                />
                 <Comment {...reply} />
               </div>
             ))}
@@ -59,18 +54,16 @@ const Comment: React.FC<CommentProps> = ({
         {/* Theresa Webb'e özel "Write your reply" kutusu */}
         {username === "Theresa Webb" && (
           <div className={styles.comment__replyBox}>
-            <img
-              src={theresaAvatar.src}
-              alt="Theresa Avatar"
-              className={styles.comment__avatarSmall}
-            />
-            <img src={chatsCircle.src} className={styles.comment__chatsIcon} />
-            <input
-              type="text"
-              placeholder="Write your reply"
-              className={styles.comment__input}
-            />
             <img src={line.src} className={styles.comment__line} />
+            <div className={styles.comment__replyBox}>
+              <img src={chatsCircle.src} className={styles.comment__chatsIcon} />
+              <input
+                type="text"
+                placeholder="Write your reply"
+                className={styles.comment__input}
+              />
+            </div>
+
             <button className={styles.comment__button}>Post Reply</button>
           </div>
         )}
@@ -82,7 +75,7 @@ const Comment: React.FC<CommentProps> = ({
 const CommentsTab: React.FC = () => {
   return (
     <div className={styles.commentsTab}>
-      <h2>Comments({comments.length})</h2>
+      <h2>Comments({comments.length} )</h2>
 
       {comments.map((comment) => (
         <div key={comment.id}>
