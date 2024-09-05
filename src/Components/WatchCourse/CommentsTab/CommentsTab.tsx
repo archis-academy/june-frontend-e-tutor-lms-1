@@ -4,7 +4,8 @@ import { CommentProps } from "@/types/commentTab";
 import { comments } from "@/utils/commentData";
 import point from "@/public/CommentAvatar/point.svg";
 import chatsCircle from "@/public/CommentAvatar/ChatsCircle.svg";
-import spinner from "@/public/CommentAvatar/spinner.svg";
+import line from "@/public/CommentAvatar/line.svg";
+import theresaAvatar from "@/public/CommentAvatar/theresa_avatar.svg"; // Theresa için avatar
 
 const Comment: React.FC<CommentProps> = ({
   username,
@@ -24,12 +25,9 @@ const Comment: React.FC<CommentProps> = ({
       <div className={styles.comment__content}>
         <div className={styles.comment__header}>
           <span className={styles.comment__username}>{username}</span>
-          {username === "Ronald Richards" && (
-            <>
-              <img src={point.src} alt="point" className={styles.comment__point} />
-              <span className={styles.comment__time}>{timeAgo}</span>
-            </>
-          )}
+          {role === "ADMIN" && <span className={styles.comment__role}>ADMIN</span>}
+          <img src={point.src} alt="point" className={styles.comment__point} />
+          <span className={styles.comment__time}>{timeAgo}</span>
         </div>
         <p className={styles.comment__text}>
           {content}
@@ -43,17 +41,6 @@ const Comment: React.FC<CommentProps> = ({
           </div>
         </p>
 
-        {username === "Theresa Webb" && (
-          <div className={styles.comment__replyBox}>
-            <input
-              type="text"
-              placeholder="Write your reply"
-              className={styles.comment__input}
-            />
-            <button className={styles.comment__button}>Post Reply</button>
-          </div>
-        )}
-
         {replies && replies.length > 0 && (
           <div className={styles.comment__replies}>
             {replies.map((reply) => (
@@ -66,6 +53,25 @@ const Comment: React.FC<CommentProps> = ({
                 <Comment {...reply} />
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Theresa Webb'e özel "Write your reply" kutusu */}
+        {username === "Theresa Webb" && (
+          <div className={styles.comment__replyBox}>
+            <img
+              src={theresaAvatar.src}
+              alt="Theresa Avatar"
+              className={styles.comment__avatarSmall}
+            />
+            <img src={chatsCircle.src} className={styles.comment__chatsIcon} />
+            <input
+              type="text"
+              placeholder="Write your reply"
+              className={styles.comment__input}
+            />
+            <img src={line.src} className={styles.comment__line} />
+            <button className={styles.comment__button}>Post Reply</button>
           </div>
         )}
       </div>
@@ -83,25 +89,6 @@ const CommentsTab: React.FC = () => {
           <Comment {...comment} />
         </div>
       ))}
-
-      {/* Write your reply box and Post reply button */}
-      <div className={styles.commentsTab__replyBox}>
-        <input
-          type="text"
-          placeholder="Write your reply"
-          className={styles.commentsTab__input}
-        />
-        <button className={styles.commentsTab__button}>Post Reply</button>
-      </div>
-
-      <div className={styles.commentsTab__loadMore}>
-        <span>Load More</span>
-        <img
-          src={spinner.src}
-          alt="Loading"
-          className={styles.commentsTab__spinner}
-        />
-      </div>
     </div>
   );
 };
