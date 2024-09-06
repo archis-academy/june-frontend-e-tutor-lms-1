@@ -29,7 +29,7 @@ export const CourseCard: React.FC<CourseType> = ({
   };
 
   return (
-    <Link href="#" target="_blank" className={styles.courseCard}>
+    <div className={styles.courseCard}>
       <div className={styles.thumbnailWrapper}>
         <Image
           src={thumbnail}
@@ -68,6 +68,6 @@ export const CourseCard: React.FC<CourseType> = ({
           </span>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
