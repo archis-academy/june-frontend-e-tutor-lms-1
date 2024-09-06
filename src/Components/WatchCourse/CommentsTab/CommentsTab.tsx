@@ -29,7 +29,7 @@ const Comment: React.FC<CommentProps> = ({
           <img src={point.src} alt="point" className={styles.comment__point} />
           <span className={styles.comment__time}>{timeAgo}</span>
         </div>
-        <p className={styles.comment__text}>
+        <div className={styles.comment__text}>
           {content}
           <div className={styles.comment__replyOption}>
             <img
@@ -39,7 +39,7 @@ const Comment: React.FC<CommentProps> = ({
             />
             <span className={styles.comment__replyText}>Reply</span>
           </div>
-        </p>
+        </div>
 
         {replies && replies.length > 0 && (
           <div className={styles.comment__replies}>
@@ -51,11 +51,10 @@ const Comment: React.FC<CommentProps> = ({
           </div>
         )}
 
-        {/* Theresa Webb'e özel "Write your reply" kutusu */}
         {username === "Theresa Webb" && (
           <div className={styles.comment__replyBox}>
             <img src={line.src} className={styles.comment__line} />
-            <div className={styles.comment__replyBox}>
+            <div className={styles.comment__replyInputWrapper}>
               <img src={chatsCircle.src} className={styles.comment__chatsIcon} />
               <input
                 type="text"
@@ -63,7 +62,6 @@ const Comment: React.FC<CommentProps> = ({
                 className={styles.comment__input}
               />
             </div>
-
             <button className={styles.comment__button}>Post Reply</button>
           </div>
         )}
@@ -75,8 +73,7 @@ const Comment: React.FC<CommentProps> = ({
 const CommentsTab: React.FC = () => {
   return (
     <div className={styles.commentsTab}>
-      <h2>Comments({comments.length} )</h2>
-
+      <h2>Comments({comments.length})</h2>
       {comments.map((comment) => (
         <div key={comment.id}>
           <Comment {...comment} />
