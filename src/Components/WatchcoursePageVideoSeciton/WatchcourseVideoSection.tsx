@@ -17,9 +17,9 @@ import avatar5 from "../../../public/Avatars/womanAvatar.svg";
 import ReactPlayer from "react-player";
 import Link from "next/link";
 import { videos } from "@/utils/videoDatabse";
-import "./Watchcourse.scss";
+import "./WatchcourseVideoSection.scss";
 
-const Watchcourse: React.FC = () => {
+const WatchcourseVideoSection: React.FC = () => {
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
   const [completed, setCompleted] = useState<boolean[]>(
     new Array(videos.length).fill(false)
@@ -217,4 +217,4 @@ const Watchcourse: React.FC = () => {
   );
 };
 
-export default Watchcourse;
+export default WatchcourseVideoSection;
