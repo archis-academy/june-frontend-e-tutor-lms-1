@@ -2,8 +2,8 @@ import { HomePageCategories } from "@/components/HomePageCategories/HomePageCate
 import { BestSellingCourses } from "@/components/BestSellingCourses/BestSellingCourses";
 import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
 import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
-import  FeatureCourse  from "@/components/FeaturedCourses/FeaturedCourses";
-import Footer from "@/components/Footer/Footer";
+import FeatureCourse from "@/components/FeaturedCourses/FeaturedCourses";
+import { FooterTop } from "@/components/Footer/FooterTop/FooterTop";
 
 
 export default function Home() {
@@ -12,10 +12,10 @@ export default function Home() {
     <main>
       <HomePageCategories />
       <BestSellingCourses />
-      <FeatureCourse/>
+      <FeatureCourse />
       <PopularInstructors />
       <HomePageCompanies />
-      <Footer />
+      <FooterTop />
     </main>
   );
 }

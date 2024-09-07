@@ -1,0 +1,32 @@
+.popularKeywords {
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.sectionTitle {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.keywordsWrapper {
+  display: inline-block;
+}
+
+.keyword {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 5px;
+  background: #f7f7f7;
+  border-radius: 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.keyword:hover {
+  background: #f2672a;
+  color: #fff;
+}
