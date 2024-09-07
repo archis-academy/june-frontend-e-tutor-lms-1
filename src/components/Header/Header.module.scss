@@ -153,43 +153,18 @@
       align-items: center;
 
       .headerIcons {
-        position: relative;
-        .notifications {
-          padding: 2px;
-          border-radius: 50%;
-          border: 1px solid #4e5566;
-          img {
-            cursor: pointer;
-          }
-        }
-
-        .dropdownIcons {
-          // display: flex;
-          // gap: 20px;
-          // padding: 0 20px;
-
-          // img {
-          //   cursor: pointer;
-          // }
-          display: none;
-        }
-        .dropdownMenu {
-          position: absolute;
-
-          left: 0;
-          background: white;
-          border: 1px solid #e9eaf0;
-
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        gap: 10px;
+        padding: 0 20px;
+        align-items: center;
+        .dropdown {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           gap: 10px;
+        }
 
-          a {
-            img {
-              cursor: pointer;
-            }
-          }
+        img {
+          cursor: pointer;
         }
       }
 
@@ -411,16 +386,35 @@
           }
         }
       }
+
       .headerBottomRight {
         flex-direction: row-reverse;
         gap: 5px;
-        .headerIcons {
-          .notifications {
-            display: block;
+
+        .notificationIcon {
+          display: block;
+        }
+
+        .dropdown {
+          display: none;
+
+          &.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
           }
 
-          .dropdownIcons {
-            display: none;
+          .heartIcon,
+          .cartIcon {
+            display: block;
+            padding: 10px;
+            width: 100%;
           }
         }
 
@@ -459,18 +453,11 @@
         gap: 15px;
       }
       .headerIcons {
-        .notifications {
-          display: block;
-        }
+        display: flex;
+      }
 
-        .dropdownIcons {
-          display: flex;
-          gap: 20px;
-
-          img {
-            cursor: pointer;
-          }
-        }
+      .dropdown {
+        display: none;
       }
     }
   }
