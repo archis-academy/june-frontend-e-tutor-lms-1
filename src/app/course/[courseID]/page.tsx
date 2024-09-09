@@ -1,10 +1,12 @@
 import React from "react";
 import StudentFeedback from "@/Components/SingleCourseFeedback/SingleCourseFeedback";
-import CourseRating from "@/components/CourseRating/CourseRating";
+import CourseRating from "@/Components/CourseRating/CourseRating";
+
 import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
 import WatchCourse from "@/Components/WatchCourse/WatchCourse";
+import WatchcourseVideoSection from "@/Components/WatchcoursePageVideoSeciton/WatchcourseVideoSection";
 
-const CoursePage = ({ params }: { params: { courseID: string } }) => {
+const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
   const alreadyBought = false;
   return (
     <>
@@ -21,7 +23,10 @@ const CoursePage = ({ params }: { params: { courseID: string } }) => {
             </div>
           </>
         ) : (
-          <WatchCourse />
+          <>
+            <WatchcourseVideoSection />
+            <WatchCourse />
+          </>
         )}
       </div>
     </>
