@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./CommentsTab.module.scss";
 import { CommentProps } from "@/types/commentTab";
 import { comments } from "@/utils/commentData";
@@ -72,23 +72,32 @@ const Comment: React.FC<CommentProps> = ({
 };
 
 const CommentsTab: React.FC = () => {
+  const [loading, setLoading] = useState(false);
+
+  const loadMoreFeedback = () => {
+    setLoading(true);
+    // Load more feedback functionality
+    setTimeout(() => {
+      console.log("Load more comments...");
+      setLoading(false);
+    }, 2000); // Simulate loading
+  };
+
   return (
     <div className={styles.commentsTab}>
-      <h2>Comments({comments.length})</h2>
+      <h2>Comments ({comments.length})</h2>
       {comments.map((comment) => (
         <div key={comment.id}>
           <Comment {...comment} />
         </div>
       ))}
 
-      <div className={styles.commentsTab__loadMore}>
-        <span>Load More</span>
-        <img
-          src={spinner.src}
-          alt="Loading spinner"
-          className={styles.commentsTab__spinner}
-        />
-      </div>
+      <button className={styles.load_more} onClick={loadMoreFeedback}>
+        <span className={styles.load_more_text}>Load More</span>
+        {loading && (
+          <img src={spinner.src} alt="Loading" className={styles.loading_spinner} />
+        )}
+      </button>
     </div>
   );
 };
