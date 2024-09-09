@@ -2,6 +2,7 @@ import React from "react";
 import StudentFeedback from "@/Components/SingleCourseFeedback/SingleCourseFeedback";
 import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
 import WatchCourse from "@/Components/WatchCourse/WatchCourse";
+import SingleCoursePageVideoSection from "../components/SingleCoursePageVideoSection/SingleCoursePageVideoSection";
 
 const CoursePage = ({ params }: { params: { courseID: string } }) => {
   const alreadyBought = false;
@@ -11,10 +12,10 @@ const CoursePage = ({ params }: { params: { courseID: string } }) => {
       <div>
         {alreadyBought ? (
           <>
+            <SingleCoursePageVideoSection />
             <StudentFeedback />
-            <div>
-              <RelatedCourses />
-            </div>
+
+            <RelatedCourses />
           </>
         ) : (
           <WatchCourse />
