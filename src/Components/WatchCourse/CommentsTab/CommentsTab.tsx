@@ -76,11 +76,11 @@ const CommentsTab: React.FC = () => {
 
   const loadMoreFeedback = () => {
     setLoading(true);
-    // Load more feedback functionality
+
     setTimeout(() => {
       console.log("Load more comments...");
       setLoading(false);
-    }, 2000); // Simulate loading
+    }, 2000);
   };
 
   return (

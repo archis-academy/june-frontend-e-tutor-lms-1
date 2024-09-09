@@ -7,28 +7,6 @@
     font-size: 24px;
   }
 
-  .commentsTab__loadMore {
-    padding: 20px;
-    background-color: #ffeee8;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    margin-right: 24px;
-
-    span {
-      margin-right: 8px;
-    }
-
-    .commentsTab__spinner {
-      width: 20px;
-      height: 20px;
-    }
-  }
-
   .comment {
     display: flex;
     align-items: flex-start;
