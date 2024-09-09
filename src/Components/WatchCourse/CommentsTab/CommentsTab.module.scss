@@ -7,163 +7,123 @@
     font-size: 24px;
   }
 
-  p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: $secondary-color;
-    position: relative;
-  }
-
-  .comment__replyOption {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-
-    .comment__replyIcon {
-      margin-right: 5px;
-    }
-
-    .comment__replyText {
-      font-size: 12px;
-      color: $secondary-color;
-      cursor: pointer;
-    }
-  }
-
-  &__replyBox {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    padding: 10px 0;
-
-    &__input {
-      flex: 1;
-      padding: 10px;
-      border: 1px solid #e0e0e0;
-      border-radius: 5px;
-      font-size: 14px;
-      color: $secondary-color;
-      margin-right: 10px;
-    }
-
-    &__button {
-      background-color: #ff6636;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    &__line {
-      margin-left: 10px;
-      height: 100%;
-    }
-  }
-
-  &__loadMore {
-    display: flex;
-    align-items: center;
+  .commentsTab__loadMore {
+    padding: 20px;
     background-color: #ffeee8;
-    padding: 10px;
-    margin-top: 15px;
-    justify-content: center;
-  }
-
-  &__spinner {
-    margin-left: 10px;
-  }
-}
-
-.comment {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1.5rem;
-
-  &__avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 1rem;
-  }
-
-  &__avatarSmall {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
-  }
-
-  &__content {
-    flex: 1;
-  }
-
-  &__header {
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-right: 24px;
+
+    span {
+      margin-right: 8px;
+    }
+
+    .commentsTab__spinner {
+      width: 20px;
+      height: 20px;
+    }
   }
 
-  &__username {
-    font-weight: bold;
-    color: $third-color;
-  }
-
-  &__role {
-    background-color: #564ffd;
-    color: white;
-    padding: 0 8px;
-    margin-left: 8px;
-    border-radius: 4px;
-  }
-
-  &__point {
-    margin-left: 8px;
-  }
-
-  &__time {
-    margin-left: 8px;
-    font-size: 0.875rem;
-    color: #6e7485;
-  }
-
-  &__text {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
-    color: $secondary-color;
-  }
-
-  &__replies {
-    margin-left: 2rem;
-  }
-
-  &__chatsIcon {
-    margin-right: 5px;
-    position: relative;
-    left: -10px;
-  }
-
-  &__replyBox {
+  .comment {
     display: flex;
-    align-items: center;
-    margin-top: 10px;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
 
-    &__input {
-      padding: 10px;
-      border: 1px solid #e0e0e0;
-      border-radius: 5px;
+    &__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 1rem;
+    }
+
+    &__avatarSmall {
+      width: 30px;
+      height: 30px;
       margin-right: 10px;
+    }
+
+    &__content {
       flex: 1;
     }
 
-    &__button {
-      background-color: #ff6636;
+    &__header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    &__username {
+      font-weight: bold;
+      color: $third-color;
+    }
+
+    &__role {
+      background-color: #564ffd;
       color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
+      padding: 0 8px;
+      margin-left: 8px;
+      border-radius: 4px;
+    }
+
+    &__point {
+      margin-left: 8px;
+    }
+
+    &__time {
+      margin-left: 8px;
+      font-size: 0.875rem;
+      color: #6e7485;
+    }
+
+    &__text {
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+      color: $secondary-color;
+    }
+
+    &__replies {
+      margin-left: 2rem;
+    }
+
+    &__replyBox {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      width: 725px;
+      height: 48px;
+      padding: 12px 551px 12px 18px;
+      border: 1px solid transparent;
+
+      &__input {
+        padding: 10px;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        margin-right: 10px;
+        flex: 1;
+      }
+
+      &__button {
+        width: 129px;
+        height: 48px;
+        padding: 0px 24px;
+        gap: 12px;
+        background-color: #ff6636;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      &__chatsIcon {
+        margin-right: 8px;
+        position: relative;
+        left: -10px;
+      }
     }
   }
 }

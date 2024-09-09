@@ -6,6 +6,7 @@ import { comments } from "@/utils/commentData";
 import point from "@/public/CommentAvatar/point.svg";
 import chatsCircle from "@/public/CommentAvatar/ChatsCircle.svg";
 import line from "@/public/CommentAvatar/line.svg";
+import spinner from "@/public/CommentAvatar/spinner.svg";
 
 const Comment: React.FC<CommentProps> = ({
   username,
@@ -79,6 +80,15 @@ const CommentsTab: React.FC = () => {
           <Comment {...comment} />
         </div>
       ))}
+
+      <div className={styles.commentsTab__loadMore}>
+        <span>Load More</span>
+        <img
+          src={spinner.src}
+          alt="Loading spinner"
+          className={styles.commentsTab__spinner}
+        />
+      </div>
     </div>
   );
 };
