@@ -97,5 +97,11 @@
   }
   .singlecoursePageVideoSectionVideo {
     display: flex;
+    justify-content: center;
+  }
+  video{
+    max-width:872px ;
+    max-height: 492px;
+
   }
 }

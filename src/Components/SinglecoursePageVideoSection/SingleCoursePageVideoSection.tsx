@@ -60,7 +60,7 @@ function SingleCoursePageVideoSection() {
         </div>
       </div>
       <div className={styles.singlecoursePageVideoSectionVideo}>
-        <video width="872" height="492" controls>
+        <video controls>
           {/* <source src="/ArchisAcademy - Introduction" type="video/mp4" /> */}
           <source src="/videos/ArchisAcademy-Introduction.mp4" type="video/mp4" />
           Your browser does not support the video tag.
