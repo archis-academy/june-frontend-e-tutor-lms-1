@@ -67,8 +67,8 @@ export const curriculumData: curriculum[] = [
       },
       {
         type: "file",
-        title: "Interactive Components Checklist",
-        size: 2050024,
+        title: "Interactive Components",
+        size: 20598024,
       },
       {
         type: "video",
