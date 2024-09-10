@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { NavLink } from "../../types/navlinkTypes";
 import styles from "./Header.module.scss";
+import { usePathname } from "next/navigation";
 
 const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
@@ -12,11 +13,18 @@ const navLinks: NavLink[] = [
 ];
 
 const HeaderLinks: React.FC = () => {
+  const pathname = usePathname();
+
   return (
     <ul className={styles.headerNavLinks}>
       {navLinks.map((link) => (
         <li key={link.href}>
-          <Link href={link.href} className={styles.link}>
+          <Link
+            href={link.href}
+            className={`${styles.link} ${
+              pathname === link.href ? styles.active : ""
+            }`}
+          >
             {link.label}
           </Link>
         </li>

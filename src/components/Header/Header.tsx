@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  console.log(styles);
+
   return (
     <header className={styles.header}>
       <div className={styles.headerTop}>
@@ -88,7 +88,7 @@ const Header: React.FC = () => {
                 <img src="/Header/notification-icon.svg" alt="notification" />
               </a>
             </div>
-            <div className={`${styles.dropdown} ${isDropdownOpen ? "active" : ""}`}>
+            <div className={styles.dropdownWeb}>
               <div className={styles.heartIcon}>
                 <a href="#">
                   <img src="/Header/heart-icon.svg" alt="heart" />
@@ -100,6 +100,20 @@ const Header: React.FC = () => {
                 </a>
               </div>
             </div>
+            {isDropdownOpen && (
+              <div className={styles.dropdown}>
+                <div className={styles.heartIcon}>
+                  <a href="#">
+                    <img src="/Header/heart-icon.svg" alt="heart" />
+                  </a>
+                </div>
+                <div className={styles.cartIcon}>
+                  <a href="#">
+                    <img src="/Header/cart-icon.svg" alt="cart" />
+                  </a>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className={styles.buttonContainer}>
