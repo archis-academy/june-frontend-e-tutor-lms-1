@@ -55,9 +55,7 @@
         padding-bottom: 0.25rem;
         transition: color 0.3s, border-bottom 0.3s;
         font-size: 14px;
-
-        &:hover,
-        &:focus {
+        &.active {
           color: white;
           box-shadow: 0 -2px 0 0 #ff6636;
           padding: 10px 0;
@@ -84,8 +82,7 @@
         transition: color 0.3s, border-bottom 0.3s;
         font-size: 14px;
 
-        &:hover,
-        &:focus {
+        &.active {
           color: white;
           box-shadow: -2px 0 0 0 #ff6636;
           padding-left: 5px;

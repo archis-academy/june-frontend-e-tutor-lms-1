@@ -3,6 +3,7 @@ import Link from "next/link";
 import { NavLink } from "../../types/navlinkTypes";
 import styles from "./Header.module.scss";
 import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
@@ -14,6 +15,11 @@ const navLinks: NavLink[] = [
 
 const HeaderLinks: React.FC = () => {
   const pathname = usePathname();
+  const [currentPath, setCurrentPath] = useState("/");
+
+  useEffect(() => {
+    setCurrentPath(pathname);
+  }, [pathname]);
 
   return (
     <ul className={styles.headerNavLinks}>
