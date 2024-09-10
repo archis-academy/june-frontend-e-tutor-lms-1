@@ -5,8 +5,10 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   border-radius: 8px;
-  margin: 0 auto;
+  margin-left: 60px;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
 
   .feedback-header {
     display: flex;
@@ -103,22 +105,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; 
-  
+    gap: 10px;
+
     .loading-spinner {
       width: 16px;
       height: 16px;
       border: 2px solid transparent;
-      border-top-color: white; 
+      border-top-color: white;
       border-radius: 50%;
-      display: none; 
+      display: none;
     }
-  
+
     .load-more-text {
       /* Default text styling */
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
-  
+
     &:hover {
       background-color: transparent !important;
       border-radius: 5px;
@@ -126,20 +128,20 @@
       transform: translateX(-50%) translateY(-1px);
       border: 1px solid #ff6600;
       color: black;
-  
+
       .loading-spinner {
-        display: inline-block; 
-        border-top-color: black; 
+        display: inline-block;
+        border-top-color: black;
         animation: spin 1s linear infinite;
       }
-  
+
       .load-more-text {
-        color: black; 
-        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); 
+        color: black;
+        text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
       }
     }
   }
-  
+
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -148,9 +150,6 @@
       transform: rotate(360deg);
     }
   }
-  
-  
-  
 }
 
 // Responsive Styles
