@@ -13,7 +13,7 @@ export const Curriculum = () => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
 
-    return `${hours}h ${minutes}m`;
+    return `${hours == 0 ? "" : hours + "h"} ${minutes}m`;
   };
   return (
     <div className={styles.curriculum}>
@@ -71,6 +71,9 @@ export const Curriculum = () => {
                   const duration = topic.duration
                     ? convertSeconds(topic.duration)
                     : null;
+                  const fileSize = topic.size
+                    ? (topic.size / 1024 ** 2).toFixed(1) + " MB"
+                    : null;
                   return (
                     <li key={index}>
                       <div className={styles.titleAndIcon}>
@@ -82,7 +85,7 @@ export const Curriculum = () => {
                         </span>
                         <p>{topic.title}</p>
                       </div>
-                      <p className={styles.duration}>{duration || topic.size}</p>
+                      <p className={styles.duration}>{duration || fileSize}</p>
                     </li>
                   );
                 })}

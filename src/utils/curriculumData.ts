@@ -19,7 +19,7 @@ export const curriculumData: curriculum[] = [
       {
         type: "file",
         title: "webflow terms & conditions",
-        size: 530,
+        size: 6594530,
       },
       {
         type: "video",
@@ -46,7 +46,7 @@ export const curriculumData: curriculum[] = [
       {
         type: "file",
         title: "webflow terms & conditions",
-        size: 530,
+        size: 5364540,
       },
       {
         type: "video",
