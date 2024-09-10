@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import FooterBottom from "@/components/Footer/FooterBottom/FooterBottom";
 import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
 import Header from "@/components/Header/Header";
@@ -23,6 +24,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <FooterBottom />
       </body>
     </html>
   );
