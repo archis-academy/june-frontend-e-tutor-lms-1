@@ -44,14 +44,14 @@ export const curriculumData: curriculum[] = [
         duration: 520,
       },
       {
-        type: "file",
-        title: "Webflow User Manual",
-        size: 3500020,
-      },
-      {
         type: "video",
         title: "Understanding Webflow Interface",
         duration: 600,
+      },
+      {
+        type: "file",
+        title: "Webflow User Manual",
+        size: 3500020,
       },
     ],
   },
@@ -66,14 +66,14 @@ export const curriculumData: curriculum[] = [
         duration: 540,
       },
       {
-        type: "video",
-        title: "Working with Forms",
-        duration: 470,
-      },
-      {
         type: "file",
         title: "Interactive Components Checklist",
         size: 2050024,
+      },
+      {
+        type: "video",
+        title: "Working with Forms",
+        duration: 470,
       },
       {
         type: "video",
