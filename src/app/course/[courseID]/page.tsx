@@ -3,11 +3,11 @@ import StudentFeedback from "@/Components/SingleCourseFeedback/SingleCourseFeedb
 import CourseRating from "@/Components/CourseRating/CourseRating";
 import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
 import WatchCourse from "@/Components/WatchCourse/WatchCourse";
-import WatchcourseVideoSection from "../../../components/WatchcoursePageVideoSeciton/WatchcourseVideoSection"
-import { CoursesData } from "../../../utils/CoursesData";
-import DescriptionComponent from "../../../components/SingleCourseDescriptionComponent/SingleCourseDescriptionComponent";
+import WatchcourseVideoSection from "@/Components/WatchcoursePageVideoSeciton/WatchcourseVideoSection";
+import { CoursesData } from "@/utils/CoursesData";
+import DescriptionComponent from "@/Components/SingleCourseDescriptionComponent/SingleCourseDescriptionComponent";
 const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
-  const alreadyBought = false;
+  const alreadyBought = true;
   const courseId = parseInt(params.courseID, 10);
   const course = CoursesData.find((course) => course.id === courseId);
 
@@ -17,19 +17,18 @@ const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
       <div>Single Course Page {params.courseID}</div>
       <div>
         {alreadyBought ? (
-          <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
-             
-      <DescriptionComponent id={courseId} description={courseDescription} />
-      Single Course Page {params.courseID}
-    
-            
-              <CourseRating />
-            
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <DescriptionComponent id={courseId} description={courseDescription} />
+            Single Course Page {params.courseID}
+            <CourseRating />
             <StudentFeedback />
-          
-         
-              <RelatedCourses />
-            
+            <RelatedCourses />
           </div>
         ) : (
           <>
@@ -39,7 +38,6 @@ const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
         )}
       </div>
     </>
-
   );
 };
 
