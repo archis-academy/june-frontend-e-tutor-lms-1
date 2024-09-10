@@ -1,8 +1,6 @@
 import React from "react";
 import InstructorCard from "./InstructorCard";
 import { Instructor } from "@/types/Instructor";
-import iconVako from "@/public/common/iconVako.svg";
-import iconNima from "@/public/common/iconNima.svg";
 
 const InstructorList: React.FC = () => {
   const instructors: Instructor[] = [

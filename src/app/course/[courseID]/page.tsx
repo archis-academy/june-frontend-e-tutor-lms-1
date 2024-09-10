@@ -7,7 +7,7 @@ import WatchcourseVideoSection from "@/Components/WatchcoursePageVideoSeciton/Wa
 import InstructorList from "@/Components/ Instructors/InstructorList";
 
 const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
-  const alreadyBought = false;
+  const alreadyBought = true;
   return (
     <>
       <div>Single Course Page {params.courseID}</div>
@@ -15,9 +15,9 @@ const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
         {alreadyBought ? (
           <>
             <div>
-              <CourseRating />
+              <InstructorList />
             </div>
-            <InstructorList />
+            <CourseRating />
             <div>
               <StudentFeedback />
             </div>
