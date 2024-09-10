@@ -1,6 +1,7 @@
 import React from "react";
 import InstructorCard from "./InstructorCard";
 import { Instructor } from "@/types/Instructor";
+import styles from "./InstructorCard.module.scss";
 
 const InstructorList: React.FC = () => {
   const instructors: Instructor[] = [
@@ -28,7 +29,7 @@ const InstructorList: React.FC = () => {
 
   return (
     <div>
-      <h2 className="heading">Course instructor (02)</h2>
+      <h2 className={styles.heading}>Course instructor (02)</h2>
       <InstructorCard {...instructors[0]} />
       {instructors.slice(1).map((instructor, index) => (
         <InstructorCard key={index} {...instructor} />
