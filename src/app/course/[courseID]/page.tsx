@@ -5,15 +5,19 @@ import CourseRating from "@/Components/CourseRating/CourseRating";
 import { RelatedCourses } from "@/Components/RelatedCourses/RelatedCourses";
 import WatchCourse from "@/Components/WatchCourse/WatchCourse";
 import WatchcourseVideoSection from "@/Components/WatchcoursePageVideoSeciton/WatchcourseVideoSection";
+import { Curriculum } from "@/components/Curriculum/Curriculum";
 
 const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
-  const alreadyBought = false;
+  const alreadyBought = true;
   return (
     <>
       <div>Single Course Page {params.courseID}</div>
       <div>
         {alreadyBought ? (
           <>
+            <div>
+              <Curriculum />
+            </div>
             <div>
               <CourseRating />
             </div>

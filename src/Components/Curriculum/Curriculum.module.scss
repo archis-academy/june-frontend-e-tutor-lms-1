@@ -1,0 +1,82 @@
+@use "../../app/_variables.scss" as *;
+@mixin flex {
+  display: flex;
+  align-items: center;
+}
+
+.curriculum * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+}
+.curriculum {
+  @include flex();
+  flex-direction: column;
+  gap: 20px;
+  .titleWrapper {
+    @include flex();
+    width: 872px;
+    justify-content: space-between;
+    h2 {
+      font-size: 24px;
+      font-weight: 600;
+    }
+    span {
+      @include flex();
+      gap: 10px;
+      color: $dark-gray;
+    }
+  }
+  .curriculumListWrapper {
+    @include flex();
+    flex-direction: column;
+    gap: 10px;
+    .listItem {
+      @include flex();
+      flex-direction: column;
+      gap: 20px;
+      border: 1px solid $light-gray;
+      padding: 20px;
+      .itemDetail {
+        @include flex();
+        width: 872px;
+        justify-content: space-between;
+        .titleDropDown {
+          @include flex();
+          gap: 20px;
+          span {
+            transform: rotate(-90deg);
+            transition: all 0.2s;
+          }
+        }
+        .detailedInfo {
+          @include flex();
+          gap: 30px;
+          span {
+            @include flex();
+            gap: 6px;
+            color: $dark-gray;
+          }
+        }
+      }
+      ul {
+        @include flex();
+        flex-direction: column;
+        gap: 20px;
+        li {
+          @include flex();
+          width: 872px;
+          justify-content: space-between;
+          .titleAndIcon {
+            @include flex();
+            gap: 20px;
+          }
+          .duration {
+            color: $gray;
+          }
+        }
+      }
+    }
+  }
+}
