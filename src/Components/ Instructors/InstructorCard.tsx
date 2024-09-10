@@ -1,4 +1,3 @@
-"useState";
 import React from "react";
 import styles from "./InstructorCard.module.scss";
 import { Instructor } from "@/types/Instructor";
