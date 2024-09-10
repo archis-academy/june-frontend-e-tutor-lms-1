@@ -5,7 +5,9 @@ import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompan
 import FeatureCourse from "@/components/FeaturedCourses/FeaturedCourses";
 import { FooterTop } from "@/components/Footer/FooterTop/FooterTop";
 
+
 export default function Home() {
+ 
   return (
     <main>
       <HomePageCategories />
