@@ -1,11 +1,12 @@
-"use client";
 import React, { useState } from "react";
 import styles from "./CommentsTab.module.scss";
 import { CommentProps } from "@/types/commentTab";
 import { comments } from "@/utils/commentData";
 import point from "@/public/CommentAvatar/point.svg";
 import chatsCircle from "@/public/CommentAvatar/ChatsCircle.svg";
+import topline from "@/public/CommentAvatar/line.svg";
 import line from "@/public/CommentAvatar/line.svg";
+import subline from "@/public/CommentAvatar/line.svg";
 import spinner from "@/public/CommentAvatar/spinner.svg";
 
 const Comment: React.FC<CommentProps> = ({
@@ -16,8 +17,26 @@ const Comment: React.FC<CommentProps> = ({
   content,
   replies,
 }) => {
+  const [isReplied, setIsReplied] = useState(false);
+
+  const handleReplyClick = () => {
+    // Toggle isReplied state when clicking on reply
+    setIsReplied((prev) => !prev);
+  };
+
   return (
     <div className={styles.comment}>
+      {/* Conditionally render the connecting lines */}
+      {username === "Ronald Richards" && (
+        <div className={styles.comment__branchLine} />
+      )}
+      {username === "Kristin Watson" && (
+        <img src={topline.src} alt="line" className={styles.comment__topline} />
+      )}
+      {username === "Cody Fisher" && (
+        <img src={line.src} alt="line" className={styles.comment__line} />
+      )}
+
       <img
         src={avatar}
         alt={`${username}'s avatar`}
@@ -36,9 +55,19 @@ const Comment: React.FC<CommentProps> = ({
             <img
               src={chatsCircle.src}
               alt="reply"
-              className={styles.comment__replyIcon}
+              className={`${styles.comment__replyIcon} ${
+                isReplied ? styles.activeReply : ""
+              } ${username === "Theresa Webb" ? styles.specialReplyIcon : ""}`}
+              onClick={handleReplyClick}
             />
-            <span className={styles.comment__replyText}>Reply</span>
+            <span
+              className={`${styles.comment__replyText} ${
+                isReplied ? styles.activeReply : ""
+              } ${username === "Theresa Webb" ? styles.specialReplyText : ""}`}
+              onClick={handleReplyClick}
+            >
+              Reply
+            </span>
           </div>
         </div>
 
@@ -52,18 +81,21 @@ const Comment: React.FC<CommentProps> = ({
           </div>
         )}
 
+        {/* Customized reply box for Theresa Webb */}
         {username === "Theresa Webb" && (
           <div className={styles.comment__replyBox}>
-            <img src={line.src} className={styles.comment__line} />
+            <img src={subline.src} className={styles.comment__subline} alt="line" />
             <div className={styles.comment__replyInputWrapper}>
-              <img src={chatsCircle.src} className={styles.comment__chatsIcon} />
-              <input
-                type="text"
-                placeholder="Write your reply"
-                className={styles.comment__input}
-              />
+              <button className={styles.comment__replyButton}>
+                <img
+                  src={chatsCircle.src}
+                  alt="Chats Icon"
+                  className={styles.comment__chatsIcon}
+                />
+                <span className={styles.comment__replyText}>Write your reply</span>
+              </button>
+              <button className={styles.comment__postButton}>Post Reply</button>
             </div>
-            <button className={styles.comment__button}>Post Reply</button>
           </div>
         )}
       </div>
@@ -85,7 +117,7 @@ const CommentsTab: React.FC = () => {
 
   return (
     <div className={styles.commentsTab}>
-      <h2>Comments ({comments.length})</h2>
+      <h2>Comments ({151})</h2>
       {comments.map((comment) => (
         <div key={comment.id}>
           <Comment {...comment} />
