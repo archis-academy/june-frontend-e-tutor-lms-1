@@ -25,6 +25,7 @@ const Comment: React.FC<CommentProps> = ({
 
   return (
     <div className={styles.comment}>
+      {" "}
       {username === "Ronald Richards" && (
         <div className={styles.comment__branchLine} />
       )}
@@ -34,7 +35,6 @@ const Comment: React.FC<CommentProps> = ({
       {username === "Cody Fisher" && (
         <img src={line.src} alt="line" className={styles.comment__line} />
       )}
-
       <img
         src={avatar}
         alt={`${username}'s avatar`}
@@ -117,7 +117,7 @@ const CommentsTab: React.FC = () => {
 
   return (
     <div className={styles.commentsTab}>
-      <h2>Comments ({comments.length})</h2>
+      <h2>Comments ({154})</h2>
       {comments.slice(0, visibleComments).map((comment) => (
         <div key={comment.id}>
           <Comment {...comment} />

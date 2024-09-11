@@ -107,27 +107,18 @@
     &__replyIcon {
       margin-right: 5px;
       cursor: pointer;
-      fill: #8c94a3; // Default color
+      fill: #8c94a3;
       &.activeReply {
-        fill: #ff6636; // Active color when clicked
+        fill: #ff6636;
       }
     }
 
     &__replyText {
-      color: #8c94a3; // Default color
+      color: #8c94a3;
       cursor: pointer;
       &.activeReply {
-        color: #ff6636; // Active color when clicked
+        color: #ff6636;
       }
-    }
-
-    // Special styling for Theresa Webb
-    .specialReplyIcon {
-      fill: #ff6636 !important; // Theresa Webb always has orange icon
-    }
-
-    .specialReplyText {
-      color: #ff6636 !important; // Theresa Webb always has orange text
     }
 
     &__replies {
@@ -135,7 +126,6 @@
       position: relative;
       left: -26px;
     }
-
     &__replyBox {
       display: flex;
       align-items: center;
@@ -191,5 +181,35 @@
         background-color: #ff7733;
       }
     }
+  }
+}
+
+.load_more {
+  background-color: #ffeee8;
+  width: 165px;
+  height: 48px;
+  padding: 0 24px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ff6636;
+  gap: 10px;
+
+  &:hover {
+    background-color: #ffd9cc;
+  }
+
+  &__text {
+    margin-right: 18px;
+    color: $third-color;
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .loading_spinner {
+    width: 24px;
+    height: 24px;
   }
 }

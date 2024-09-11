@@ -62,7 +62,7 @@ export const comments: CommentProps[] = [
     id: 8,
     username: "Darel Steward",
     avatar: "../../CommentAvatar/darel_avatar.svg",
-    timeAgo: "4 weeks ago",
+    timeAgo: "1 month ago",
     content:
       "Awesome video. Sometimes, we have to get rid by path and the possibilities of designs and not be bounded by codes. The fact that the designed file is part from the norm, it is only expected that its code is well executed, but also well thinking out of the box. That is what differentiates yourself from others who are just building on top of someone else's code.",
   },
@@ -70,14 +70,14 @@ export const comments: CommentProps[] = [
     id: 9,
     username: "Floyd Miles",
     avatar: "../../CommentAvatar/floyd_avatar.svg",
-    timeAgo: "4 weeks ago",
+    timeAgo: "1 month ago",
     content: "I really hope you make some series out of this UI + AE tutorials :)",
   },
   {
     id: 10,
     username: "Courtney Henry",
     avatar: "../../CommentAvatar/courtney_henry_avatar.svg",
-    timeAgo: "4 weeks ago",
+    timeAgo: "1 month ago",
     content: "Hearing this while being a frontend programmer.",
   },
   {
