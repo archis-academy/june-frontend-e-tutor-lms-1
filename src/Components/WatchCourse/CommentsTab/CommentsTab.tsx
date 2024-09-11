@@ -20,13 +20,11 @@ const Comment: React.FC<CommentProps> = ({
   const [isReplied, setIsReplied] = useState(false);
 
   const handleReplyClick = () => {
-    // Toggle isReplied state when clicking on reply
     setIsReplied((prev) => !prev);
   };
 
   return (
     <div className={styles.comment}>
-      {/* Conditionally render the connecting lines */}
       {username === "Ronald Richards" && (
         <div className={styles.comment__branchLine} />
       )}
@@ -81,7 +79,6 @@ const Comment: React.FC<CommentProps> = ({
           </div>
         )}
 
-        {/* Customized reply box for Theresa Webb */}
         {username === "Theresa Webb" && (
           <div className={styles.comment__replyBox}>
             <img src={subline.src} className={styles.comment__subline} alt="line" />
@@ -104,32 +101,41 @@ const Comment: React.FC<CommentProps> = ({
 };
 
 const CommentsTab: React.FC = () => {
+  const [visibleComments, setVisibleComments] = useState(8);
   const [loading, setLoading] = useState(false);
 
   const loadMoreFeedback = () => {
     setLoading(true);
 
     setTimeout(() => {
-      console.log("Load more comments...");
+      setVisibleComments((prevVisible) =>
+        Math.min(prevVisible + 3, comments.length)
+      );
       setLoading(false);
     }, 2000);
   };
 
   return (
     <div className={styles.commentsTab}>
-      <h2>Comments ({151})</h2>
-      {comments.map((comment) => (
+      <h2>Comments ({comments.length})</h2>
+      {comments.slice(0, visibleComments).map((comment) => (
         <div key={comment.id}>
           <Comment {...comment} />
         </div>
       ))}
 
-      <button className={styles.load_more} onClick={loadMoreFeedback}>
-        <span className={styles.load_more_text}>Load More</span>
-        {loading && (
-          <img src={spinner.src} alt="Loading" className={styles.loading_spinner} />
-        )}
-      </button>
+      {visibleComments < comments.length && (
+        <button className={styles.load_more} onClick={loadMoreFeedback}>
+          <span className={styles.load_more_text}>Load More</span>
+          {loading && (
+            <img
+              src={spinner.src}
+              alt="Loading"
+              className={styles.loading_spinner}
+            />
+          )}
+        </button>
+      )}
     </div>
   );
 };
