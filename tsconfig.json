@@ -12,6 +12,8 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "target": "es5",
+    "jsxImportSource": "react",
     "plugins": [
       {
         "name": "next"
@@ -21,7 +23,7 @@
       "@/*": ["./src/*"],
       "@/root/*": ["./*"],
       "@/public/*": ["./public/*"],
-      "@/components/*": ["./src/components/*"],
+      "@/components/*": ["src/Components/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/utils/*": ["./src/utils/*"],
       "@/fonts/*": ["./public/fonts/*"]

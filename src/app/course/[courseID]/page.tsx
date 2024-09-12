@@ -6,7 +6,7 @@ import WatchCourse from "@/Components/WatchCourse/WatchCourse";
 import WatchcourseVideoSection from "@/Components/WatchcoursePageVideoSeciton/WatchcourseVideoSection";
 import { CoursesData } from "@/utils/CoursesData";
 import DescriptionComponent from "@/Components/SingleCourseDescriptionComponent/SingleCourseDescriptionComponent";
-import { Curriculum } from "@/components/Curriculum/Curriculum";
+import { Curriculum } from "@/Components/Curriculum/Curriculum";
 import InstructorList from "@/Components/ Instructors/InstructorList";
 
 const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {

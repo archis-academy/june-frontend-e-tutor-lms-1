@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import DescriptionTab from "../WatchCourse/DescriptionTab/DescriptionTab";
-import LectureNotesTab from "../WatchCourse/LectureNotesTab/LectureNotesTab";
-import AttachFileTab from "../WatchCourse/AttachFileTab/AttachFileTab";
-import CommentsTab from "../WatchCourse/CommentsTab/CommentsTab";
+import DescriptionTab from "./DescriptionTab/DescriptionTab";
+import LectureNotesTab from "./LectureNotesTab/LectureNotesTab";
+import AttachFileTab from "./AttachFileTab/AttachFileTab";
+import CommentsTab from "./CommentsTab/CommentsTab";
 import styles from "./WatchCourse.module.scss";
 
 const WatchCourse: React.FC = () => {
