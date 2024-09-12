@@ -1,0 +1,473 @@
+@use "../../app/_variables.scss" as *;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 150px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+
+  .headerTop {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background-color: $primary-font-color;
+    color: #8c94a3;
+
+    .selectContainer {
+      display: flex;
+      gap: 15px;
+      justify-content: end;
+    }
+
+    .currencySelect,
+    .languageSelect {
+      background-color: $primary-font-color;
+      color: #8c94a3;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  .menuContainer {
+    background-color: $primary-font-color;
+    display: none;
+  }
+
+  .headerNav {
+    display: flex;
+    align-items: center;
+
+    .headerNavLinks {
+      text-decoration: none;
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      color: #8c94a3;
+
+      a {
+        color: #8c94a3;
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        transition: color 0.3s, border-bottom 0.3s;
+        font-size: 14px;
+        &.active {
+          color: white;
+          box-shadow: 0 -2px 0 0 #ff6636;
+          padding: 10px 0;
+        }
+      }
+    }
+  }
+
+  .headerNavMobile {
+    display: none;
+    .headerNavLinks {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      list-style: none;
+      color: #8c94a3;
+      padding: 0 1rem;
+
+      a {
+        color: #8c94a3;
+        text-decoration: none;
+        padding-bottom: 0.25rem;
+        transition: color 0.3s, border-bottom 0.3s;
+        font-size: 14px;
+
+        &.active {
+          color: white;
+          box-shadow: -2px 0 0 0 #ff6636;
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .headerBottom {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    width: 100%;
+
+    .headerBottomLeft {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .logoDiv {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      font-size: 32px;
+      cursor: pointer;
+      padding-left: 25px;
+    }
+
+    .headerBrowse {
+      width: 200px;
+      height: 48px;
+      font-size: 16px;
+      padding: 0 10px;
+      border: 1px solid #e9eaf0;
+      color: #4e5566;
+    }
+
+    .headerSearch {
+      width: 425px;
+      height: 48px;
+      padding: 0 10px;
+      border: 1px solid #e9eaf0;
+      display: flex;
+
+      .searchIcon {
+        margin-right: 8px;
+        width: 24px;
+      }
+
+      .headerSearchInput {
+        border: none;
+        outline: none;
+        padding: 5px;
+        font-size: 16px;
+        width: 100%;
+        color: #4e5566;
+      }
+    }
+
+    .headerBottomRight {
+      display: flex;
+      align-items: center;
+
+      .headerIcons {
+        display: flex;
+        gap: 10px;
+        padding: 0 20px;
+        align-items: center;
+        position: relative;
+        .dropdownWeb {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+        }
+
+        img {
+          cursor: pointer;
+        }
+      }
+
+      .buttonContainer {
+        display: flex;
+        gap: 15px;
+        padding-right: 25px;
+
+        .createAccount {
+          color: #ff6636;
+          width: 170px;
+          background: #ffeee8;
+          border: none;
+          height: 48px;
+          cursor: pointer;
+          gap: 15px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .signIn {
+          background-color: #ff6636;
+          color: white;
+          width: 100px;
+          border: none;
+          height: 48px;
+          cursor: pointer;
+          gap: 15px;
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .menuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1350px) {
+    .headerBottom {
+      align-items: center;
+
+      .headerBottomLeft {
+        .headerBrowse {
+          width: 150px;
+        }
+        .headerSearch {
+          width: 240px;
+        }
+      }
+      .headerBottomRight {
+        .buttonContainer {
+          display: flex;
+          gap: 15px;
+
+          .createAccount {
+            width: 120px;
+            font-size: 12px;
+          }
+          .signIn {
+            width: 80px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1110px) and (min-width: 951px) {
+    .headerBottom {
+      align-items: center;
+
+      width: 100%;
+
+      .headerBottomLeft,
+      .headerBottomRight {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .headerBottomLeft {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        .logoDiv .e-tutor {
+          display: none;
+        }
+        .headerSearch {
+          width: 235px;
+          font-size: 12px;
+        }
+      }
+
+      .headerBottomRight {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+
+        .headerSearch,
+        .buttonContainer {
+          display: flex;
+          gap: 10px;
+        }
+        .headerIcons {
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    .headerBottom {
+      align-items: center;
+
+      width: 100%;
+
+      .headerBottomLeft,
+      .headerBottomRight {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .headerBottomLeft {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        .logoDiv .e-tutor,
+        .headerBrowse {
+          display: none;
+        }
+        .headerSearch {
+          width: 235px;
+          font-size: 12px;
+        }
+      }
+
+      .headerBottomRight {
+        align-items: center;
+        gap: 10px;
+        padding: 10px 0;
+
+        .headerSearch,
+        .buttonContainer {
+          display: flex;
+          gap: 10px;
+        }
+        .headerIcons {
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 760px) {
+    .menuContainer {
+      display: block;
+    }
+
+    .headerNav {
+      display: none;
+    }
+
+    .headerNavMobile {
+      display: flex;
+      background-color: $primary-font-color;
+    }
+
+    .menuButton {
+      display: block;
+      padding: 1rem;
+    }
+
+    .headerBottom {
+      align-items: center;
+      justify-content: space-between;
+
+      .headerBottomLeft,
+      .headerBottomRight {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .headerBottomLeft {
+        align-items: center;
+        gap: 0;
+
+        .logoDiv {
+          padding: 5px;
+          .etutorLogo {
+            width: 25px;
+          }
+
+          .e-tutor {
+            display: none;
+          }
+        }
+        .headerSearch {
+          width: 155px;
+          height: 35px;
+          align-items: center;
+
+          .searchIcon {
+            height: 20px;
+          }
+          .headerSearchInput {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .headerBottomRight {
+        flex-direction: row-reverse;
+        gap: 0px;
+
+        .notificationIcon {
+          display: block;
+          position: relative;
+        }
+        .dropdownWeb {
+          display: none !important;
+        }
+        .dropdown {
+          display: flex;
+          flex-direction: column !important;
+          position: absolute;
+          top: 100%;
+          background-color: white;
+          z-index: 10;
+          border-radius: 3px;
+          // .active {
+          //   display: flex;
+          //   flex-direction: column;
+          //   position: absolute;
+          //   top: 100%;
+          //   left: 0;
+          //   background-color: white;
+          //   border: 1px solid #ccc;
+          //   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          //   z-index: 10;
+          // }
+          .heartIcon,
+          .cartIcon {
+            display: block;
+            padding-top: 10px;
+            width: 100%;
+            width: 20px;
+          }
+        }
+        .notificationIcon img,
+        .heartIcon img,
+        .cartIcon img {
+          height: 20px;
+          width: 20px;
+        }
+        .buttonContainer {
+          display: flex;
+          gap: 0px;
+          padding-right: 0;
+
+          .createAccount {
+            height: 35px;
+            width: 71px;
+            font-size: 8px;
+          }
+          .signIn {
+            height: 35px;
+            font-size: 8px;
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 761px) {
+    .headerNav {
+      display: flex;
+      align-items: center;
+    }
+
+    .headerNavMobile {
+      display: none;
+    }
+    .headerBottomRight {
+      .buttonContainer {
+        display: flex;
+        gap: 15px;
+      }
+      .headerIcons {
+        display: flex;
+      }
+
+      .dropdown {
+        display: none;
+      }
+    }
+  }
+}

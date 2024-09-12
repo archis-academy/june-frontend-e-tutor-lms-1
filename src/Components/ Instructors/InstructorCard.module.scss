@@ -1,0 +1,144 @@
+.heading {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #333;
+  width: 872px;
+  max-width: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 8px;
+  width: 872px;
+  max-width: 100%;
+  padding: 20px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  display: flex;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.image {
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.title {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+  color: #888;
+}
+
+.stats div {
+  display: flex;
+  align-items: center;
+}
+
+.stats img {
+  margin-right: 4px;
+  width: 14px;
+  height: 14px;
+}
+
+.description {
+  font-size: 14px;
+  color: #777;
+  margin-top: 8px;
+}
+
+@media (max-width: 450px) {
+  .card {
+    flex-direction: column;
+    width: 85%;
+    padding: 10px;
+  }
+
+  .image {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 8px;
+  }
+
+  .name {
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+
+  .title {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .stats {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 8px;
+    font-size: 10px;
+    color: #666;
+  }
+
+  .stats div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .stats img {
+    width: 10px;
+    height: 10px;
+    margin-right: 0;
+  }
+
+  .description {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+  }
+
+  .cardContainer {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+}

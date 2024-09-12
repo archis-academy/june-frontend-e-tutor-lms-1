@@ -23,16 +23,24 @@ export const PopularInstructors = () => {
           );
         })}
       </div>
-      <p className={styles.description}>
+      <span className={styles.description}>
         Thousands of students waiting for an instructor. Start teaching & earning
         now!
         <span className={styles.becomeInstructorContainer}>
           <Link href="/" className={styles.becomeInstructor}>
             Become Instructor
           </Link>
-          <Image className={styles.arrowIcon} src={arrowIcon} alt="arrow-icon" />
+          <div className={styles.arrowIconWrapper}>
+            <Image
+              className={styles.arrowIcon}
+              src={arrowIcon}
+              alt="arrow-icon"
+              fill
+              sizes="24px"
+            />
+          </div>
         </span>
-      </p>
+      </span>
     </section>
   );
 };
