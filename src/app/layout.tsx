@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import FooterBottom from "@/components/Footer/FooterBottom/FooterBottom";
 import { Inter } from "next/font/google";
 import styles from "./globals.module.scss";
+import Header from "@/components/Header/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         className={inter.className}
         style={{ margin: 0, boxSizing: "border-box", padding: 0 }}
       >
+        <Header />
         {children}
         <FooterBottom />
       </body>
