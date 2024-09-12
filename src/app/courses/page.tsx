@@ -1,4 +1,4 @@
-import { CourseList } from "../../components/CourseList/CourseList";
+import { CourseList } from "../../Components/CourseList/CourseList";
 
 export default function Home() {
   return (

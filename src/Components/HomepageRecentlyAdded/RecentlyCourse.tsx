@@ -13,8 +13,10 @@ import allCourse from "../../types/allCourses";
 
 
 function RecentlyCourseCard({ course }: { course: allCourse }) {
+
+  const router = useRouter();
   const handleLinkClick = () => {
-    const router = useRouter();
+   
     router.push(`/course/${course.id}`);
   };
 

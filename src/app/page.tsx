@@ -1,14 +1,16 @@
-import { HomePageCategories } from "@/components/HomePageCategories/HomePageCategories";
-import { BestSellingCourses } from "@/components/BestSellingCourses/BestSellingCourses";
-import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
-import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
-import FeatureCourse from "@/components/FeaturedCourses/FeaturedCourses";
-import { FooterTop } from "@/components/Footer/FooterTop/FooterTop";
-import RecentlyAddedComponent from "../../src/components/HomepageRecentlyAdded/HomepageRecentlyAdded";
+import { HomePageCategories } from "@/Components/HomePageCategories/HomePageCategories";
+import { BestSellingCourses } from "@/Components/BestSellingCourses/BestSellingCourses";
+import { PopularInstructors } from "@/Components/PopularInstructors/PopularInstructors";
+import { HomePageCompanies } from "@/Components/HomePageCompanies/HomePageCompanies";
+import HomepageHeroSection from "@/Components/HomepageHeroSection/HomepageHeroSection";
+import FeatureCourse from "@/Components/FeaturedCourses/FeaturedCourses";
+import { FooterTop } from "@/Components/Footer/FooterTop/FooterTop";
+import RecentlyAddedComponent from "@/Components/HomepageRecentlyAdded/HomepageRecentlyAdded";
 
 export default function Home() {
   return (
     <main>
+      <HomepageHeroSection />
       <HomePageCategories />
       <BestSellingCourses />
       <FeatureCourse />
