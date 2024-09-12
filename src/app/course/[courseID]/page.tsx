@@ -10,7 +10,7 @@ import { Curriculum } from "@/components/Curriculum/Curriculum";
 import InstructorList from "@/Components/ Instructors/InstructorList";
 
 const CoursePage: React.FC<{ params: { courseID: string } }> = ({ params }) => {
-  const alreadyBought = true;
+  const alreadyBought = false;
   const courseId = parseInt(params.courseID, 10);
   const course = CoursesData.find((course) => course.id === courseId);
 
