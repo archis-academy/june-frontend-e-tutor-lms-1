@@ -1,11 +1,12 @@
-import { HomePageCategories } from "@/Components/HomePageCategories/HomePageCategories";
-import { BestSellingCourses } from "@/Components/BestSellingCourses/BestSellingCourses";
-import { PopularInstructors } from "@/Components/PopularInstructors/PopularInstructors";
-import { HomePageCompanies } from "@/Components/HomePageCompanies/HomePageCompanies";
-import HomepageHeroSection from "@/Components/HomepageHeroSection/HomepageHeroSection";
-import FeatureCourse from "@/Components/FeaturedCourses/FeaturedCourses";
-import { FooterTop } from "@/Components/Footer/FooterTop/FooterTop";
+import { HomePageCategories } from "@/components/HomePageCategories/HomePageCategories";
+import { BestSellingCourses } from "@/components/BestSellingCourses/BestSellingCourses";
+import { PopularInstructors } from "@/components/PopularInstructors/PopularInstructors";
+import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompanies";
+import HomepageHeroSection from "@/components/HomepageHeroSection/HomepageHeroSection";
+import FeatureCourse from "@/components/FeaturedCourses/FeaturedCourses";
 import RecentlyAddedComponent from "@/Components/HomepageRecentlyAdded/HomepageRecentlyAdded";
+import CtaComponent from "../components/CtaComponent/CtaComponent";
+import { FooterTop } from "@/components/Footer/FooterTop/FooterTop";
 
 export default function Home() {
   return (
@@ -13,8 +14,10 @@ export default function Home() {
       <HomepageHeroSection />
       <HomePageCategories />
       <BestSellingCourses />
+
       <FeatureCourse />
       <RecentlyAddedComponent />
+      <CtaComponent />
       <PopularInstructors />
       <HomePageCompanies />
       <FooterTop />
