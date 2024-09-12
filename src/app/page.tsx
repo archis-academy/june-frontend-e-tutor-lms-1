@@ -5,6 +5,7 @@ import { HomePageCompanies } from "@/components/HomePageCompanies/HomePageCompan
 import HomepageHeroSection from "@/components/HomepageHeroSection/HomepageHeroSection";
 import FeatureCourse from "@/components/FeaturedCourses/FeaturedCourses";
 import { FooterTop } from "@/components/Footer/FooterTop/FooterTop";
+import CtaComponent from "../components/CtaComponent/CtaComponent";
 
 export default function Home() {
   return (
@@ -12,10 +13,11 @@ export default function Home() {
       <HomepageHeroSection />
       <HomePageCategories />
       <BestSellingCourses />
+
       <FeatureCourse />
+      <CtaComponent />
       <PopularInstructors />
       <HomePageCompanies />
-      <FooterTop />
     </main>
   );
 }
