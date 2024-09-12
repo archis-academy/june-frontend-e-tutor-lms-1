@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+// import Link from "next/link";
 import { CourseType } from "@/types/allCourses";
 import styles from "./CourseCard.module.scss";
 import starIcon from "@/public/common/star.svg";
@@ -25,7 +25,7 @@ export const CourseCard: React.FC<CourseType> = ({
   };
 
   const formatRatingNumber = (rating: number) => {
-    return rating % 1 ? rating.toString() : rating.toString() + ".0";
+    return rating % 1 ? rating.toString() : rating.toString() + ".00";
   };
 
   return (
