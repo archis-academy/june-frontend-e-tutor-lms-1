@@ -1,12 +1,12 @@
 "use client";
 import React, { useState } from "react";
 import { CourseCard } from "../CourseCard/CourseCard";
-import { CoursesData } from "../../utils/CoursesData";
+import { CoursesData } from "@/utils/CoursesData";
 import styles from "../BestSellingCourses/BestSellingCourses.module.scss";
 import scssRecently from "../HomepageRecentlyAdded/HomepageRecentlyAdded.module.scss";
 import RecentlyCourse from "./RecentlyCourse";
 import Image from "next/image";
-import arrowRight from "../../../public/common/arrow-right.svg";
+import arrowRight from "@/public/common/arrow-right.svg";
 import CourseType from "../../types/allCourses";
 
 

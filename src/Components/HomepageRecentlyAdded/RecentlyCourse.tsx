@@ -1,14 +1,14 @@
 import styles from "./HomepageRecentlyAdded.module.scss";
 import Image from "next/image";
-import star from "../../../public/common/star.svg";
-import clock from "../../../public/common/Clock.svg";
-import BarChart from "../../../public/common/bar-chart.svg";
-import heart from "../../../public/common/Heart.svg";
-import user from "../../../public/common/User.svg";
-import check from "../../../public/Check.svg";
-import shoppingCartSimple from "../../../public/common/ShoppingCartSimple.svg";
+import star from "@/public/common/star.svg";
+import clock from "@/public/common/Clock.svg";
+import BarChart from "@/public/common/bar-chart.svg";
+import heart from "@/public/common/Heart.svg";
+import user from "@/public/common/User.svg";
+import check from "@/public/Check.svg";
+import shoppingCartSimple from "@/public/common/ShoppingCartSimple.svg";
 import { useRouter } from "next/navigation";
-import allCourse from "../../types/allCourses";
+import allCourse from "@/types/allCourses";
 
 
 
