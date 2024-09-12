@@ -7,14 +7,18 @@ import heart from "../../../public/common/Heart.svg";
 import user from "../../../public/common/User.svg";
 import check from "../../../public/Check.svg";
 import shoppingCartSimple from "../../../public/common/ShoppingCartSimple.svg";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import allCourse from "../../types/allCourses";
 
-const handleLinkClick = () => {
-  const router = useRouter();
-  router.push("/app/course/page.tsx");
-};
 
-function RecentlyCourseCard({ course }) {
+
+function RecentlyCourseCard({ course }: { course: allCourse }) {
+  const handleLinkClick = () => {
+    const router = useRouter();
+    router.push(`/course/${course.id}`);
+  };
+
+
   if (!course) return null;
 
   return (
@@ -82,7 +86,7 @@ function RecentlyCourseCard({ course }) {
           <Image src={shoppingCartSimple} alt="shoppingCartSimple" />
           Add to Cart
         </a>
-        <button  onclick={handleLinkClick}>Course Details</button>
+        <button onClick={handleLinkClick}>Course Details</button>
       </div>
     </div>
   );

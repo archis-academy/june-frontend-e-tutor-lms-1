@@ -9,10 +9,11 @@ import RecentlyAddedComponent from "../../src/components/HomepageRecentlyAdded/H
 export default function Home() {
   return (
     <main>
-      <RecentlyAddedComponent />
+      
       <HomePageCategories />
       <BestSellingCourses />
       <FeatureCourse/>
+      <RecentlyAddedComponent />
       <PopularInstructors />
       <HomePageCompanies />
       <Footer />

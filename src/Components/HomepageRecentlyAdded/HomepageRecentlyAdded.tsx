@@ -7,16 +7,19 @@ import scssRecently from "../HomepageRecentlyAdded/HomepageRecentlyAdded.module.
 import RecentlyCourse from "./RecentlyCourse";
 import Image from "next/image";
 import arrowRight from "../../../public/common/arrow-right.svg";
+import CourseType from "../../types/allCourses";
+
 
 function RecentlyAddedComponent() {
-  const [selectedCourse, setSelectedCourse] = useState(null);
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState<CourseType | null>(null);
+  const [isPopupOpen, setIsPopupOpen] = useState();
   const [visibleCourses, setVisibleCourses] = useState(4);
 
-  const handleCardClick = (course) => {
+  const handleCardClick = (course:CourseType) => {
     setSelectedCourse(course);
-    setIsPopupOpen(true);
+    setIsPopupOpen(course.id);
   };
+
 
   const toggleCourses = () => {
     setVisibleCourses((prevVisibleCourses) =>
@@ -25,9 +28,7 @@ function RecentlyAddedComponent() {
   };
 
   return (
-    <section
-      
-      
+    <section 
     >
       <div className={styles.bestSellingCourses} style={{ backgroundColor: "#ffffff" }}>
         <h2
@@ -62,6 +63,9 @@ function RecentlyAddedComponent() {
                 duration={card.duration}
                 level={card.level}
               />
+              <div className={scssRecently["recently-course-popup"]}>{isPopupOpen === card.id && <RecentlyCourse   course={selectedCourse}  />}
+              
+              </div>
             </div>
           ))}
         </div>
@@ -69,14 +73,17 @@ function RecentlyAddedComponent() {
           onClick={toggleCourses}
           className={scssRecently["recently-course-card-btn-all"]}
         >
-          {visibleCourses === 4 ? "Browse all Course" : "Reduce Courses"}{" "}
-          <Image src={arrowRight} />{" "}
+          {visibleCourses === 4 ? "Browse all Course" : "Reduce Courses"}
+          <Image src={arrowRight} alt="arrowRight" />
         </button>
+        
       </div>
-      <div className={scssRecently["recently-course-popup"]}>{isPopupOpen && <RecentlyCourse  course={selectedCourse}  />}</div>
+      
       
     </section>
   );
 }
 
 export default RecentlyAddedComponent;
+
+

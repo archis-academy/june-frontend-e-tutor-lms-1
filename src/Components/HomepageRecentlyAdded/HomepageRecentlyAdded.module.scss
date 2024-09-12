@@ -1,5 +1,7 @@
 .recently-course-card {
-  max-width: 424px;
+  display: flex;
+  flex-direction: column;
+  max-width: 424px !important; 
   // max-height: 670px;
   box-shadow: 0px 4px 20px 0px #1d20261f;
   border: 1px solid #e9eaf0;
@@ -9,7 +11,7 @@
     padding: 16px;
     .recently-course-card-paragraph-content {
       font-family: Inter;
-      font-size: 10px;
+      font-size: 8px;
       font-weight: 500;
       line-height: 12px;
       color: #342f98;
@@ -21,7 +23,7 @@
     }
     .recently-course-card-paragraph {
       font-family: Inter;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 500;
       line-height: 24px;
       color: #1d2026;
@@ -45,7 +47,7 @@
         flex-direction: column;
         span {
           font-family: Inter;
-          font-size: 14px;
+          font-size: 12px;
           font-weight: 400;
           line-height: 22px;
           letter-spacing: -0.01em;
@@ -54,7 +56,7 @@
         }
         .recently-course-card-course-by-name{
 font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 400;
 line-height: 22px;
 letter-spacing: -0.01em;
@@ -76,7 +78,7 @@ margin: 0;
       }
       p{
 font-family: Inter;
-font-size: 16px;
+font-size: 14px;
 font-weight: 500;
 line-height: 22px;
 text-align: left;
@@ -84,7 +86,7 @@ color: #1D2026;
       }
       span{
 font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 400;
 line-height: 22px;
 letter-spacing: -0.01em;
@@ -110,7 +112,7 @@ color: #6E7485;
       gap: 6px;
       p{
 font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 400;
 line-height: 22px;
 letter-spacing: -0.01em;
@@ -119,7 +121,7 @@ margin: 0;
       }
       span{
         font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 600;
 line-height: 22px;
 letter-spacing: -0.01em;
@@ -147,12 +149,12 @@ gap: 3px;
    align-items: center;
    gap: 4px;
 font-family: Inter;
-font-size: 24px;
+font-size: 22px;
 font-weight: 400;
 line-height: 32px;
 color: #1D2026;
 strike{
-font-size: 16px;
+font-size: 14px;
 font-weight: 400;
 line-height: 24px;
 color: #8C94A3;
@@ -168,7 +170,7 @@ color: #8C94A3;
         p{
 color: #FF6636;
 font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 500;
 line-height: 14px;
 
@@ -192,7 +194,7 @@ line-height: 14px;
    flex-direction: column;
    padding: 20px;
 font-family: Inter;
-font-size: 12px;
+font-size: 10px;
 font-weight: 500;
 line-height: 12px;
 text-align: left;
@@ -209,7 +211,7 @@ img{
 
   p{
 font-family: Inter;
-font-size: 14px;
+font-size: 12px;
 font-weight: 400;
 line-height: 22px;
 letter-spacing: -0.01em;
@@ -236,7 +238,7 @@ border: 1px solid #E9EAF0;
     align-items: center;
     gap: 12px;
 font-family: Inter;
-font-size: 16px;
+font-size: 14px;
 font-weight: 600;
 line-height: 48px;
 letter-spacing: -0.008em;
@@ -250,13 +252,15 @@ text-decoration: none;
     background: #FFEEE8;
     color: #FF6636;
 font-family: Inter;
-font-size: 16px;
+font-size: 14px;
 font-weight: 600;
 line-height: 48px;
 letter-spacing: -0.008em;
 text-align: left;
 border: none;
 max-height: 48px;
+cursor: pointer;
+width: clamp(200px, 50vw, 300px);
   }
 }
 }
@@ -268,7 +272,7 @@ background-color: #FFEEE8;
 gap: 12px;
 color: #FF6636;
 font-family: Inter;
-font-size: 16px;
+font-size: 14px;
 font-weight: 600;
 line-height: 48px;
 letter-spacing: -0.008em;
@@ -278,7 +282,10 @@ border: none;
 cursor: pointer;
 }
 .recently-course-popup{
-  position: absolute;
-  top: 0;
-  left: 71%;
+  display: flex;
+   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, -50%);
+  z-index: 99;
 }
